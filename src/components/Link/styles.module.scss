@@ -1,0 +1,20 @@
+@import 'src/assets/styles/colors';
+
+.link {
+  text-decoration: none;
+  color: $linkColor;
+  border-bottom: dashed 1px $linkColor;
+
+  path {
+    fill: $linkColor;
+  }
+
+  &:hover {
+    border-bottom-color: $linkHover;
+    color: $linkHover;
+
+    path {
+      fill: $linkHover;
+    }
+  }
+}

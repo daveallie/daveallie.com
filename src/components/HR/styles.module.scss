@@ -1,0 +1,9 @@
+@import "src/assets/styles/colors";
+
+.hr {
+  width: 20%;
+  background-color: $hrBackground;
+  margin: 3rem 0;
+  height: 0.125rem;
+  border: none;
+}

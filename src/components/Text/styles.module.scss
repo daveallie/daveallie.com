@@ -1,0 +1,30 @@
+@import 'src/assets/styles/colors';
+
+.amsiFont {
+  font-family: 'Amsi', sans-serif;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.normal {
+  font-style: normal;
+}
+
+$weights: 200, 300, 400, 500, 600, 700, 800;
+@each $weight in $weights {
+  .weight_#{$weight} {
+    font-weight: $weight;
+  }
+}
+
+.color_headingLight {
+  color: $headingLight
+}
+.color_subheadingLight {
+  color: $subheadingLight
+}
+.color_dark {
+  color: $textDark
+}

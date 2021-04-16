@@ -1,0 +1,7 @@
+@import 'src/assets/styles/colors';
+
+.container {
+  background-color: $bodyBackground;
+  z-index: 20;
+  position: relative;
+}

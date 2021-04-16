@@ -1,0 +1,24 @@
+@import 'src/assets/styles/colors';
+
+body {
+  background-color: $heroBackground;
+  margin: 0;
+}
+
+.container {
+  min-height: calc(100vh - 6rem);
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.details {
+  margin-top: 1rem;
+}
+
+.aboutBlockSpacing {
+  margin-top: 2rem;
+}

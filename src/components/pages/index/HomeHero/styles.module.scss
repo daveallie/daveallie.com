@@ -1,0 +1,303 @@
+@import 'src/assets/styles/colors';
+
+$dSlideLeftDuration: 0.5s;
+
+$firstNameSlideInStart: $dSlideLeftDuration;
+$firstNameSlideInDelay: 0.1s;
+$firstNameSlideInDuration: 0.5s;
+
+$firstNameFoldUpStart: $firstNameSlideInStart + 2 * $firstNameSlideInDelay + $firstNameSlideInDuration;
+$firstNameFoldUpDuration: 0.5s;
+
+$aRotateStart: $firstNameFoldUpStart + $firstNameFoldUpDuration;
+$aRotateDuration: 0.5s;
+
+$lastNameSlideInStart: $aRotateStart + $aRotateDuration;
+$lastNameSlideInDelay: 0.1s;
+$lastNameSlideInDuration: 0.5s;
+
+$aSettleStart: $lastNameSlideInStart + 3 * $lastNameSlideInDelay + $lastNameSlideInDuration;
+$aSettleDuration: 0.5s;
+
+.container {
+  position: fixed;
+  top: calc(50vh - 24vw);
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.content {
+  text-align: center;
+  transform-origin: 0 0;
+}
+
+.header {
+  line-height: 80%;
+  margin: 0;
+}
+
+.firstName {
+  perspective: 60vw;
+  perspective-origin: bottom;
+}
+
+.lastName {
+  transform: perspective(60vw) rotate(90deg) rotateY(45deg) skew(0, -8deg);
+  transform-origin: 0 50%;
+  margin-left: 28vw;
+  margin-top: -18vw;
+  display: inline-block;
+  position: relative;
+  z-index: -1;
+
+  perspective: 60vw;
+  perspective-origin: left;
+}
+
+.firstNameD {
+  display: inline-block;
+  cursor: default;
+  user-select: none;
+
+  &.preAnimation {
+    cursor: pointer;
+    z-index: 10;
+    position: relative;
+    transform: translateY(calc(24vw - 50%)) translateX(150%);
+  }
+
+  &.animation {
+    animation: slideleft $dSlideLeftDuration ease,
+    foldup $firstNameFoldUpDuration ease $firstNameFoldUpStart;
+    animation-fill-mode: forwards;
+    transform: translateY(calc(24vw - 50%)) translateX(150%);
+  }
+
+  &.postAnimation {
+    transform: rotateX(45deg);
+  }
+}
+
+.firstNameLetter {
+  display: inline-block;
+  cursor: default;
+  user-select: none;
+
+  &.preAnimation {
+    opacity: 0;
+  }
+
+  &.postAnimation {
+    transform: rotateX(45deg);
+  }
+
+  &.A.animation {
+    animation: slidein-firstname $firstNameSlideInDuration ease $firstNameSlideInStart,
+    foldup $firstNameFoldUpDuration ease $firstNameFoldUpStart,
+    rotate $aRotateDuration ease $aRotateStart,
+    settle $aSettleDuration ease $aSettleStart;
+    animation-fill-mode: forwards;
+    opacity: 0;
+    transform: translateY(calc(50vh - 50%));
+  }
+
+  &.V.animation {
+    animation: slidein-firstname $firstNameSlideInDuration ease ($firstNameSlideInStart + $firstNameSlideInDelay) forwards,
+    foldup $firstNameFoldUpDuration ease $firstNameFoldUpStart forwards;
+    animation-fill-mode: forwards;
+    opacity: 0;
+    transform: translateY(calc(50vh - 50%));
+  }
+
+  &.E.animation {
+    animation: slidein-firstname $firstNameSlideInDuration ease ($firstNameSlideInStart + 2 * $firstNameSlideInDelay) forwards,
+    foldup $firstNameFoldUpDuration ease $firstNameFoldUpStart forwards;
+    animation-fill-mode: forwards;
+    opacity: 0;
+    transform: translateY(calc(50vh - 50%));
+  }
+}
+
+.lastNameLetter {
+  display: inline-block;
+  cursor: default;
+  user-select: none;
+
+  &.preAnimation {
+    opacity: 0;
+  }
+
+  &.L1.animation {
+    animation: slidein-lastname $lastNameSlideInDuration ease $lastNameSlideInStart forwards;
+    opacity: 0;
+  }
+
+  &.L2.animation {
+    animation: slidein-lastname $lastNameSlideInDuration ease ($lastNameSlideInStart + $lastNameSlideInDelay) forwards;
+    opacity: 0;
+  }
+
+  &.I.animation {
+    animation: slidein-lastname $lastNameSlideInDuration ease ($lastNameSlideInStart + 2 * $lastNameSlideInDelay) forwards;
+    opacity: 0;
+  }
+
+  &.E.animation {
+    animation: slidein-lastname $lastNameSlideInDuration ease ($lastNameSlideInStart + 3 * $lastNameSlideInDelay) forwards;
+    opacity: 0;
+  }
+}
+
+@keyframes slidein-firstname {
+  from {
+    transform: translateY(calc(24vw - 50%)) translateX(-100%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(calc(24vw - 50%)) translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slidein-lastname {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideleft {
+  from {
+    transform: translateY(calc(24vw - 50%)) translateX(150%);
+  }
+
+  to {
+    transform: translateY(calc(24vw - 50%)) translateX(0);
+  }
+}
+
+@keyframes slideup {
+  from {
+    transform: translateY(calc(24vw - 50%)) rotateX(0);
+  }
+
+  to {
+    transform: translateY(0) rotateX(45deg);
+  }
+}
+
+@keyframes foldup {
+  from {
+    transform: translateY(calc(24vw - 50%)) rotateX(0);
+  }
+
+  to {
+    transform: translateY(0) rotateX(45deg);
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotateX(45deg);
+  }
+
+  to {
+    transform: rotate(90deg) rotateX(0) rotateY(45deg) translateX(-2vw) translateY(3vw) scale(1.1);
+  }
+}
+
+@keyframes settle {
+  from {
+    transform: rotate(90deg) rotateX(0) rotateY(45deg) translateX(-2vw) translateY(3vw) scale(1.1);
+  }
+
+  to {
+    transform: rotate(0) rotateX(45deg) rotateY(0) translateX(0) translateY(0) scale(1);
+  }
+}
+
+@keyframes shrink {
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(0.1);
+  }
+}
+
+.bottomSpacing {
+  min-height: calc(36vw + 700px);
+  height: calc(50vh + 700px);
+  width: 100vw;
+}
+
+.clickPrompt {
+  pointer-events: none;
+}
+
+.clickPromptFadeIn {
+  animation: fadein 1s linear forwards;
+}
+
+.clickPromptFadeOut {
+  animation: fadein 1s linear forwards;
+}
+
+.clickPromptItem {
+  opacity: 0;
+  cursor: default;
+  user-select: none;
+  position: absolute;
+  width: 100vw;
+  left: 0;
+}
+
+.clickPromptFirst {
+  top: 4vw;
+}
+
+.clickPromptSecond {
+  top: 39vw;
+  animation-delay: 2.5s;
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.scrollArrowLeft, .scrollArrowRight {
+  font-size: 10vw !important;
+  color: $subheadingLight;
+  position: fixed;
+  bottom: 0;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+.scrollArrowLeft {
+  left: 0;
+}
+
+.scrollArrowRight {
+  right: 0;
+}
+
+.scrollArrowVisible {
+  opacity: 1;
+}
