@@ -1,32 +1,39 @@
+const path = require(`path`);
+
 const SUBSITES = ['home', 'blog'];
 const buildSubsite = SUBSITES.find((s) => s === process.env.SUBSITE) || 'home';
 
-const path = require(`path`)
+exports.onPreInit = () => {
+  console.log(`=====\nBuilding subsite: ${buildSubsite}\n=====`);
+};
 
-exports.createPages = async  ({ graphql, actions }) => {
-  const { createPage } = actions
-  const result = await graphql(`
-    query loadPagesQuery ($limit: Int!) {
-      allMdx(limit: $limit) {
-        edges {
-          node {
-            id
-            frontmatter {
-              slug
-            }
-            parent {
-              ... on File {
-                sourceInstanceName
+exports.createPages = async ({ graphql, actions }) => {
+  const { createPage } = actions;
+  const result = await graphql(
+    `
+      query loadPagesQuery($limit: Int!) {
+        allMdx(limit: $limit) {
+          edges {
+            node {
+              id
+              frontmatter {
+                slug
+              }
+              parent {
+                ... on File {
+                  sourceInstanceName
+                }
               }
             }
           }
         }
       }
-    }
-  `, { limit: 1000 })
+    `,
+    { limit: 1000 }
+  );
 
   if (result.errors) {
-    throw result.errors
+    throw result.errors;
   }
 
   if (buildSubsite === 'blog') {
@@ -34,14 +41,16 @@ exports.createPages = async  ({ graphql, actions }) => {
 
     result.data.allMdx.edges
       .map(({ node }) => node)
-      .filter(node => node.parent.sourceInstanceName === 'blog-posts')
-      .forEach(node => createPage({
-        path: `/${node.frontmatter.slug}`,
-        component: blogPostTemplate,
-        context: { id: node.id },
-      }));
+      .filter((node) => node.parent.sourceInstanceName === 'blog-posts')
+      .forEach((node) =>
+        createPage({
+          path: `/${node.frontmatter.slug}`,
+          component: blogPostTemplate,
+          context: { id: node.id },
+        })
+      );
   }
-}
+};
 
 exports.onCreatePage = ({ page, actions }) => {
   const { createPage, deletePage } = actions;

@@ -11,7 +11,8 @@
     "develop": "gatsby develop",
     "lint": "yarn lint:prettier && yarn lint:stylelint",
     "lint:stylelint": "stylelint 'src/**/*.scss' --syntax scss",
-    "lint:prettier": "prettier --write 'src/**/*.{ts,tsx,js,jsx,json,md}'"
+    "lint:prettier": "prettier --write 'src/**/*.{ts,tsx,js,jsx,json,md}' '*.{ts,tsx,js,jsx,json,md}'",
+    "prepare": "husky install"
   },
   "repository": {
     "type": "git",
@@ -46,6 +47,7 @@
     "prettier": "^2.2.1",
     "stylelint": "13.12.0",
     "stylelint-config-recommended": "^4.0.0",
-    "typescript": "^4.2.4"
+    "typescript": "^4.2.4",
+    "husky": "^6.0.0"
   }
 }
