@@ -1,10 +1,5 @@
 @import 'src/assets/styles/colors';
 
-body {
-  background-color: $heroBackground;
-  margin: 0;
-}
-
 .container {
   min-height: calc(100vh - 6rem);
   padding: 3rem;

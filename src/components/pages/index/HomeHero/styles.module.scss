@@ -19,6 +19,10 @@ $lastNameSlideInDuration: 0.5s;
 $aSettleStart: $lastNameSlideInStart + 3 * $lastNameSlideInDelay + $lastNameSlideInDuration;
 $aSettleDuration: 0.5s;
 
+.body {
+  background-color: $heroBackground;
+}
+
 .container {
   position: fixed;
   top: calc(50vh - 24vw);

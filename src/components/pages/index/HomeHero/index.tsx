@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import cn from 'classnames';
 import Text from '../../../Text';
 import useAnimationLifecycle, { AnimationState } from './useAnimationLifecycle';
@@ -11,6 +11,15 @@ export default function HomeHero() {
     actions: { startAnimation },
     visibility: { showClickPrompt, showScrollPrompt },
   } = useAnimationLifecycle(AnimationState.notStarted);
+
+  useEffect(() => {
+    document.body.className = cn(document.body.className, styles.body);
+    return () => {
+      document.body.className = cn(
+        document.body.className.split(' ').filter((c) => c !== styles.body)
+      );
+    };
+  }, []);
 
   const {
     firstNameStyles,

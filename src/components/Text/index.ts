@@ -58,7 +58,9 @@ export default function Text({
     {
       [styles.normal]: italic != null && !italic,
       [styles.italic]: italic != null && italic,
+      // @ts-ignore
       [styles[`weight_${numberWeight}`]]: numberWeight != null,
+      // @ts-ignore
       [styles[`color_${color}`]]: color != null,
     },
     className
