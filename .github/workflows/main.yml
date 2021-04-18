@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  deploy:
+  deploy-home:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -21,4 +21,22 @@ jobs:
           vercel-token: ${{ secrets.VERCEL_DEPLOY_TOKEN }}
           github-comment: false
           vercel-project-id: ${{ secrets.VERCEL_HOME_PROJECT_ID }}
+          vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
+          alias-domains: daveallie.com
+
+  deploy-blog:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          ssh-key: ${{ secrets.SUBMODULE_DEPLOY_KEY }}
+          submodules: 'recursive'
+
+      - name: Vercel Deploy - Blog
+        uses: amondnet/vercel-action@v20.0.0
+        with:
+          vercel-token: ${{ secrets.VERCEL_DEPLOY_TOKEN }}
+          github-comment: false
+          vercel-project-id: ${{ secrets.VERCEL_BLOG_PROJECT_ID }}
           vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
