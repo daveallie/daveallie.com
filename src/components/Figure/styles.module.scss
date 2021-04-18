@@ -1,3 +1,39 @@
-.figureGrid {
-  display: block;
+@import 'src/assets/styles/colors';
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.container.grid {
+  .row {
+    &:first-child {
+      margin-top: 0;
+    }
+
+    margin-top: 1rem;
+  }
+
+  :global(.gatsby-resp-image-wrapper) {
+    width: calc(50% - 0.5rem);
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+}
+
+.container.notGrid :global(.gatsby-resp-image-wrapper) {
+  width: 100%;
+}
+
+.caption {
+  text-align: center;
+  font-weight: 300;
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+  color: $imageCaption;
 }
