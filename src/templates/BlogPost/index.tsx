@@ -7,6 +7,7 @@ import Text from '../../components/Text';
 import HR from '../../components/HR';
 import SEO from '../../components/seo';
 import Figure from '../../components/Figure';
+import useAlternateBodyBackground from '../../hooks/useAlternateBodyBackground';
 import * as styles from './styles.module.scss';
 
 type BlogPostQueryResult = {
@@ -22,6 +23,8 @@ type BlogPostQueryResult = {
 };
 
 export default function BlogPost({ data: { mdx } }: BlogPostQueryResult) {
+  useAlternateBodyBackground('Offwhite');
+
   return (
     <>
       <SEO title={mdx.frontmatter.title} />

@@ -18,3 +18,22 @@
     }
   }
 }
+
+.linkLight {
+  text-decoration: none;
+  color: $linkLightColor;
+  border-bottom: dashed 1px $linkLightColor;
+
+  path { /* stylelint-disable-line no-descending-specificity */
+    fill: $linkLightColor;
+  }
+
+  &:hover {
+    border-bottom-color: $linkLightHover;
+    color: $linkLightHover;
+
+    path {
+      fill: $linkLightHover;
+    }
+  }
+}
