@@ -11,12 +11,14 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+        with:
+          ssh-key: ${{ secrets.SUBMODULE_DEPLOY_KEY }}
+          submodules: 'recursive'
 
       - name: Vercel Deploy - Home
         uses: amondnet/vercel-action@v20.0.0
         with:
           vercel-token: ${{ secrets.VERCEL_DEPLOY_TOKEN }}
-          # vercel-args: # optional, default is 
           github-comment: false
           vercel-project-id: ${{ secrets.VERCEL_HOME_PROJECT_ID }}
           vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
