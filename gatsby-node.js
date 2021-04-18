@@ -12,7 +12,11 @@ exports.createPages = async ({ graphql, actions }) => {
   const result = await graphql(
     `
       query loadPagesQuery($limit: Int!) {
-        allMdx(limit: $limit) {
+        allMdx(limit: $limit${
+          process.env.NODE_ENV === 'production'
+            ? ', filter: {frontmatter: {published: {eq: true}}}'
+            : ''
+        }) {
           edges {
             node {
               id
