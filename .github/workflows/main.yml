@@ -12,11 +12,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-      - name: Vercel Action
+      - name: Vercel Deploy - Home
         uses: amondnet/vercel-action@v20.0.0
         with:
           vercel-token: ${{ secrets.VERCEL_DEPLOY_TOKEN }}
           # vercel-args: # optional, default is 
           github-comment: false
-          vercel-project-name: davealliedotcom
-
+          vercel-project-id: ${{ secrets.VERCEL_HOME_PROJECT_ID }}
+          vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
