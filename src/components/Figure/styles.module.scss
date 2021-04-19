@@ -3,11 +3,13 @@
 .container {
   display: flex;
   flex-direction: column;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .row {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 .container.grid {
@@ -21,8 +23,8 @@
 
   :global(.gatsby-resp-image-wrapper) {
     width: calc(50% - 0.5rem);
-    margin-left: 0 !important;
-    margin-right: 0 !important;
+    margin-left: 0.5rem !important;
+    margin-right: 0.5rem !important;
   }
 }
 
@@ -32,8 +34,5 @@
 
 .caption {
   text-align: center;
-  font-weight: 300;
-  font-size: 0.9rem;
   margin-top: 0.5rem;
-  color: $imageCaption;
 }

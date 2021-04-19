@@ -14,7 +14,7 @@ export default function Error404() {
       </Text>
       <Text weight={400} color="subheadingLight" size="2.5vw">
         Head back to{' '}
-        <Link href="https://daveallie.com" light>
+        <Link href="https://daveallie.com" color="light">
           https://daveallie.com
         </Link>
       </Text>

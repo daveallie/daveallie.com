@@ -1,6 +1,7 @@
 import React, { Children, ReactElement, ReactNode } from 'react';
 import cn from 'classnames';
 import { chunk } from 'lodash';
+import Text from '../Text';
 import * as styles from './styles.module.scss';
 
 type FigureProps = {
@@ -43,7 +44,11 @@ export default function Figure(props: FigureProps) {
         ))}
       </div>
       {props.caption && (
-        <figcaption className={styles.caption}>{props.caption}</figcaption>
+        <figcaption className={styles.caption}>
+          <Text weight={300} size="0.9rem" color="accent">
+            {props.caption}
+          </Text>
+        </figcaption>
       )}
     </figure>
   );

@@ -3,7 +3,9 @@
 .link {
   text-decoration: none;
   color: $linkColor;
-  border-bottom: dashed 1px $linkColor;
+  &:not(.noUnderline) {
+    border-bottom: dashed 1px $linkColor;
+  }
 
   path {
     fill: $linkColor;
@@ -22,7 +24,9 @@
 .linkLight {
   text-decoration: none;
   color: $linkLightColor;
-  border-bottom: dashed 1px $linkLightColor;
+  &:not(.noUnderline) {
+    border-bottom: dashed 1px $linkLightColor;
+  }
 
   path { /* stylelint-disable-line no-descending-specificity */
     fill: $linkLightColor;
@@ -34,6 +38,27 @@
 
     path {
       fill: $linkLightHover;
+    }
+  }
+}
+
+.linkUltraLight {
+  text-decoration: none;
+  color: $linkUltraLightColor;
+  &:not(.noUnderline) {
+    border-bottom: dashed 1px $linkUltraLightColor;
+  }
+
+  path { /* stylelint-disable-line no-descending-specificity */
+    fill: $linkUltraLightColor;
+  }
+
+  &:hover {
+    border-bottom-color: $linkUltraLightHover;
+    color: $linkUltraLightHover;
+
+    path {
+      fill: $linkUltraLightHover;
     }
   }
 }

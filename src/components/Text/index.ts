@@ -12,6 +12,8 @@ const WEIGHT_MAP = {
   Ultra: 800,
 };
 
+type TextColor = 'headingLight' | 'subheadingLight' | 'dark' | 'accent';
+
 type TextProps = {
   container?: 'div' | 'span';
   weight?:
@@ -29,7 +31,7 @@ type TextProps = {
     | 'Bold'
     | 'Black'
     | 'Ultra';
-  color?: 'headingLight' | 'subheadingLight' | 'dark';
+  color?: TextColor;
   size?: string;
   italic?: boolean;
   style?: CSSProperties;

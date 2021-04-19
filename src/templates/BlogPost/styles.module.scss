@@ -1,3 +1,26 @@
-.title {
-  background-color: red;
+@import 'src/assets/styles/colors';
+
+.blogHeader {
+  height: 2rem;
+  width: 90%;
+  padding: 1vmin 4vmin;
 }
+
+.title {
+  margin-bottom: 3rem;
+  position: relative;
+
+  &:after {
+    content: "";
+    position: absolute;
+    top: -10rem;
+    bottom: -1rem;
+    left: 0;
+    right: 0;
+    background: $heroBackground;
+    z-index: -1;
+    transform: skew(0, -2deg);
+    transform-origin: top;
+  }
+}
+
