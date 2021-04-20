@@ -12,7 +12,7 @@ type FigureProps = {
 
 const removeWrappingP = (children: ReactNode) => {
   if (Children.count(children) !== 1) {
-    return Children.toArray(children);
+    return children;
   }
 
   const onlyChild = Children.only(children)!! as ReactElement;
@@ -24,12 +24,14 @@ const removeWrappingP = (children: ReactNode) => {
     return Children.toArray(onlyChild.props.children).filter((c) => c !== '\n');
   }
 
-  return Children.toArray(children);
+  return children;
 };
 
 export default function Figure(props: FigureProps) {
-  const children = removeWrappingP(props.children);
-  const childrenChunks = chunk(children, props.grid ? 2 : 1);
+  const childrenChunks = chunk(
+    Children.toArray(props.children),
+    props.grid ? 2 : 1
+  );
 
   return (
     <figure>
@@ -54,4 +56,8 @@ export default function Figure(props: FigureProps) {
       )}
     </figure>
   );
+}
+
+export function FigureMDXWrapper({ children, ...rest }: FigureProps) {
+  return <Figure {...rest} children={removeWrappingP(children)} />;
 }

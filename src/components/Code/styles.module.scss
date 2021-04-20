@@ -1,0 +1,11 @@
+@import "src/assets/styles/colors";
+
+.code.withFilename::before {
+  user-select: all;
+  content: attr(data-filename);
+  display: block;
+  background-color: $codeFilenameBackground;
+  font-family: monospace;
+  margin: -0.5em -0.5em 0.5em;
+  padding: 0.3em 0 0.3em 1.5em;
+}

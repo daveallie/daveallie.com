@@ -6,12 +6,13 @@ import Link from '../../components/Link';
 import Text from '../../components/Text';
 import HR from '../../components/HR';
 import SEO from '../../components/seo';
-import Figure from '../../components/Figure';
+import { FigureMDXWrapper } from '../../components/Figure';
 import useAlternateBodyBackground from '../../hooks/useAlternateBodyBackground';
 import ContentBlock from '../../components/ContentBlock';
 import H1 from '../../components/H1';
 import H2 from '../../components/H2';
-import BlockQuote from '../../components/BlockQuote';
+import { BlockQuoteMDXWrapper } from '../../components/BlockQuote';
+import { CodeMDXWrapper } from '../../components/Code';
 import P from '../../components/P';
 import * as styles from './styles.module.scss';
 
@@ -55,14 +56,15 @@ export default function BlogPost({ data: { mdx } }: BlogPostQueryResult) {
       </ContentBlock>
       <MDXProvider
         components={{
-          hr: HR,
           a: Link,
-          p: P,
+          blockquote: BlockQuoteMDXWrapper,
+          code: CodeMDXWrapper,
           h1: H1,
           h2: H2,
-          blockquote: BlockQuote,
-          BlockQuote,
-          Figure,
+          hr: HR,
+          p: P,
+          BlockQuote: BlockQuoteMDXWrapper,
+          Figure: FigureMDXWrapper,
           Link,
           Text,
         }}

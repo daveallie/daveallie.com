@@ -3,17 +3,12 @@ import Text from '../Text';
 import ContentBlock from '../ContentBlock';
 import * as styles from './styles.module.scss';
 
-export default function BlockQuote({
-  large,
-  children,
-}: {
+type BlockQuoteProps = {
   large: boolean;
   children: ReactNode;
-}) {
-  if (Children.count(children) === 1) {
-    children = (Children.only(children) as ReactElement).props.children;
-  }
+};
 
+export default function BlockQuote({ large, children }: BlockQuoteProps) {
   return (
     <ContentBlock>
       <Text italic size={large ? '1.9rem' : '1.2rem'}>
@@ -21,4 +16,12 @@ export default function BlockQuote({
       </Text>
     </ContentBlock>
   );
+}
+
+export function BlockQuoteMDXWrapper({ children, ...rest }: BlockQuoteProps) {
+  if (Children.count(children) === 1) {
+    children = (Children.only(children) as ReactElement).props.children;
+  }
+
+  return <BlockQuote {...rest} children={children} />;
 }
