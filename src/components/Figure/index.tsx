@@ -39,8 +39,10 @@ export default function Figure(props: FigureProps) {
           props.grid ? styles.grid : styles.notGrid
         )}
       >
-        {childrenChunks.map((cc) => (
-          <div className={styles.row}>{cc}</div>
+        {childrenChunks.map((cc, index) => (
+          <div className={styles.row} key={index}>
+            {cc}
+          </div>
         ))}
       </div>
       {props.caption && (

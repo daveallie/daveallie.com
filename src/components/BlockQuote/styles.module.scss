@@ -1,0 +1,22 @@
+@import "src/assets/styles/colors";
+
+.blockquote {
+  position: relative;
+  margin-left: 0;
+}
+
+.blockquote:before {
+  content: "";
+  position: absolute;
+  left: -1.5rem;
+  top: 0;
+  bottom: 0;
+  width: .15rem;
+  background: $heroBackground;
+}
+
+@media(max-width: 870px) {
+  .blockquote {
+    margin-left: 1.5rem;
+  }
+}

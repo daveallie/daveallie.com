@@ -11,6 +11,8 @@ import useAlternateBodyBackground from '../../hooks/useAlternateBodyBackground';
 import ContentBlock from '../../components/ContentBlock';
 import H1 from '../../components/H1';
 import H2 from '../../components/H2';
+import BlockQuote from '../../components/BlockQuote';
+import P from '../../components/P';
 import * as styles from './styles.module.scss';
 
 type BlogPostQueryResult = {
@@ -55,13 +57,11 @@ export default function BlogPost({ data: { mdx } }: BlogPostQueryResult) {
         components={{
           hr: HR,
           a: Link,
-          p: ({ children }: { children: ReactNode }) => (
-            <Text size="1.2rem">
-              <ContentBlock>{children}</ContentBlock>
-            </Text>
-          ),
+          p: P,
           h1: H1,
           h2: H2,
+          blockquote: BlockQuote,
+          BlockQuote,
           Figure,
           Link,
           Text,
