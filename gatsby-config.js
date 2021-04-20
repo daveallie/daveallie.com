@@ -64,5 +64,11 @@ module.exports = {
         path: `${__dirname}/blog/posts/`,
       },
     },
+    {
+      resolve: `gatsby-plugin-env-variables`,
+      options: {
+        allowList: ['SUBSITE'],
+      },
+    },
   ],
 };

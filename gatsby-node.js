@@ -1,10 +1,8 @@
 const path = require(`path`);
-
-const SUBSITES = ['home', 'blog'];
-const buildSubsite = SUBSITES.find((s) => s === process.env.SUBSITE) || 'home';
+const { BUILD_SUBSITE, SUBSITES } = require('./config/util/subsite');
 
 exports.onPreInit = () => {
-  console.log(`=====\nBuilding subsite: ${buildSubsite}\n=====`);
+  console.log(`=====\nBuilding subsite: ${BUILD_SUBSITE}\n=====`);
 };
 
 exports.createPages = async ({ graphql, actions }) => {
@@ -40,7 +38,7 @@ exports.createPages = async ({ graphql, actions }) => {
     throw result.errors;
   }
 
-  if (buildSubsite === 'blog') {
+  if (BUILD_SUBSITE === 'blog') {
     const blogPostTemplate = path.resolve(`src/templates/BlogPost/index.tsx`);
 
     result.data.allMdx.edges
@@ -65,7 +63,7 @@ exports.onCreatePage = ({ page, actions }) => {
     return;
   }
 
-  if (pageSubsite !== buildSubsite) {
+  if (pageSubsite !== BUILD_SUBSITE) {
     // subsite doesn't match page delete
     deletePage(page);
     return;
@@ -78,7 +76,7 @@ exports.onCreatePage = ({ page, actions }) => {
   const originalPath = page.path;
 
   deletePage(page);
-  const pathReplaceRegex = new RegExp(`^\/${buildSubsite}`);
+  const pathReplaceRegex = new RegExp(`^\/${BUILD_SUBSITE}`);
   const newPage = {
     ...page,
     path: page.path.replace(pathReplaceRegex, ''),

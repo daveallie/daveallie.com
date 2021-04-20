@@ -1,4 +1,13 @@
 @import "amsipro";
+@import "colors.scss";
+
+body.body_Hero {
+  background-color: $heroBackground;
+}
+
+body.body_Offwhite {
+  background-color: $bodyBackground;
+}
 
 body {
   margin: 0;

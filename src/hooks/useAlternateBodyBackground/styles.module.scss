@@ -1,9 +1,9 @@
 @import 'src/assets/styles/colors';
 
-.body_Hero {
-  background-color: $heroBackground;
+.bodyOverride_Hero {
+  background-color: $heroBackground !important;
 }
 
-.body_Offwhite {
-  background-color: $bodyBackground;
+.bodyOverride_Offwhite {
+  background-color: $bodyBackground !important;
 }
