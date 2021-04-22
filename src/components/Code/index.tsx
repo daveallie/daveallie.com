@@ -6,10 +6,6 @@ import ContentBlock from '../ContentBlock';
 import Text from '../Text';
 import * as styles from './styles.module.scss';
 
-interface CodeTagProps extends React.HTMLAttributes<HTMLElement> {
-  'data-filename'?: string;
-}
-
 export default function Code({
   language,
   filename,
@@ -24,20 +20,18 @@ export default function Code({
   return (
     <ContentBlock>
       <Text container="div" size="1rem">
-        <SyntaxHighlighter
-          showLineNumbers={showLineNumbers}
-          language={language}
-          style={githubGist}
-          customStyle={{ borderRadius: '0.15rem' }}
-          codeTagProps={
-            {
-              className: cn(styles.code, { [styles.withFilename]: filename }),
-              'data-filename': filename,
-            } as CodeTagProps
-          }
+        <div
+          className={cn(styles.container, { [styles.withFilename]: filename })}
         >
-          {children}
-        </SyntaxHighlighter>
+          {filename && <div className={styles.filename}>{filename}</div>}
+          <SyntaxHighlighter
+            showLineNumbers={showLineNumbers}
+            language={language}
+            style={githubGist}
+          >
+            {children}
+          </SyntaxHighlighter>
+        </div>
       </Text>
     </ContentBlock>
   );

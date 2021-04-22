@@ -27,8 +27,9 @@ type BlogPostQueryResult = {
       timeToRead: number;
       frontmatter: {
         title: string;
-        slug: string;
+        description: string;
         author: string;
+        slug: string;
         date: string;
         datestamp: string;
         updatestamp: string;
@@ -55,6 +56,7 @@ export default function BlogPost({ data: { mdx } }: BlogPostQueryResult) {
     <>
       <SEO
         title={mdx.frontmatter.title}
+        description={mdx.frontmatter.description}
         path={`/${mdx.frontmatter.slug}`}
         meta={[
           {
@@ -115,8 +117,9 @@ export const pageQuery = graphql`
       timeToRead
       frontmatter {
         title
-        slug
+        description
         author
+        slug
         date(formatString: "ll")
         datestamp: date
         updatestamp: update_date
