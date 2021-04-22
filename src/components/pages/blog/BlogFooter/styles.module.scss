@@ -1,5 +1,12 @@
 @import 'src/assets/styles/colors';
 
+.footer.fixed {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
 .footer {
   padding: 2vmin 10vmin;
   position: relative;

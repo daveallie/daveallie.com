@@ -1,17 +1,26 @@
 import React from 'react';
+import cn from 'classnames';
 import Link from '../../../Link';
 import Text from '../../../Text';
 import Github from '../../../Icon/Github';
 import LinkedIn from '../../../Icon/LinkedIn';
 import * as styles from './styles.module.scss';
 
-export default function BlogFooter() {
+export default function BlogFooter({
+  includeHomeLink = true,
+  fixed = false,
+}: {
+  includeHomeLink?: boolean;
+  fixed?: boolean;
+}) {
   return (
-    <div className={styles.footer}>
+    <div className={cn(styles.footer, { [styles.fixed]: fixed })}>
       <div className={styles.footerItem}>
-        <Link color="ultraLight" href="/" gatsby>
-          <Text>Back to Home</Text>
-        </Link>
+        {includeHomeLink && (
+          <Link color="ultraLight" href="/" gatsby>
+            <Text>Back to Home</Text>
+          </Link>
+        )}
       </div>
 
       <div className={styles.socialLinks}>
