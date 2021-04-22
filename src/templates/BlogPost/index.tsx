@@ -34,6 +34,17 @@ type BlogPostQueryResult = {
   };
 };
 
+const ListElement = ({ ordered }: { ordered: boolean }) => ({
+  children,
+}: {
+  children: ReactNode;
+}) => (
+  <P negTopMargin>
+    {ordered && <ol>{children}</ol>}
+    {!ordered && <ul>{children}</ul>}
+  </P>
+);
+
 export default function BlogPost({ data: { mdx } }: BlogPostQueryResult) {
   useAlternateBodyBackground('Offwhite');
 
@@ -59,6 +70,8 @@ export default function BlogPost({ data: { mdx } }: BlogPostQueryResult) {
           h3: H3,
           hr: HR,
           p: P,
+          ul: ListElement({ ordered: false }),
+          ol: ListElement({ ordered: true }),
           BlockQuote: BlockQuoteMDXWrapper,
           Figure: FigureMDXWrapper,
           Link,
