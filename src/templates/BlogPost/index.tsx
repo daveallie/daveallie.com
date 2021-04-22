@@ -27,8 +27,11 @@ type BlogPostQueryResult = {
       timeToRead: number;
       frontmatter: {
         title: string;
-        date: string;
+        slug: string;
         author: string;
+        date: string;
+        datestamp: string;
+        updatestamp: string;
       };
     };
   };
@@ -50,7 +53,24 @@ export default function BlogPost({ data: { mdx } }: BlogPostQueryResult) {
 
   return (
     <>
-      <SEO title={mdx.frontmatter.title} />
+      <SEO
+        title={mdx.frontmatter.title}
+        path={`/${mdx.frontmatter.slug}`}
+        meta={[
+          {
+            property: 'article:published_time',
+            content: mdx.frontmatter.datestamp,
+          },
+          {
+            property: 'article:modified_time',
+            content: mdx.frontmatter.updatestamp,
+          },
+          {
+            property: 'article:author',
+            content: mdx.frontmatter.author,
+          },
+        ]}
+      />
       <BlogHeader title={mdx.frontmatter.title} />
       <ContentBlock>
         <Text size="0.9rem" weight={300} color="accent">
@@ -95,8 +115,11 @@ export const pageQuery = graphql`
       timeToRead
       frontmatter {
         title
-        date(formatString: "ll")
+        slug
         author
+        date(formatString: "ll")
+        datestamp: date
+        updatestamp: update_date
       }
     }
   }
