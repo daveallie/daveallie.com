@@ -34,7 +34,7 @@ export default function Figure(props: FigureProps) {
   );
 
   return (
-    <figure>
+    <figure className={styles.figure}>
       <div
         className={cn(
           styles.container,

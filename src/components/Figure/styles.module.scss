@@ -1,5 +1,10 @@
 @import 'src/assets/styles/colors';
 
+.figure {
+  width: 90%;
+  margin: 2rem auto;
+}
+
 .container {
   display: flex;
   flex-direction: column;
@@ -24,11 +29,16 @@
   :global(.gatsby-resp-image-wrapper) {
     width: calc(50% - 0.5rem);
     margin-left: 0.5rem !important;
-    margin-right: 0.5rem !important;
+    margin-right: 0 !important;
+
+    &:first-child {
+      margin-left: 0 !important;
+      margin-right: 0.5rem !important;
+    }
   }
 }
 
-.container.notGrid :global(.gatsby-resp-image-wrapper) {
+.container.notGrid :global(.gatsby-resp-image-wrapper) { /* stylelint-disable-line no-descending-specificity */
   width: 100%;
 }
 

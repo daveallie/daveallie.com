@@ -5,7 +5,7 @@ import { MDXRenderer } from 'gatsby-plugin-mdx';
 import Link from '../../components/Link';
 import Text from '../../components/Text';
 import HR from '../../components/HR';
-import SEO from '../../components/seo';
+import SEO from '../../components/SEO';
 import { FigureMDXWrapper } from '../../components/Figure';
 import useAlternateBodyBackground from '../../hooks/useAlternateBodyBackground';
 import ContentBlock from '../../components/ContentBlock';
