@@ -14,7 +14,8 @@ import H2 from '../../components/H2';
 import { BlockQuoteMDXWrapper } from '../../components/BlockQuote';
 import { CodeMDXWrapper } from '../../components/Code';
 import P from '../../components/P';
-import * as styles from './styles.module.scss';
+import BlogHeader from '../../components/pages/blog/BlogHeader';
+import BlogFooter from '../../components/pages/blog/BlogFooter';
 
 type BlogPostQueryResult = {
   data: {
@@ -37,16 +38,7 @@ export default function BlogPost({ data: { mdx } }: BlogPostQueryResult) {
   return (
     <>
       <SEO title={mdx.frontmatter.title} />
-      <div className={styles.blogHeader}>
-        <Text weight={500} color="headingLight" size="1.6rem">
-          <Link href="/" color="ultraLight" gatsby underline={false}>
-            Dave Allie
-          </Link>
-        </Text>
-      </div>
-      <div className={styles.title}>
-        <H1>{mdx.frontmatter.title}</H1>
-      </div>
+      <BlogHeader title={mdx.frontmatter.title} />
       <ContentBlock>
         <Text size="0.9rem" weight={300} color="accent">
           By {mdx.frontmatter.author}
@@ -73,6 +65,7 @@ export default function BlogPost({ data: { mdx } }: BlogPostQueryResult) {
           <MDXRenderer>{mdx.body}</MDXRenderer>
         </Text>
       </MDXProvider>
+      <BlogFooter />
     </>
   );
 }

@@ -1,0 +1,30 @@
+@import 'src/assets/styles/colors';
+
+.footer {
+  padding: 2vmin 10vmin;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  &:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: $heroBackground;
+    z-index: -1;
+  }
+}
+
+.socialLinks {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.footerItem {
+  margin: 0 0.25rem;
+}
