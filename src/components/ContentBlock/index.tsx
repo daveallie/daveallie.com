@@ -6,7 +6,7 @@ export default function ContentBlock({
   negTopMargin,
   children,
 }: {
-  negTopMargin: boolean;
+  negTopMargin?: boolean;
   children: ReactNode;
 }) {
   return (

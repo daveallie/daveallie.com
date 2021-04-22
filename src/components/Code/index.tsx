@@ -28,6 +28,7 @@ export default function Code({
           showLineNumbers={showLineNumbers}
           language={language}
           style={githubGist}
+          customStyle={{ borderRadius: '0.15rem' }}
           codeTagProps={
             {
               className: cn(styles.code, { [styles.withFilename]: filename }),
