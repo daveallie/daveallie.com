@@ -1,10 +1,14 @@
+const { SUBSITE_URL } = require('./config/util/subsite');
+
 module.exports = {
   siteMetadata: {
     title: 'Dave Allie',
     description: '',
     author: '@daveallie',
+    siteUrl: SUBSITE_URL,
   },
   plugins: [
+    'gatsby-plugin-sitemap',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-typescript',
     {

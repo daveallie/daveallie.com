@@ -1,5 +1,5 @@
 const path = require(`path`);
-const { BUILD_SUBSITE, SUBSITES } = require('./config/util/subsite');
+const { BUILD_SUBSITE, getPathSubsite } = require('./config/util/subsite');
 
 exports.onPreInit = () => {
   console.log(`=====\nBuilding subsite: ${BUILD_SUBSITE}\n=====`);
@@ -56,7 +56,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
 exports.onCreatePage = ({ page, actions }) => {
   const { createPage, deletePage } = actions;
-  const pageSubsite = SUBSITES.find((s) => page.path.startsWith(`/${s}/`));
+  const pageSubsite = getPathSubsite(page.path);
 
   if (!pageSubsite) {
     // not a subsite page, ignore
