@@ -13,17 +13,19 @@ interface CodeTagProps extends React.HTMLAttributes<HTMLElement> {
 export default function Code({
   language,
   filename,
+  showLineNumbers = true,
   children,
 }: {
   language?: string;
   filename?: string;
+  showLineNumbers?: boolean;
   children: ReactNode;
 }) {
   return (
     <ContentBlock>
       <Text container="div" size="1rem">
         <SyntaxHighlighter
-          showLineNumbers
+          showLineNumbers={showLineNumbers}
           language={language}
           style={githubGist}
           codeTagProps={
@@ -47,16 +49,27 @@ export function CodeMDXWrapper({
   className?: string;
   children: ReactNode;
 }) {
-  const trimmedContent = children?.toString()?.trim();
-  const match = trimmedContent?.match(
+  let trimmedContent = children?.toString()?.trimEnd();
+  const filenameMatch = trimmedContent?.match(
     /^--filename:([^\n]+)--\n((?:.|[\n\r])*)/
   );
+  const filename = filenameMatch ? filenameMatch[1] : undefined;
+  trimmedContent = filenameMatch ? filenameMatch[2] : trimmedContent;
+
+  const lineNumbersMatch = trimmedContent?.match(
+    /^--linenumbers:([^\n]+)--\n((?:.|[\n\r])*)/
+  );
+  const lineNumbers = lineNumbersMatch
+    ? lineNumbersMatch[1] === 'true'
+    : undefined;
+  trimmedContent = lineNumbersMatch ? lineNumbersMatch[2] : trimmedContent;
 
   return (
     <Code
       language={className?.replace('language-', '')}
-      filename={match ? match[1] : undefined}
-      children={match ? match[2] : trimmedContent}
+      filename={filename}
+      showLineNumbers={lineNumbers}
+      children={trimmedContent}
     />
   );
 }
