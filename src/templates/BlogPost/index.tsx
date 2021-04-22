@@ -11,8 +11,10 @@ import useAlternateBodyBackground from '../../hooks/useAlternateBodyBackground';
 import ContentBlock from '../../components/ContentBlock';
 import H1 from '../../components/H1';
 import H2 from '../../components/H2';
+import H3 from '../../components/H3';
 import { BlockQuoteMDXWrapper } from '../../components/BlockQuote';
 import { CodeMDXWrapper } from '../../components/Code';
+import InlineCode from '../../components/InlineCode';
 import P from '../../components/P';
 import BlogHeader from '../../components/pages/blog/BlogHeader';
 import BlogFooter from '../../components/pages/blog/BlogFooter';
@@ -51,8 +53,10 @@ export default function BlogPost({ data: { mdx } }: BlogPostQueryResult) {
           a: Link,
           blockquote: BlockQuoteMDXWrapper,
           code: CodeMDXWrapper,
+          inlineCode: InlineCode,
           h1: H1,
           h2: H2,
+          h3: H3,
           hr: HR,
           p: P,
           BlockQuote: BlockQuoteMDXWrapper,
