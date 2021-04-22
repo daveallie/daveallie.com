@@ -1,5 +1,9 @@
 import React from 'react';
 import SEO from '../../components/SEO';
+import ContentBlock from '../../components/ContentBlock';
+import Text from '../../components/Text';
+import BlogHeader from '../../components/pages/blog/BlogHeader';
+import BlogPostList from '../../components/pages/blog/BlogPostList';
 import useAlternateBodyBackground from '../../hooks/useAlternateBodyBackground';
 import '../../assets/styles/global.scss';
 
@@ -9,7 +13,13 @@ export default function BlogIndexPage() {
   return (
     <>
       <SEO />
-      blog home
+      <BlogHeader title="Dave Allie" titleStandalone />
+      <Text container="div" color="dark">
+        <ContentBlock>Here's what I've been writing about:</ContentBlock>
+        <ContentBlock>
+          <BlogPostList />
+        </ContentBlock>
+      </Text>
     </>
   );
 }

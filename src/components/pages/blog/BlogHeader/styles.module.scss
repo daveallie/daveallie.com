@@ -7,8 +7,15 @@
 
 .title {
   margin-top: -3rem;
-  margin-bottom: 3rem;
+}
+
+.titleStandalone {
+  padding-bottom: 1rem;
+}
+
+.title, .titleStandalone {
   position: relative;
+  margin-bottom: 3rem;
 
   &:after {
     content: "";

@@ -15,16 +15,14 @@ exports.createPages = async ({ graphql, actions }) => {
             ? ', filter: {frontmatter: {published: {eq: true}}}'
             : ''
         }) {
-          edges {
-            node {
-              id
-              frontmatter {
-                slug
-              }
-              parent {
-                ... on File {
-                  sourceInstanceName
-                }
+          nodes {
+            id
+            frontmatter {
+              slug
+            }
+            parent {
+              ... on File {
+                sourceInstanceName
               }
             }
           }
@@ -41,8 +39,7 @@ exports.createPages = async ({ graphql, actions }) => {
   if (BUILD_SUBSITE === 'blog') {
     const blogPostTemplate = path.resolve(`src/templates/BlogPost/index.tsx`);
 
-    result.data.allMdx.edges
-      .map(({ node }) => node)
+    result.data.allMdx.nodes
       .filter((node) => node.parent.sourceInstanceName === 'blog-posts')
       .forEach((node) =>
         createPage({
