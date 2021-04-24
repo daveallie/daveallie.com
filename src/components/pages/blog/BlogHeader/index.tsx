@@ -23,7 +23,7 @@ export default function BlogHeader({
         </div>
       ) : null}
       <div className={titleStandalone ? styles.titleStandalone : styles.title}>
-        <H1 size="4rem">{title}</H1>
+        <H1 size={titleStandalone ? '4rem' : undefined}>{title}</H1>
       </div>
     </>
   );
