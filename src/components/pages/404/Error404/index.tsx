@@ -3,7 +3,7 @@ import Link from '../../../Link';
 import Text from '../../../Text';
 import * as styles from './styles.module.scss';
 
-export default function Error404() {
+export default function Error404({ home }: { home: string }) {
   return (
     <div className={styles.container}>
       <Text weight={800} color="headingLight" size="20vw">
@@ -14,8 +14,8 @@ export default function Error404() {
       </Text>
       <Text weight={400} color="subheadingLight" size="2.5vw">
         Head back to{' '}
-        <Link href="https://daveallie.com" color="light">
-          https://daveallie.com
+        <Link href={home} color="light">
+          {home}
         </Link>
       </Text>
     </div>
