@@ -1,45 +1,14 @@
 import React from 'react';
-import { graphql, useStaticQuery } from 'gatsby';
 import Link from '../../../Link';
 import Text from '../../../Text';
 import ContentBlock from '../../../ContentBlock';
+import useBlogPostListQuery, {
+  BlogPostListQueryNode,
+} from '../../../../hooks/queries/useBlogPostListQuery';
 import * as styles from './styles.module.scss';
 
-type BlogPostListQueryNode = {
-  id: string;
-  frontmatter: {
-    title: string;
-    slug: string;
-    date: string;
-    year: string;
-  };
-};
-
-type BlogPostListQueryResult = {
-  allMdx: {
-    nodes: BlogPostListQueryNode[];
-  };
-};
-
 export default function BlogPostList() {
-  const data: BlogPostListQueryResult = useStaticQuery(graphql`
-    query BlogPostListQuery {
-      allMdx(
-        filter: { frontmatter: { published: { eq: true } } }
-        sort: { fields: frontmatter___date, order: DESC }
-      ) {
-        nodes {
-          id
-          frontmatter {
-            title
-            slug
-            date(formatString: "ll")
-            year: date(formatString: "YYYY")
-          }
-        }
-      }
-    }
-  `);
+  const data = useBlogPostListQuery();
 
   const yearData = data.allMdx.nodes.reduce<{
     [year: string]: BlogPostListQueryNode[];

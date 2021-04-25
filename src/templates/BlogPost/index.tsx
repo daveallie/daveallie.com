@@ -7,7 +7,6 @@ import Text from '../../components/Text';
 import HR from '../../components/HR';
 import SEO from '../../components/SEO';
 import { FigureMDXWrapper } from '../../components/Figure';
-import useAlternateBodyBackground from '../../hooks/useAlternateBodyBackground';
 import ContentBlock from '../../components/ContentBlock';
 import H1 from '../../components/H1';
 import H2 from '../../components/H2';
@@ -18,6 +17,8 @@ import InlineCode from '../../components/InlineCode';
 import P from '../../components/P';
 import BlogHeader from '../../components/pages/blog/BlogHeader';
 import BlogFooter from '../../components/pages/blog/BlogFooter';
+import useAlternateBodyBackground from '../../hooks/useAlternateBodyBackground';
+import usePageTracking from '../../hooks/usePageTracking';
 
 type BlogPostQueryResult = {
   data: {
@@ -51,6 +52,7 @@ const ListElement = ({ ordered }: { ordered: boolean }) => ({
 
 export default function BlogPost({ data: { mdx } }: BlogPostQueryResult) {
   useAlternateBodyBackground('Offwhite');
+  usePageTracking();
 
   return (
     <>

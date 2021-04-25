@@ -6,10 +6,12 @@ import BlogHeader from '../../components/pages/blog/BlogHeader';
 import BlogFooter from '../../components/pages/blog/BlogFooter';
 import BlogPostList from '../../components/pages/blog/BlogPostList';
 import useAlternateBodyBackground from '../../hooks/useAlternateBodyBackground';
+import usePageTracking from '../../hooks/usePageTracking';
 import '../../assets/styles/global.scss';
 
 export default function BlogIndexPage() {
   useAlternateBodyBackground('Offwhite');
+  usePageTracking();
 
   return (
     <>

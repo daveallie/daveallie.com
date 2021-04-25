@@ -2,7 +2,7 @@
   "name": "daveallie.com",
   "private": true,
   "description": "Codebase for daveallie.com",
-  "version": "3.2.0",
+  "version": "3.3.0",
   "author": "Dave Allie <dave@daveallie.com>",
   "license": "MIT",
   "scripts": {
@@ -11,7 +11,7 @@
     "develop": "gatsby develop",
     "lint": "yarn lint:prettier && yarn lint:stylelint",
     "lint:stylelint": "stylelint 'src/**/*.scss' --syntax scss",
-    "lint:prettier": "prettier --write 'src/**/*.{ts,tsx,js,jsx,json,md}' '*.{ts,tsx,js,jsx,json,md}'",
+    "lint:prettier": "prettier --write '{src,api}/**/*.{ts,tsx,js,jsx,json,md}' '*.{ts,tsx,js,jsx,json,md}'",
     "prepare": "husky install"
   },
   "repository": {
@@ -50,6 +50,8 @@
     "@types/react-dom": "^17.0.3",
     "@types/react-helmet": "^6.1.1",
     "@types/react-syntax-highlighter": "^13.5.0",
+    "@vercel/node": "^1.10.0",
+    "aws-sdk": "^2.892.0",
     "classnames": "^2.3.1",
     "husky": "^6.0.0",
     "prettier": "^2.2.1",
