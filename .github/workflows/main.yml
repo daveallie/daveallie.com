@@ -22,7 +22,7 @@ jobs:
           github-comment: false
           vercel-project-id: ${{ secrets.VERCEL_HOME_PROJECT_ID }}
           vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
-          alias-domains: daveallie.com
+          vercel-args: --prod
 
   deploy-blog:
     runs-on: ubuntu-latest
@@ -40,3 +40,4 @@ jobs:
           github-comment: false
           vercel-project-id: ${{ secrets.VERCEL_BLOG_PROJECT_ID }}
           vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
+          vercel-args: --prod
