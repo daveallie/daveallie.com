@@ -4,11 +4,24 @@ on:
   push:
     branches: [ master ]
   workflow_dispatch:
+    inputs:
+      vercelArgs:
+        description: 'Vercel CLI args'
+        required: true
+        default: '--prod'
 
 jobs:
   deploy-home:
+    env:
+      VERCEL_ARGS: ${{ github.event.inputs.vercelArgs }}
     runs-on: ubuntu-latest
     steps:
+      - name: Set VERCEL_ARGS environment variable
+        if: env.VERCEL_ARGS == null
+        run: echo "VERCEL_ARGS=--prod" >> $GITHUB_ENV
+      - name: Test VERCEL_ARGS environment variable
+        run: echo "VERCEL_ARGS=$VERCEL_ARGS"
+
       - name: Checkout
         uses: actions/checkout@v2
         with:
@@ -22,11 +35,19 @@ jobs:
           github-comment: false
           vercel-project-id: ${{ secrets.VERCEL_HOME_PROJECT_ID }}
           vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
-          vercel-args: --prod
+          vercel-args: ${{ env.VERCEL_ARGS }}
 
   deploy-blog:
+    env:
+      VERCEL_ARGS: ${{ github.event.inputs.vercelArgs }}
     runs-on: ubuntu-latest
     steps:
+      - name: Set VERCEL_ARGS environment variable
+        if: env.VERCEL_ARGS == null
+        run: echo "VERCEL_ARGS=--prod" >> $GITHUB_ENV
+      - name: Test VERCEL_ARGS environment variable
+        run: echo "VERCEL_ARGS=$VERCEL_ARGS"
+
       - name: Checkout
         uses: actions/checkout@v2
         with:
@@ -40,4 +61,4 @@ jobs:
           github-comment: false
           vercel-project-id: ${{ secrets.VERCEL_BLOG_PROJECT_ID }}
           vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
-          vercel-args: --prod
+          vercel-args: ${{ env.VERCEL_ARGS }}
