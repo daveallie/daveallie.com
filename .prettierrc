@@ -1,3 +1,4 @@
 {
-  "singleQuote": true
+  "singleQuote": true,
+  "importOrder": ["^react$", "^[^./]", "^[./]((?!(styles\\.module|styles/global)).)*$", "^[./]((?!styles/global).)*$","^[./]"]
 }

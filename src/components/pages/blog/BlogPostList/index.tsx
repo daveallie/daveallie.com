@@ -1,10 +1,10 @@
 import React from 'react';
-import Link from '../../../Link';
-import Text from '../../../Text';
-import ContentBlock from '../../../ContentBlock';
 import useBlogPostListQuery, {
   BlogPostListQueryNode,
 } from '../../../../hooks/queries/useBlogPostListQuery';
+import ContentBlock from '../../../ContentBlock';
+import Link from '../../../Link';
+import Text from '../../../Text';
 import * as styles from './styles.module.scss';
 
 export default function BlogPostList() {

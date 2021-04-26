@@ -14,5 +14,5 @@ const BodyPresetBackground = () => {
 };
 
 exports.onRenderBody = ({ setPreBodyComponents }) => {
-  setPreBodyComponents([<BodyPresetBackground key="preset-background" />]);
+  setPreBodyComponents([<BodyPresetBackground key='preset-background' />]);
 };

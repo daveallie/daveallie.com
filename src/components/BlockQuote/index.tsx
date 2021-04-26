@@ -1,6 +1,6 @@
 import React, { Children, ReactElement, ReactNode } from 'react';
-import Text from '../Text';
 import ContentBlock from '../ContentBlock';
+import Text from '../Text';
 import * as styles from './styles.module.scss';
 
 type BlockQuoteProps = {

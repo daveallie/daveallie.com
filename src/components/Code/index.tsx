@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react';
-import SyntaxHighlighter from 'react-syntax-highlighter';
 import cn from 'classnames';
+import SyntaxHighlighter from 'react-syntax-highlighter';
 import { githubGist } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import ContentBlock from '../ContentBlock';
 import Text from '../Text';

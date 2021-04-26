@@ -1,9 +1,9 @@
 import React from 'react';
-import Link from '../../../Link';
+import HR from '../../../HR';
 import Github from '../../../Icon/Github';
 import LinkedIn from '../../../Icon/LinkedIn';
+import Link from '../../../Link';
 import Text from '../../../Text';
-import HR from '../../../HR';
 import * as styles from './styles.module.scss';
 
 export default function AboutMe() {

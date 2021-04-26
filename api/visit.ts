@@ -1,6 +1,6 @@
+import { VercelRequest, VercelResponse } from '@vercel/node';
 import aws from 'aws-sdk';
 import { GetItemInput, PutItemInput } from 'aws-sdk/clients/dynamodb';
-import { VercelRequest, VercelResponse } from '@vercel/node';
 import { SUBSITE_URL } from '../config/util/subsite';
 
 aws.config.update({

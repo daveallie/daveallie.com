@@ -1,7 +1,7 @@
 import React from 'react';
-import Text from '../../../Text';
-import Link from '../../../Link';
 import H1 from '../../../H1';
+import Link from '../../../Link';
+import Text from '../../../Text';
 import * as styles from './styles.module.scss';
 
 export default function BlogHeader({

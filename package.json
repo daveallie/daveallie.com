@@ -11,7 +11,7 @@
     "develop": "gatsby develop",
     "lint": "yarn lint:prettier && yarn lint:stylelint",
     "lint:stylelint": "stylelint 'src/**/*.scss' --syntax scss",
-    "lint:prettier": "prettier --write '{src,api}/**/*.{ts,tsx,js,jsx,json,md}' '*.{ts,tsx,js,jsx,json,md}'",
+    "lint:prettier": "prettier --write '{src,api,config,gatsby}/**/*.{ts,tsx,js,jsx,json,md}' '*.{ts,tsx,js,jsx,json,md}'",
     "prepare": "husky install"
   },
   "repository": {
@@ -46,6 +46,7 @@
     "sass": "^1.32.10"
   },
   "devDependencies": {
+    "@trivago/prettier-plugin-sort-imports": "^2.0.2",
     "@types/node": "^14.14.41",
     "@types/react": "^17.0.3",
     "@types/react-dom": "^17.0.3",

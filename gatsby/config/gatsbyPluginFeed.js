@@ -41,8 +41,9 @@ const pluginFeedConfig = {
           `,
         output: '/rss.xml',
         title: "Dave Allie's Blog",
-        description: 'A collection of random thoughts and opinions from Dave Allie',
-        site_url: 'https://blog.daveallie.com/'
+        description:
+          'A collection of random thoughts and opinions from Dave Allie',
+        site_url: 'https://blog.daveallie.com/',
       },
     ],
   },

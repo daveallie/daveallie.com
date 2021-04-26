@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react';
-import Text from '../Text';
 import ContentBlock from '../ContentBlock';
+import Text from '../Text';
 
 export default function P({
   negTopMargin,

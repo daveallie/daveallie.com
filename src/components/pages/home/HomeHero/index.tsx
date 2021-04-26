@@ -1,8 +1,8 @@
 import React from 'react';
 import cn from 'classnames';
 import Text from '../../../Text';
-import useAnimationLifecycle, { AnimationState } from './useAnimationLifecycle';
 import getNameStyles from './getNameStyles';
+import useAnimationLifecycle, { AnimationState } from './useAnimationLifecycle';
 import * as styles from './styles.module.scss';
 
 export default function HomeHero() {
