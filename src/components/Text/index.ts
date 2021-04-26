@@ -12,25 +12,26 @@ const WEIGHT_MAP = {
   Ultra: 800,
 };
 
-type TextColor = 'headingLight' | 'subheadingLight' | 'dark' | 'accent';
+export type TextColor = 'headingLight' | 'subheadingLight' | 'dark' | 'accent';
+export type TextWeight =
+  | 200
+  | 300
+  | 400
+  | 500
+  | 600
+  | 700
+  | 800
+  | 'XLight'
+  | 'Light'
+  | 'Regular'
+  | 'SemiBold'
+  | 'Bold'
+  | 'Black'
+  | 'Ultra';
 
 type TextProps = {
   container?: 'div' | 'span';
-  weight?:
-    | 200
-    | 300
-    | 400
-    | 500
-    | 600
-    | 700
-    | 800
-    | 'XLight'
-    | 'Light'
-    | 'Regular'
-    | 'SemiBold'
-    | 'Bold'
-    | 'Black'
-    | 'Ultra';
+  weight?: TextWeight;
   color?: TextColor;
   size?: string;
   italic?: boolean;

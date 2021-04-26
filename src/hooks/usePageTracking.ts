@@ -6,6 +6,8 @@ export default function useScrollLocking() {
   const siteUrl = data.site.siteMetadata.siteUrl;
 
   useEffect(() => {
-    (async () => await fetch(`${siteUrl}/api/visit`))();
+    if (process.env.NODE_ENV === 'production') {
+      (async () => await fetch(`${siteUrl}/api/visit`))();
+    }
   }, [siteUrl]);
 }

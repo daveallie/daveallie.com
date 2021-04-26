@@ -1,5 +1,5 @@
 import React from 'react';
-import H1 from '../../../H1';
+import { H1 } from '../../../ContentHeader';
 import Link from '../../../Link';
 import Text from '../../../Text';
 import * as styles from './styles.module.scss';
