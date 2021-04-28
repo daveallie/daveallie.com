@@ -11,10 +11,10 @@ import HR from '../../components/HR';
 import InlineCode from '../../components/InlineCode';
 import Link from '../../components/Link';
 import P from '../../components/P';
+import PageFooter from '../../components/PageFooter';
+import PageHeader from '../../components/PageHeader';
 import SEO from '../../components/SEO';
 import Text from '../../components/Text';
-import BlogFooter from '../../components/pages/blog/BlogFooter';
-import BlogHeader from '../../components/pages/blog/BlogHeader';
 import useAlternateBodyBackground from '../../hooks/useAlternateBodyBackground';
 import usePageTracking from '../../hooks/usePageTracking';
 
@@ -73,7 +73,7 @@ export default function BlogPost({ data: { mdx } }: BlogPostQueryResult) {
           },
         ]}
       />
-      <BlogHeader title={mdx.frontmatter.title} />
+      <PageHeader title={mdx.frontmatter.title} />
       <ContentBlock>
         <Text size="0.9rem" weight={300} color="accent">
           By {mdx.frontmatter.author}
@@ -104,7 +104,7 @@ export default function BlogPost({ data: { mdx } }: BlogPostQueryResult) {
           <MDXRenderer>{mdx.body}</MDXRenderer>
         </Text>
       </MDXProvider>
-      <BlogFooter />
+      <PageFooter />
     </>
   );
 }

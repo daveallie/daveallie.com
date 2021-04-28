@@ -62,3 +62,29 @@ jobs:
           vercel-project-id: ${{ secrets.VERCEL_BLOG_PROJECT_ID }}
           vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
           vercel-args: ${{ env.VERCEL_ARGS }}
+
+  deploy-meet:
+    env:
+      VERCEL_ARGS: ${{ github.event.inputs.vercelArgs }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set VERCEL_ARGS environment variable
+        if: env.VERCEL_ARGS == null
+        run: echo "VERCEL_ARGS=--prod" >> $GITHUB_ENV
+      - name: Test VERCEL_ARGS environment variable
+        run: echo "VERCEL_ARGS=$VERCEL_ARGS"
+
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          ssh-key: ${{ secrets.SUBMODULE_DEPLOY_KEY }}
+          submodules: 'recursive'
+
+      - name: Vercel Deploy - Blog
+        uses: amondnet/vercel-action@v20.0.0
+        with:
+          vercel-token: ${{ secrets.VERCEL_DEPLOY_TOKEN }}
+          github-comment: false
+          vercel-project-id: ${{ secrets.VERCEL_MEET_PROJECT_ID }}
+          vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
+          vercel-args: ${{ env.VERCEL_ARGS }}

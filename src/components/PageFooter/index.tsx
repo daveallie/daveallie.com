@@ -1,12 +1,12 @@
 import React from 'react';
 import cn from 'classnames';
-import Github from '../../../Icon/Github';
-import LinkedIn from '../../../Icon/LinkedIn';
-import Link from '../../../Link';
-import Text from '../../../Text';
+import Github from '../Icon/Github';
+import LinkedIn from '../Icon/LinkedIn';
+import Link from '../Link';
+import Text from '../Text';
 import * as styles from './styles.module.scss';
 
-export default function BlogFooter({
+export default function PageFooter({
   includeHomeLink = true,
   fixed = false,
 }: {
