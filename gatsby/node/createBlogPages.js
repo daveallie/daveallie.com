@@ -1,30 +1,27 @@
 const path = require('path');
 
 async function createBlogPages({ graphql, createPage }) {
-  const result = await graphql(
-    `
-      query loadPagesQuery($limit: Int!) {
-        allMdx(limit: $limit${
-          process.env.NODE_ENV === 'production'
-            ? ', filter: {frontmatter: {published: {eq: true}}}'
-            : ''
-        }) {
-          nodes {
-            id
-            frontmatter {
-              slug
-            }
-            parent {
-              ... on File {
-                sourceInstanceName
-              }
+  const result = await graphql(`
+    query loadPagesQuery {
+      allMdx${
+        process.env.NODE_ENV === 'production'
+          ? '(filter: {frontmatter: {published: {eq: true}}})'
+          : ''
+      } {
+        nodes {
+          id
+          frontmatter {
+            slug
+          }
+          parent {
+            ... on File {
+              sourceInstanceName
             }
           }
         }
       }
-    `,
-    { limit: 1000 }
-  );
+    }
+  `);
 
   if (result.errors) {
     throw result.errors;

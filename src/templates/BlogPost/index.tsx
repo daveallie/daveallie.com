@@ -14,28 +14,10 @@ import P from '../../components/P';
 import PageFooter from '../../components/PageFooter';
 import PageHeader from '../../components/PageHeader';
 import SEO from '../../components/SEO';
+import TagBadge from '../../components/TagBadge';
 import Text from '../../components/Text';
 import useAlternateBodyBackground from '../../hooks/useAlternateBodyBackground';
 import usePageTracking from '../../hooks/usePageTracking';
-
-type BlogPostQueryResult = {
-  data: {
-    mdx: {
-      id: string;
-      body: string & ReactNode;
-      timeToRead: number;
-      frontmatter: {
-        title: string;
-        description: string;
-        author: string;
-        slug: string;
-        date: string;
-        datestamp: string;
-        updatestamp: string;
-      };
-    };
-  };
-};
 
 const ListElement = ({ ordered }: { ordered: boolean }) => ({
   children,
@@ -48,7 +30,29 @@ const ListElement = ({ ordered }: { ordered: boolean }) => ({
   </P>
 );
 
-export default function BlogPost({ data: { mdx } }: BlogPostQueryResult) {
+type BlogPostQueryResult = {
+  mdx: {
+    id: string;
+    body: string & ReactNode;
+    timeToRead: number;
+    frontmatter: {
+      title: string;
+      description: string;
+      author: string;
+      slug: string;
+      date: string;
+      datestamp: string;
+      updatestamp: string;
+      tags: string[];
+    };
+  };
+};
+
+type BlogPostProps = {
+  data: BlogPostQueryResult;
+};
+
+export default function BlogPost({ data: { mdx } }: BlogPostProps) {
   useAlternateBodyBackground('Offwhite');
   usePageTracking();
 
@@ -75,10 +79,15 @@ export default function BlogPost({ data: { mdx } }: BlogPostQueryResult) {
       />
       <PageHeader title={mdx.frontmatter.title} />
       <ContentBlock>
-        <Text size="0.9rem" weight={300} color="accent">
+        <Text size="0.9rem" weight={300} color="accent" container="div">
           By {mdx.frontmatter.author}
           <br />
           Published {mdx.frontmatter.date} • {mdx.timeToRead} min read
+        </Text>
+        <Text container="div">
+          {mdx.frontmatter.tags.map((tag) => (
+            <TagBadge key={tag} tag={tag} />
+          ))}
         </Text>
       </ContentBlock>
       <MDXProvider
@@ -123,6 +132,7 @@ export const pageQuery = graphql`
         date(formatString: "ll")
         datestamp: date
         updatestamp: update_date
+        tags
       }
     }
   }

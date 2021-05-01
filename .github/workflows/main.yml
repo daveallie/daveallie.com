@@ -80,7 +80,7 @@ jobs:
           ssh-key: ${{ secrets.SUBMODULE_DEPLOY_KEY }}
           submodules: 'recursive'
 
-      - name: Vercel Deploy - Blog
+      - name: Vercel Deploy - Meet
         uses: amondnet/vercel-action@v20.0.0
         with:
           vercel-token: ${{ secrets.VERCEL_DEPLOY_TOKEN }}

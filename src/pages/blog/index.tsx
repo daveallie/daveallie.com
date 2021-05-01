@@ -5,6 +5,7 @@ import PageHeader from '../../components/PageHeader';
 import SEO from '../../components/SEO';
 import Text from '../../components/Text';
 import BlogPostList from '../../components/pages/blog/BlogPostList';
+import useBlogPostListQuery from '../../hooks/queries/useBlogPostListQuery';
 import useAlternateBodyBackground from '../../hooks/useAlternateBodyBackground';
 import usePageTracking from '../../hooks/usePageTracking';
 import '../../assets/styles/global.scss';
@@ -12,6 +13,9 @@ import '../../assets/styles/global.scss';
 export default function BlogIndexPage() {
   useAlternateBodyBackground('Offwhite');
   usePageTracking();
+  const {
+    allMdx: { nodes },
+  } = useBlogPostListQuery();
 
   return (
     <>
@@ -20,7 +24,7 @@ export default function BlogIndexPage() {
       <Text container="div" color="dark">
         <ContentBlock>Here's what I've been writing about:</ContentBlock>
         <ContentBlock>
-          <BlogPostList />
+          <BlogPostList data={nodes} />
         </ContentBlock>
       </Text>
       <PageFooter fixed includeHomeLink={false} />

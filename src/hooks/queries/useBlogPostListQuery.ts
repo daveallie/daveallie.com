@@ -16,7 +16,7 @@ export type BlogPostListQueryResult = {
   };
 };
 
-export default function useSiteUrlQuery(): BlogPostListQueryResult {
+export default function useBlogPostListQuery(): BlogPostListQueryResult {
   return useStaticQuery(graphql`
     query BlogPostListQuery {
       allMdx(

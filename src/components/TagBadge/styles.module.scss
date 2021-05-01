@@ -1,0 +1,13 @@
+@import "src/assets/styles/colors";
+
+.badgeContainer {
+  display: inline-flex;
+  margin: 0 0.5rem 0 0;
+}
+
+.badge {
+  display: inline;
+  padding: 0 0.4rem 0.2rem;
+  border-radius: 0.3rem;
+  background-color: $tagBackground;
+}

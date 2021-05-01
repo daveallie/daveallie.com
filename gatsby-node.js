@@ -1,4 +1,5 @@
 const createBlogPages = require('./gatsby/node/createBlogPages');
+const createTagPages = require('./gatsby/node/createTagPages');
 const moveSubsitePage = require('./gatsby/node/moveSubsitePage');
 const { BUILD_SUBSITE } = require('./config/util/subsite');
 
@@ -11,6 +12,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
   if (BUILD_SUBSITE === 'blog') {
     await createBlogPages({ graphql, createPage });
+    await createTagPages({ graphql, createPage });
   }
 };
 
