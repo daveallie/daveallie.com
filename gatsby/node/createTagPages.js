@@ -28,7 +28,7 @@ async function createBlogPages({ graphql, createPage }) {
     createPage({
       path: pagePath,
       component: blogsByTagTemplate,
-      context: { tag: group.tag, path: pagePath },
+      context: { tag: group.tag, tagPath: pagePath },
     });
   });
 }

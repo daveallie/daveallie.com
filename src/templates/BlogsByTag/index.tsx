@@ -20,7 +20,7 @@ type BlogsByTagProps = {
   data: BlogsByTagQueryResult;
   pageContext: {
     tag: string;
-    path: string;
+    tagPath: string;
   };
 };
 
@@ -30,7 +30,7 @@ export default function BlogsByTag({ data, pageContext }: BlogsByTagProps) {
 
   return (
     <>
-      <SEO title={`Tag: ${pageContext.tag}`} path={pageContext.path} />
+      <SEO title={`Tag: ${pageContext.tag}`} path={pageContext.tagPath} />
       <PageHeader title={`Tag: ${pageContext.tag}`} />
       <Text container="div" color="dark">
         <ContentBlock>
