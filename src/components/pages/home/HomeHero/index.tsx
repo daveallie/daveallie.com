@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import cn from 'classnames';
 import Text from '../../../Text';
 import getNameStyles from './getNameStyles';
@@ -6,16 +6,20 @@ import useAnimationLifecycle, { AnimationState } from './useAnimationLifecycle';
 import * as styles from './styles.module.scss';
 
 export default function HomeHero() {
-  const initialState =
-    new URLSearchParams(window.location.search).get('skip') === '1'
-      ? AnimationState.finished
-      : AnimationState.notStarted;
-
   const {
     state: { animationState, scrollY },
-    actions: { startAnimation },
+    actions: { startAnimation, skipAnimation },
     visibility: { showClickPrompt, showScrollPrompt },
-  } = useAnimationLifecycle(initialState);
+  } = useAnimationLifecycle(AnimationState.notStarted);
+
+  useEffect(() => {
+    if (
+      typeof window !== 'undefined' &&
+      new URLSearchParams(window.location.search).get('skip') === '1'
+    ) {
+      skipAnimation();
+    }
+  }, []);
 
   const {
     firstNameStyles,

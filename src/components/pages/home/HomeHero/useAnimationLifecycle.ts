@@ -25,9 +25,12 @@ export default function useAnimationLifecycle(
       setShowClickPrompt(false);
       setTimeout(() => setAnimationState(AnimationState.finished), 3800);
     }
-    // Note: intentionally excluded setAnimationState and setShowClickPrompt from deps
-    // Don't want this effect to re-run when those change, only on animation state
-  }, [animationState]);
+  }, [setAnimationState, setShowClickPrompt, animationState]);
+
+  const skipAnimation = useCallback(
+    () => setAnimationState(AnimationState.finished),
+    [setAnimationState]
+  );
 
   // Show the 'click' prompt 1.5 seconds after idle in not started state
   useEffect(() => {
@@ -35,7 +38,7 @@ export default function useAnimationLifecycle(
       const timeout = setTimeout(() => setShowClickPrompt(true), 1500);
       return () => clearTimeout(timeout);
     }
-  }, [animationState]);
+  }, [setShowClickPrompt, animationState]);
 
   // Show the 'scroll' prompt 1 second after idle in finished
   // clear once scrolling
@@ -52,7 +55,7 @@ export default function useAnimationLifecycle(
     if (scrollY > 0) {
       setShowScrollPrompt(false);
     }
-  }, [animationState, scrollY, showScrollPrompt]);
+  }, [setShowScrollPrompt, animationState, scrollY, showScrollPrompt]);
 
   useEffect(() => {
     setScrollLocked(animationState !== AnimationState.finished);
@@ -60,7 +63,7 @@ export default function useAnimationLifecycle(
 
   return {
     state: { animationState, scrollY },
-    actions: { startAnimation },
+    actions: { startAnimation, skipAnimation },
     visibility: { showClickPrompt, showScrollPrompt },
   };
 }
