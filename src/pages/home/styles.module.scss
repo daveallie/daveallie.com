@@ -1,4 +1,8 @@
-.hiddenScrollbar::-webkit-scrollbar {
-  width: 0;
-  background: transparent;
+.hiddenScrollbar {
+  overflow-x: hidden;
+
+  &::-webkit-scrollbar {
+    width: 0;
+    background: transparent;
+  }
 }

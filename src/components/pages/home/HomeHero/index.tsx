@@ -6,11 +6,16 @@ import useAnimationLifecycle, { AnimationState } from './useAnimationLifecycle';
 import * as styles from './styles.module.scss';
 
 export default function HomeHero() {
+  const initialState =
+    new URLSearchParams(window.location.search).get('skip') === '1'
+      ? AnimationState.finished
+      : AnimationState.notStarted;
+
   const {
     state: { animationState, scrollY },
     actions: { startAnimation },
     visibility: { showClickPrompt, showScrollPrompt },
-  } = useAnimationLifecycle(AnimationState.notStarted);
+  } = useAnimationLifecycle(initialState);
 
   const {
     firstNameStyles,

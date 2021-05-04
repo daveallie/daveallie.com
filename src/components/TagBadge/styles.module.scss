@@ -2,12 +2,12 @@
 
 .badgeContainer {
   display: inline-flex;
-  margin: 0 0.5rem 0 0;
+  margin: 1rem 0.5rem 0 0;
 }
 
 .badge {
   display: inline;
-  padding: 0 0.4rem 0.2rem;
+  padding: 0.2rem 0.4rem;
   border-radius: 0.3rem;
   background-color: $tagBackground;
 }
