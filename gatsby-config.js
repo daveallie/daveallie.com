@@ -1,5 +1,5 @@
 const pluginFeedConfig = require('./gatsby/config/gatsbyPluginFeed');
-const { BUILD_SUBSITE, SUBSITE_URL } = require('./config/util/subsite');
+const { SUBSITE, SUBSITE_URL } = require('./config/util/subsite');
 
 const plugins = [
   'gatsby-plugin-robots-txt',
@@ -73,7 +73,7 @@ const plugins = [
   },
 ];
 
-if (BUILD_SUBSITE === 'blog') {
+if (SUBSITE === 'blog') {
   plugins.push(pluginFeedConfig);
 }
 

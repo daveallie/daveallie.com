@@ -1,4 +1,4 @@
-const { BUILD_SUBSITE } = require('../../config/util/subsite');
+const { SUBSITE } = require('../../config/util/subsite');
 const { getPathSubsite } = require('../../config/util/subsite');
 
 function moveSubsitePage(page, { createPage, deletePage }) {
@@ -9,7 +9,7 @@ function moveSubsitePage(page, { createPage, deletePage }) {
     return;
   }
 
-  if (pageSubsite !== BUILD_SUBSITE) {
+  if (pageSubsite !== SUBSITE) {
     // subsite doesn't match page delete
     deletePage(page);
     return;
@@ -22,7 +22,7 @@ function moveSubsitePage(page, { createPage, deletePage }) {
   const originalPath = page.path;
 
   deletePage(page);
-  const pathReplaceRegex = new RegExp(`^\/${BUILD_SUBSITE}`);
+  const pathReplaceRegex = new RegExp(`^\/${SUBSITE}`);
   const newPage = {
     ...page,
     path: page.path.replace(pathReplaceRegex, ''),

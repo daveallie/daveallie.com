@@ -1,16 +1,17 @@
+const path = require('path');
 const createBlogPages = require('./gatsby/node/createBlogPages');
 const createTagPages = require('./gatsby/node/createTagPages');
 const moveSubsitePage = require('./gatsby/node/moveSubsitePage');
-const { BUILD_SUBSITE } = require('./config/util/subsite');
+const { SUBSITE } = require('./config/util/subsite');
 
 exports.onPreInit = () => {
-  console.log(`=====\nBuilding subsite: ${BUILD_SUBSITE}\n=====`);
+  console.log(`=====\nBuilding subsite: ${SUBSITE}\n=====`);
 };
 
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
 
-  if (BUILD_SUBSITE === 'blog') {
+  if (SUBSITE === 'blog') {
     await createBlogPages({ graphql, createPage });
     await createTagPages({ graphql, createPage });
   }

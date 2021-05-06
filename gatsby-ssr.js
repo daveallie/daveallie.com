@@ -1,8 +1,8 @@
 const React = require('react');
-const { BUILD_SUBSITE } = require('./config/util/subsite');
+const { SUBSITE } = require('./config/util/subsite');
 
 const BodyPresetBackground = () => {
-  const className = BUILD_SUBSITE === 'home' ? 'body_Hero' : 'body_Offwhite';
+  const className = SUBSITE === 'home' ? 'body_Hero' : 'body_Offwhite';
 
   const codeToRunOnClient = `
 (function() {

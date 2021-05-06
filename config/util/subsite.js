@@ -11,7 +11,7 @@ const SUBSITES = {
 };
 const DEFAULT_SUBSITE = 'home';
 
-const BUILD_SUBSITE =
+const SUBSITE =
   Object.keys(SUBSITES).find((s) => s === process.env.SUBSITE) ||
   DEFAULT_SUBSITE;
 
@@ -19,7 +19,7 @@ const getPathSubsite = (path) =>
   Object.keys(SUBSITES).find((s) => path.startsWith(`/${s}/`));
 
 module.exports = {
-  BUILD_SUBSITE,
-  SUBSITE_URL: SUBSITES[BUILD_SUBSITE].url,
+  SUBSITE,
+  SUBSITE_URL: SUBSITES[SUBSITE].url,
   getPathSubsite,
 };
