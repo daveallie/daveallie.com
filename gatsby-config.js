@@ -2,6 +2,7 @@ const pluginFeedConfig = require('./gatsby/config/gatsbyPluginFeed');
 const { BUILD_SUBSITE, SUBSITE_URL } = require('./config/util/subsite');
 
 const plugins = [
+  'gatsby-plugin-robots-txt',
   'gatsby-plugin-sitemap',
   'gatsby-plugin-react-helmet',
   'gatsby-plugin-typescript',
