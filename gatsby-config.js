@@ -66,7 +66,7 @@ const plugins = [
     },
   },
   {
-    resolve: `gatsby-plugin-env-variables`,
+    resolve: 'gatsby-plugin-env-variables',
     options: {
       allowList: ['SUBSITE'],
     },

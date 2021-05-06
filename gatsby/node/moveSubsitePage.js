@@ -10,7 +10,7 @@ function moveSubsitePage(page, { createPage, deletePage }) {
   }
 
   if (pageSubsite !== SUBSITE) {
-    // subsite doesn't match page delete
+    // subsite doesn't match page, delete
     deletePage(page);
     return;
   }
@@ -21,6 +21,7 @@ function moveSubsitePage(page, { createPage, deletePage }) {
   }
   const originalPath = page.path;
 
+  // replace original page with new page
   deletePage(page);
   const pathReplaceRegex = new RegExp(`^\/${SUBSITE}`);
   const newPage = {
