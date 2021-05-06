@@ -9,7 +9,7 @@ import * as styles from './styles.module.scss';
 export default function Code({
   language,
   filename,
-  showLineNumbers = true,
+  showLineNumbers = false,
   children,
 }: {
   language?: string;
