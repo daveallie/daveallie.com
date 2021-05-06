@@ -7,7 +7,7 @@
     border-bottom: dashed 1px $linkColor;
   }
 
-  path {
+  rect, path {
     fill: $linkColor;
   }
 
@@ -15,7 +15,7 @@
     border-bottom-color: $linkHover;
     color: $linkHover;
 
-    path {
+    rect, path {
       fill: $linkHover;
     }
   }
@@ -28,7 +28,7 @@
     border-bottom: dashed 1px $linkLightColor;
   }
 
-  path { /* stylelint-disable-line no-descending-specificity */
+  rect, path { /* stylelint-disable-line no-descending-specificity */
     fill: $linkLightColor;
   }
 
@@ -36,7 +36,7 @@
     border-bottom-color: $linkLightHover;
     color: $linkLightHover;
 
-    path {
+    rect, path {
       fill: $linkLightHover;
     }
   }
@@ -49,7 +49,7 @@
     border-bottom: dashed 1px $linkUltraLightColor;
   }
 
-  path { /* stylelint-disable-line no-descending-specificity */
+  rect, path { /* stylelint-disable-line no-descending-specificity */
     fill: $linkUltraLightColor;
   }
 
@@ -57,7 +57,7 @@
     border-bottom-color: $linkUltraLightHover;
     color: $linkUltraLightHover;
 
-    path {
+    rect, path {
       fill: $linkUltraLightHover;
     }
   }

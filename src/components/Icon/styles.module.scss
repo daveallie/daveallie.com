@@ -1,4 +1,18 @@
+@import "src/assets/styles/colors";
+
 .container {
   width: 1rem;
   display: inline-block;
+}
+
+.noStroke {
+  stroke: none;
+}
+
+.forceLightFill {
+  fill: $lightIconAccent !important;
+}
+
+.forceDarkFill {
+  fill: $darkIconAccent !important;
 }
