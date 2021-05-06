@@ -2,7 +2,19 @@ const pluginFeedConfig = require('./gatsby/config/gatsbyPluginFeed');
 const { SUBSITE, SUBSITE_URL } = require('./config/util/subsite');
 
 const plugins = [
-  'gatsby-plugin-robots-txt',
+  {
+    resolve: 'gatsby-plugin-robots-txt',
+    options: {
+      policy: [
+        {
+          userAgent: '*',
+          ...(process.env.GATSBY_VERCEL_ENV === 'preview'
+            ? { disallow: ['/'] }
+            : { allow: '/' }),
+        },
+      ],
+    },
+  },
   'gatsby-plugin-sitemap',
   'gatsby-plugin-react-helmet',
   'gatsby-plugin-typescript',

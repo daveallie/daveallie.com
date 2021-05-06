@@ -20,6 +20,9 @@ const getPathSubsite = (path) =>
 
 module.exports = {
   SUBSITE,
-  SUBSITE_URL: SUBSITES[SUBSITE].url,
+  SUBSITE_URL:
+    process.env.GATSBY_VERCEL_ENV === 'preview'
+      ? `https://${process.env.GATSBY_VERCEL_URL}`
+      : SUBSITES[SUBSITE].url,
   getPathSubsite,
 };
