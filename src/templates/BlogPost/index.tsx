@@ -2,22 +2,22 @@ import React, { ReactNode } from 'react';
 import { MDXProvider } from '@mdx-js/react';
 import { graphql } from 'gatsby';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
-import { BlockQuoteMDXWrapper } from '../../components/BlockQuote';
-import { CodeMDXWrapper } from '../../components/Code';
-import ContentBlock from '../../components/ContentBlock';
-import { H1, H2, H3 } from '../../components/ContentHeader';
-import { FigureMDXWrapper } from '../../components/Figure';
-import HR from '../../components/HR';
-import InlineCode from '../../components/InlineCode';
-import Link from '../../components/Link';
-import P from '../../components/P';
-import PageFooter from '../../components/PageFooter';
-import PageHeader from '../../components/PageHeader';
-import SEO from '../../components/SEO';
-import TagBadge from '../../components/TagBadge';
-import Text from '../../components/Text';
-import useAlternateBodyBackground from '../../hooks/useAlternateBodyBackground';
-import usePageTracking from '../../hooks/usePageTracking';
+import { BlockQuoteMDXWrapper } from '~/components/BlockQuote';
+import { CodeMDXWrapper } from '~/components/Code';
+import ContentBlock from '~/components/ContentBlock';
+import { H1, H2, H3 } from '~/components/ContentHeader';
+import { FigureMDXWrapper } from '~/components/Figure';
+import HR from '~/components/HR';
+import InlineCode from '~/components/InlineCode';
+import Link from '~/components/Link';
+import P from '~/components/P';
+import PageFooter from '~/components/PageFooter';
+import PageHeader from '~/components/PageHeader';
+import SEO from '~/components/SEO';
+import TagBadge from '~/components/TagBadge';
+import Text from '~/components/Text';
+import useAlternateBodyBackground from '~/hooks/useAlternateBodyBackground';
+import usePageTracking from '~/hooks/usePageTracking';
 
 const ListElement = ({ ordered }: { ordered: boolean }) => ({
   children,

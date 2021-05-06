@@ -1,9 +1,9 @@
 import React from 'react';
 import cn from 'classnames';
-import { BlogPostListQueryNode } from '../../../../hooks/queries/useBlogPostListQuery';
-import ContentBlock from '../../../ContentBlock';
-import Link from '../../../Link';
-import Text from '../../../Text';
+import ContentBlock from '~/components/ContentBlock';
+import Link from '~/components/Link';
+import Text from '~/components/Text';
+import { BlogPostListQueryNode } from '~/hooks/queries/useBlogPostListQuery';
 import * as styles from './styles.module.scss';
 
 type BlogPostListProps = {

@@ -1,7 +1,7 @@
 import React from 'react';
-import { H1 } from '../ContentHeader';
-import Link from '../Link';
-import Text from '../Text';
+import { H1 } from '~/components/ContentHeader';
+import Link from '~/components/Link';
+import Text from '~/components/Text';
 import * as styles from './styles.module.scss';
 
 export default function PageHeader({

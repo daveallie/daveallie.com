@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import cn from 'classnames';
-import Text from '../../../Text';
+import Text from '~/components/Text';
 import getNameStyles from './getNameStyles';
 import useAnimationLifecycle, { AnimationState } from './useAnimationLifecycle';
 import * as styles from './styles.module.scss';

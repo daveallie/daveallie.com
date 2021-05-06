@@ -1,6 +1,6 @@
 import React from 'react';
-import Link from '../../../Link';
-import Text from '../../../Text';
+import Link from '~/components/Link';
+import Text from '~/components/Text';
 import * as styles from './styles.module.scss';
 
 export default function Error404({ home }: { home: string }) {

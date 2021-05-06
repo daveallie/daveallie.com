@@ -1,14 +1,14 @@
 import React from 'react';
-import ContentBlock from '../../components/ContentBlock';
-import PageFooter from '../../components/PageFooter';
-import PageHeader from '../../components/PageHeader';
-import SEO from '../../components/SEO';
-import Text from '../../components/Text';
-import BlogPostList from '../../components/pages/blog/BlogPostList';
-import useBlogPostListQuery from '../../hooks/queries/useBlogPostListQuery';
-import useAlternateBodyBackground from '../../hooks/useAlternateBodyBackground';
-import usePageTracking from '../../hooks/usePageTracking';
-import '../../assets/styles/global.scss';
+import ContentBlock from '~/components/ContentBlock';
+import PageFooter from '~/components/PageFooter';
+import PageHeader from '~/components/PageHeader';
+import SEO from '~/components/SEO';
+import Text from '~/components/Text';
+import BlogPostList from '~/components/pages/blog/BlogPostList';
+import useBlogPostListQuery from '~/hooks/queries/useBlogPostListQuery';
+import useAlternateBodyBackground from '~/hooks/useAlternateBodyBackground';
+import usePageTracking from '~/hooks/usePageTracking';
+import '~/assets/styles/global.scss';
 
 export default function BlogIndexPage() {
   useAlternateBodyBackground('Offwhite');

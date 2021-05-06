@@ -1,10 +1,10 @@
 import React from 'react';
 import cn from 'classnames';
-import Github from '../Icon/Github';
-import LinkedIn from '../Icon/LinkedIn';
-import RSS from '../Icon/RSS';
-import Link from '../Link';
-import Text from '../Text';
+import Github from '~/components/Icon/Github';
+import LinkedIn from '~/components/Icon/LinkedIn';
+import RSS from '~/components/Icon/RSS';
+import Link from '~/components/Link';
+import Text from '~/components/Text';
 import * as styles from './styles.module.scss';
 
 type PageFooterProps = {

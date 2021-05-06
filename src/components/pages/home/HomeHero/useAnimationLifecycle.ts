@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from 'react';
-import useScrollLocking from '../../../../hooks/useScrollLocking';
+import useScrollLocking from '~/hooks/useScrollLocking';
 
 export enum AnimationState {
   notStarted,

@@ -1,7 +1,7 @@
 import React, { Children, ReactElement, ReactNode } from 'react';
 import cn from 'classnames';
 import { chunk } from 'lodash';
-import Text from '../Text';
+import Text from '~/components/Text';
 import * as styles from './styles.module.scss';
 
 type FigureProps = {

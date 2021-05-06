@@ -2,8 +2,8 @@ import React, { ReactNode } from 'react';
 import cn from 'classnames';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { githubGist } from 'react-syntax-highlighter/dist/esm/styles/hljs';
-import ContentBlock from '../ContentBlock';
-import Text from '../Text';
+import ContentBlock from '~/components/ContentBlock';
+import Text from '~/components/Text';
 import * as styles from './styles.module.scss';
 
 export default function Code({

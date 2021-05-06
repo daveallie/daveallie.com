@@ -24,6 +24,15 @@ exports.onCreatePage = ({ page, actions }) => {
 };
 
 exports.onCreateWebpackConfig = ({ getConfig, actions }) => {
+  actions.setWebpackConfig({
+    resolve: {
+      alias: {
+        '~': path.resolve(__dirname, 'src/'),
+      },
+      extensions: ['.ts', '.tsx', '.js'],
+    },
+  });
+
   if (getConfig().mode === 'production') {
     actions.setWebpackConfig({
       devtool: false,

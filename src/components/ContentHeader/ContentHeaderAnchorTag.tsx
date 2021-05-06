@@ -1,5 +1,5 @@
 import React, { Children, ReactNode } from 'react';
-import Link from '../Link';
+import Link from '~/components/Link';
 import * as styles from './styles.module.scss';
 
 export default function ContentHeaderAnchorTag({

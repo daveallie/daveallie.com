@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react';
-import ContentBlock from '../ContentBlock';
-import Text, { TextColor, TextWeight } from '../Text';
+import ContentBlock from '~/components/ContentBlock';
+import Text, { TextColor, TextWeight } from '~/components/Text';
 import ContentHeaderAnchorTag from './ContentHeaderAnchorTag';
 import * as styles from './styles.module.scss';
 

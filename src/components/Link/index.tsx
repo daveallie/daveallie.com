@@ -7,7 +7,6 @@ type LinkProps = {
   href: string;
   color?: 'light' | 'ultraLight' | 'normal';
   underline?: boolean;
-  light?: boolean;
   gatsby?: boolean;
   children: ReactNode;
 };

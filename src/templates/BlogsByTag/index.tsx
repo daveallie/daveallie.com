@@ -1,14 +1,14 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import ContentBlock from '../../components/ContentBlock';
-import PageFooter from '../../components/PageFooter';
-import PageHeader from '../../components/PageHeader';
-import SEO from '../../components/SEO';
-import Text from '../../components/Text';
-import BlogPostList from '../../components/pages/blog/BlogPostList';
-import { BlogPostListQueryNode } from '../../hooks/queries/useBlogPostListQuery';
-import useAlternateBodyBackground from '../../hooks/useAlternateBodyBackground';
-import usePageTracking from '../../hooks/usePageTracking';
+import ContentBlock from '~/components/ContentBlock';
+import PageFooter from '~/components/PageFooter';
+import PageHeader from '~/components/PageHeader';
+import SEO from '~/components/SEO';
+import Text from '~/components/Text';
+import BlogPostList from '~/components/pages/blog/BlogPostList';
+import { BlogPostListQueryNode } from '~/hooks/queries/useBlogPostListQuery';
+import useAlternateBodyBackground from '~/hooks/useAlternateBodyBackground';
+import usePageTracking from '~/hooks/usePageTracking';
 
 type BlogsByTagQueryResult = {
   allMdx: {

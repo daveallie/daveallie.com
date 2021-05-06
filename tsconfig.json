@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "baseUrl": "./src",
+    "baseUrl": ".",
     "module": "commonjs",
     "sourceMap": true,
     "experimentalDecorators": true,
@@ -17,7 +17,10 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "removeComments": false,
-    "preserveConstEnums": true
+    "preserveConstEnums": true,
+    "paths": {
+      "~*": ["./src/*"]
+    }
   },
-  "include": ["./src/**/*", "./api/**/*"]
+  "include": ["src/**/*", "api/**/*"]
 }
