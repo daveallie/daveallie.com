@@ -83,6 +83,12 @@ const plugins = [
       allowList: ['SUBSITE'],
     },
   },
+  {
+    resolve: 'gatsby-plugin-google-gtag',
+    options: {
+      trackingIds: ['G-VC4JCPT7M2'],
+    },
+  },
 ];
 
 if (SUBSITE === 'blog') {
