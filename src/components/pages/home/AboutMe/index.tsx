@@ -26,6 +26,13 @@ export default function AboutMe() {
         I'm currently working at <Text weight={400}>Amazon</Text> as a{' '}
         <Text weight={400}>Software Development Engineer</Text>.
       </Text>
+      <Text className={styles.details} size="1.2rem">
+        I was previously working
+        <br />
+        at <Text weight={400}>Tanda</Text> as a{' '}
+        <Text weight={400}>Software Development Engineer</Text> and{' '}
+        <Text weight={400}>CTO</Text>.
+      </Text>
       <HR />
       <Text container="div">
         Check out what I'm up to on{' '}

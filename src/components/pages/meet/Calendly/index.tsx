@@ -17,7 +17,7 @@ export default function Calendly() {
   return (
     <div
       className={cn('calendly-inline-widget', styles.calendarContainer)}
-      data-url="https://calendly.com/meetdaveallie?hide_landing_page_details=1&hide_gdpr_banner=1"
+      data-url="https://calendly.com/meetdaveallie/coffee?hide_landing_page_details=1&hide_gdpr_banner=1"
     />
   );
 }

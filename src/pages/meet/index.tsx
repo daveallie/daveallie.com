@@ -13,8 +13,8 @@ export default function MeetIndexPage() {
 
   return (
     <>
-      <SEO />
-      <PageHeader title="Dave Allie" titleStandalone />
+      <SEO title="Meet" />
+      <PageHeader title="Meet Dave Allie" titleStandalone />
       <Calendly />
       <PageFooter includeHomeLink={false} fixed />
     </>
