@@ -1,0 +1,47 @@
+@import "src/assets/styles/colors";
+
+.alertContainer {
+  position: relative;
+  margin-left: -1.5rem;
+  padding: 0.75rem 0.75rem 0.75rem 1.5rem;
+  border-left: .2rem solid;
+  border-radius: 0.2rem 0.3rem 0.3rem 0.2rem;
+
+  &.info {
+    background-color: $alertBackgroundInfo;
+    border-color: $alertAccentInfo;
+  }
+
+  &.warning {
+    background-color: $alertBackgroundWarning;
+    border-color: $alertAccentWarning;
+  }
+}
+
+.alertIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 50%;
+  transform: translate(calc(-50% - 0.1rem), -50%);
+  background-color: $bodyBackground;
+
+  &.info {
+    color: $alertAccentInfo;
+  }
+
+  &.warning {
+    color: $alertAccentWarning;
+  }
+}
+
+@media(max-width: 870px) {
+  .alertContainer {
+    margin-left: 0;
+  }
+}

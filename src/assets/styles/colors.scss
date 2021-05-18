@@ -1,10 +1,15 @@
-// click prompt / hr / side-arrows
-
+// https://coolors.co/fef3ee-ffdbdb-feb0b0-ff656d-bf3f4c
 $primary100: #FEF3EE;
 $primary200: #ffdbdb;
 $primary250: #FEB0B0;
 $primary400: #FF656D;
 $primary700: #BF3F4C;
+
+$info200: #DBF0FF;
+$info400: #2f8dd2;
+
+$warning200: #FFE8DB;
+$warning400: #FF9666;
 
 $headingLight: $primary100;
 $subheadingLight: $primary250;
@@ -28,3 +33,8 @@ $linkUltraLightColor: $primary100;
 $linkUltraLightHover: $primary250;
 
 $imageCaption: $textAccent;
+
+$alertBackgroundInfo: $info200;
+$alertBackgroundWarning: $warning200;
+$alertAccentInfo: $info400;
+$alertAccentWarning: $warning400;

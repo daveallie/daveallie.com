@@ -2,6 +2,7 @@ import React, { ReactNode } from 'react';
 import { MDXProvider } from '@mdx-js/react';
 import { graphql } from 'gatsby';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
+import AlertBox from '~/components/AlertBox';
 import { BlockQuoteMDXWrapper } from '~/components/BlockQuote';
 import { CodeMDXWrapper } from '~/components/Code';
 import ContentBlock from '~/components/ContentBlock';
@@ -105,6 +106,7 @@ export default function BlogPost({ data: { mdx } }: BlogPostProps) {
           ol: ListElement({ ordered: true }),
           BlockQuote: BlockQuoteMDXWrapper,
           Figure: FigureMDXWrapper,
+          AlertBox,
           Link,
           Text,
         }}
