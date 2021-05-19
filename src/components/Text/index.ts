@@ -30,7 +30,7 @@ export type TextWeight =
   | 'Ultra';
 
 type TextProps = {
-  container?: 'div' | 'span';
+  container?: keyof HTMLElementTagNameMap;
   weight?: TextWeight;
   color?: TextColor;
   size?: string;

@@ -5,6 +5,26 @@
   word-wrap: break-word;
 }
 
-.negTopMargin {
-  margin-top: -2rem
+.spaceBefore_half {
+  margin-top: -1rem;
+}
+
+.spaceBefore_none {
+  margin-top: -2rem;
+}
+
+.spaceAfter_half {
+  margin-bottom: 1rem;
+}
+
+.spaceAfter_half + .container {
+  margin-top: 1rem;
+}
+
+.spaceAfter_none {
+  margin-bottom: 0;
+}
+
+.spaceAfter_none + .container {
+  margin-top: 0;
 }

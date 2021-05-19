@@ -25,7 +25,7 @@ const ListElement = ({ ordered }: { ordered: boolean }) => ({
 }: {
   children: ReactNode;
 }) => (
-  <P negTopMargin>
+  <P spaceBefore="none">
     {ordered && <ol>{children}</ol>}
     {!ordered && <ul>{children}</ul>}
   </P>

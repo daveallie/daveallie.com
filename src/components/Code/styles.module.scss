@@ -7,15 +7,23 @@
 
 .container.withFilename pre {
   margin-top: 0;
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
+}
+
+.tab {
+  position: relative;
+  left: 2rem;
+  max-width: calc(100% - 4rem);
+  display: inline-block;
+  color: $textAccent;
+  background-color: $codeFilenameBackground;
+  font-family: monospace;
+  padding: 0.3em 0.5rem;
+  border-top-left-radius: 0.3rem;
+  border-top-right-radius: 0.3rem;
 }
 
 .filename {
-  display: block;
-  background-color: $codeFilenameBackground;
-  font-family: monospace;
-  padding: 0.3em 0 0.3em 1.5em;
-  border-top-left-radius: 0.3rem;
-  border-top-right-radius: 0.3rem;
+  padding-left: 0.5rem;
+  white-space: normal;
+  word-break: break-word;
 }

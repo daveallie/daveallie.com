@@ -5977,6 +5977,11 @@ file-entry-cache@^6.0.1:
   dependencies:
     flat-cache "^3.0.4"
 
+file-icons-js@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/file-icons-js/-/file-icons-js-1.1.0.tgz#da5e0679a58ab661abf9ec6c2a47c5f14f638ab6"
+  integrity sha512-EwR5RJoNIp5Wnzc+AF1oyBYZhOqPuPm0QHzfCaeh5KJpLB5lWIsxswiAwj3m8lIj7ddBzYBJDDnIr6IVrRCy8Q==
+
 file-loader@^6.2.0:
   version "6.2.0"
   resolved "https://registry.yarnpkg.com/file-loader/-/file-loader-6.2.0.tgz#baef7cf8e1840df325e4390b4484879480eebe4d"

@@ -25,7 +25,7 @@ export default function BlogPostList({ data }: BlogPostListProps) {
   return (
     <Text container="div" className={styles.container}>
       {keys.map((year, yearI) => (
-        <ContentBlock negTopMargin={yearI === 0} key={year}>
+        <ContentBlock spaceBefore={yearI === 0 ? 'none' : 'normal'} key={year}>
           <Text
             container="div"
             weight={800}

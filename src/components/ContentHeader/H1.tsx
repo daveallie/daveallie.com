@@ -11,6 +11,7 @@ export default function H1({
 }) {
   return (
     <ContentHeaderContainer
+      container="h1"
       textColor="headingLight"
       textSize={size}
       textWeight={600}

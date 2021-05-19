@@ -3,6 +3,7 @@ import cn from 'classnames';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { githubGist } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import ContentBlock from '~/components/ContentBlock';
+import FileIcon from '~/components/FileIcon';
 import Text from '~/components/Text';
 import * as styles from './styles.module.scss';
 
@@ -23,7 +24,12 @@ export default function Code({
         <div
           className={cn(styles.container, { [styles.withFilename]: filename })}
         >
-          {filename && <div className={styles.filename}>{filename}</div>}
+          {filename && (
+            <div className={styles.tab}>
+              <FileIcon filename={filename} />
+              <span className={styles.filename}>{filename}</span>
+            </div>
+          )}
           <SyntaxHighlighter
             showLineNumbers={showLineNumbers}
             language={language}
