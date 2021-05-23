@@ -7,11 +7,11 @@
 
 .container.withFilename pre {
   margin-top: 0;
+  border-top-left-radius: 0;
 }
 
 .tab {
   position: relative;
-  left: 2rem;
   max-width: calc(100% - 4rem);
   display: inline-block;
   color: $textAccent;
