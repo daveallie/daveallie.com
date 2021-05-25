@@ -35,6 +35,7 @@ type TextProps = {
   color?: TextColor;
   size?: string;
   italic?: boolean;
+  align?: CSSProperties['textAlign'];
   style?: CSSProperties;
   className?: string;
   children: ReactNode;
@@ -46,6 +47,7 @@ export default function Text({
   color,
   size,
   italic,
+  align,
   style = {},
   className = '',
   children,
@@ -73,7 +75,11 @@ export default function Text({
     container,
     {
       className: classes,
-      style: { ...(size != null ? { fontSize: size } : {}), ...style },
+      style: {
+        ...(size != null ? { fontSize: size } : {}),
+        ...(align != null ? { textAlign: align } : {}),
+        ...style,
+      },
     },
     children
   );

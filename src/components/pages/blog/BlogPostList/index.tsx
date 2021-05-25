@@ -23,12 +23,13 @@ export default function BlogPostList({ data }: BlogPostListProps) {
   const keys = Object.keys(yearData).sort((a, b) => (a > b ? -1 : 1));
 
   return (
-    <Text container="div" className={styles.container}>
+    <Text container="div">
       {keys.map((year, yearI) => (
-        <ContentBlock spaceBefore={yearI === 0 ? 'none' : 'normal'} key={year}>
+        <ContentBlock width="wide" key={year}>
           <Text
             container="div"
             weight={800}
+            size="1.2rem"
             className={cn({ [styles.firstYearRow]: yearI === 0 })}
           >
             {year}
@@ -40,11 +41,20 @@ export default function BlogPostList({ data }: BlogPostListProps) {
                 [styles.firstPostRow]: postI === 0,
               })}
             >
-              <div className={styles.postDate}>{node.frontmatter.date}</div>
+              <Text
+                container="div"
+                className={styles.postDate}
+                color="accent"
+                size="1.1rem"
+              >
+                {node.frontmatter.date}
+              </Text>
               <div>
                 <Link href={`/${node.frontmatter.slug}`} gatsby>
-                  {node.frontmatter.title}
+                  <Text size="1.2rem">{node.frontmatter.title}</Text>
                 </Link>
+                <br />
+                <Text>{node.frontmatter.description}</Text>
               </div>
             </div>
           ))}

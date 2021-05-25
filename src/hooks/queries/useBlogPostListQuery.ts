@@ -4,6 +4,7 @@ export type BlogPostListQueryNode = {
   id: string;
   frontmatter: {
     title: string;
+    description: string;
     slug: string;
     date: string;
     year: string;
@@ -27,6 +28,7 @@ export default function useBlogPostListQuery(): BlogPostListQueryResult {
           id
           frontmatter {
             title
+            description
             slug
             date(formatString: "ll")
             year: date(formatString: "YYYY")

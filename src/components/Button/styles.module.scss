@@ -1,0 +1,24 @@
+@import "src/assets/styles/colors";
+
+.button {
+  background-color: $buttonLightBackground;
+  transition: background-color 0.2s;
+  border: none;
+  border-radius: 0.3rem;
+  color: $buttonLightText;
+  padding: 1rem;
+  cursor: pointer;
+
+  &:hover {
+    background-color: white;
+  }
+}
+
+.button.disabled {
+  cursor: not-allowed;
+  background-color: $disabled;
+
+  &:hover {
+    background-color: $disabled;
+  }
+}

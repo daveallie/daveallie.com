@@ -1,7 +1,3 @@
-.container {
-  margin-bottom: 6rem;
-}
-
 .firstYearRow {
   padding-top: 1rem;
 }
@@ -9,6 +5,11 @@
 .postRow {
   display: flex;
   margin-left: 2rem;
+  margin-bottom: 2rem;
+
+  @media(max-width: 870px) {
+    flex-direction: column;
+  }
 }
 
 .firstPostRow {
@@ -16,5 +17,11 @@
 }
 
 .postDate {
-  min-width: 7rem;
+  min-width: 8rem;
+  padding-right: 1rem;
+  text-align: right;
+
+  @media(max-width: 870px) {
+    text-align: left;
+  }
 }

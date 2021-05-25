@@ -1,6 +1,5 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import ContentBlock from '~/components/ContentBlock';
 import PageFooter from '~/components/PageFooter';
 import PageHeader from '~/components/PageHeader';
 import SEO from '~/components/SEO';
@@ -33,9 +32,7 @@ export default function BlogsByTag({ data, pageContext }: BlogsByTagProps) {
       <SEO title={`Tag: ${pageContext.tag}`} path={pageContext.tagPath} />
       <PageHeader title={`Tag: ${pageContext.tag}`} />
       <Text container="div" color="dark">
-        <ContentBlock>
-          <BlogPostList data={data.allMdx.nodes} />
-        </ContentBlock>
+        <BlogPostList data={data.allMdx.nodes} />
       </Text>
       <PageFooter fixed />
     </>
@@ -52,6 +49,7 @@ export const pageQuery = graphql`
         id
         frontmatter {
           title
+          description
           slug
           date(formatString: "ll")
           year: date(formatString: "YYYY")

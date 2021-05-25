@@ -17,6 +17,7 @@ import PageHeader from '~/components/PageHeader';
 import SEO from '~/components/SEO';
 import TagBadge from '~/components/TagBadge';
 import Text from '~/components/Text';
+import BlogSignupForm from '~/components/pages/blog/BlogSignupForm';
 import useAlternateBodyBackground from '~/hooks/useAlternateBodyBackground';
 import usePageTracking from '~/hooks/usePageTracking';
 
@@ -115,6 +116,8 @@ export default function BlogPost({ data: { mdx } }: BlogPostProps) {
           <MDXRenderer>{mdx.body}</MDXRenderer>
         </Text>
       </MDXProvider>
+      <HR />
+      <BlogSignupForm />
       <PageFooter />
     </>
   );
