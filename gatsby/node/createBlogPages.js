@@ -29,15 +29,25 @@ async function createBlogPages({ graphql, createPage }) {
 
   const blogPostTemplate = path.resolve(`src/templates/BlogPost/index.tsx`);
 
-  result.data.allMdx.nodes
-    .filter((node) => node.parent.sourceInstanceName === 'blog-posts')
-    .forEach((node) =>
-      createPage({
-        path: `/${node.frontmatter.slug}`,
-        component: blogPostTemplate,
-        context: { id: node.id },
-      })
-    );
+  const nodes = result.data.allMdx.nodes.filter(
+    (node) => node.parent.sourceInstanceName === 'blog-posts'
+  );
+
+  const slugs = nodes.map((node) => node.frontmatter.slug);
+  const duplicatedSlug = slugs.find(
+    (slug) => slugs.indexOf(slug) !== slugs.lastIndexOf(slug)
+  );
+  if (duplicatedSlug) {
+    throw `Duplicated slug: ${duplicatedSlug}`;
+  }
+
+  nodes.forEach((node) =>
+    createPage({
+      path: `/${node.frontmatter.slug}`,
+      component: blogPostTemplate,
+      context: { id: node.id },
+    })
+  );
 }
 
 module.exports = createBlogPages;
