@@ -34,7 +34,6 @@ const plugins = [
   },
   'gatsby-plugin-sharp',
   'gatsby-transformer-sharp',
-  'gatsby-remark-copy-linked-files',
   {
     resolve: 'gatsby-plugin-sass',
     options: {

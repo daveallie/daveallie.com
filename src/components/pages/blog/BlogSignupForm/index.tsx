@@ -3,6 +3,7 @@ import jsonp from 'jsonp';
 import Button from '~/components/Button';
 import HR from '~/components/HR';
 import Input from '~/components/Input';
+import Link from '~/components/Link';
 import Text from '~/components/Text';
 import * as styles from './styles.module.scss';
 
@@ -68,6 +69,14 @@ export default function BlogSignupForm() {
           <Text container="div" className={styles.details} size="1.1rem">
             I post infrequently, but if you'd like an email each time I publish
             a post, enter your email below. Unsubscribe anytime.
+          </Text>
+
+          <Text container="div" className={styles.details} size="0.9rem">
+            Alternatively, you can use the{' '}
+            <Link color="ultraLight" href="/rss.xml">
+              RSS feed
+            </Link>
+            .
           </Text>
 
           <HR width="wide" spaceAfter="half" spaceBefore="half" />

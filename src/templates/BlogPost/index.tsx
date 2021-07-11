@@ -40,6 +40,13 @@ type BlogPostQueryResult = {
     frontmatter: {
       title: string;
       description: string;
+      imageUrl?: {
+        childImageSharp: {
+          fluid: {
+            src: string;
+          };
+        };
+      };
       author: string;
       slug: string;
       date: string;
@@ -64,6 +71,7 @@ export default function BlogPost({ data: { mdx } }: BlogPostProps) {
         title={mdx.frontmatter.title}
         description={mdx.frontmatter.description}
         path={`/${mdx.frontmatter.slug}`}
+        imageUrl={mdx.frontmatter.imageUrl?.childImageSharp?.fluid?.src}
         meta={[
           {
             property: 'article:published_time',
@@ -132,6 +140,13 @@ export const pageQuery = graphql`
       frontmatter {
         title
         description
+        imageUrl {
+          childImageSharp {
+            fluid {
+              src
+            }
+          }
+        }
         author
         slug
         date(formatString: "ll")

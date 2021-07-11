@@ -12,6 +12,7 @@ type SEOProps = {
   keywords?: string[];
   title?: string;
   path?: string;
+  imageUrl?: string | null;
 };
 
 export default function SEO({
@@ -19,6 +20,7 @@ export default function SEO({
   meta,
   keywords,
   title,
+  imageUrl = null,
   path = '',
 }: SEOProps) {
   const data = useStaticQuery(graphql`
@@ -88,6 +90,20 @@ export default function SEO({
                 name: 'keywords',
                 content: keywords.join(', '),
               }
+            : []
+        )
+        .concat(
+          imageUrl
+            ? [
+                {
+                  name: 'twitter:image',
+                  content: `${data.site.siteMetadata.siteUrl}${imageUrl}`,
+                },
+                {
+                  name: 'og:image',
+                  content: `${data.site.siteMetadata.siteUrl}${imageUrl}`,
+                },
+              ]
             : []
         )
         .concat(meta || [])}
