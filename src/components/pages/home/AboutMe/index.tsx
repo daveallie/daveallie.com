@@ -50,7 +50,7 @@ export default function AboutMe() {
       </Text>
       <Text container="div">
         Connect with me on{' '}
-        <Link href="https://www.linkedin.com/in/dave-allie-851a05b3">
+        <Link href="https://www.linkedin.com/in/daveallie">
           LinkedIn <LinkedIn />
         </Link>
       </Text>
