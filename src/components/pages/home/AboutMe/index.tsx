@@ -23,11 +23,14 @@ export default function AboutMe() {
         <Text weight={500}>Daveloper</Text>.
       </Text>
       <Text className={styles.details} size="1.5rem">
-        I'm currently working at <Text weight={400}>Amazon</Text> as a{' '}
-        <Text weight={400}>Software Development Engineer</Text>.
+        I'm currently working at <Text weight={400}>Visibuild</Text> as{' '}
+        <Text weight={400}>Chief Technology Officer</Text>.
       </Text>
       <Text className={styles.details} size="1.2rem">
         I was previously working
+        <br />
+        at <Text weight={400}>Amazon</Text> as a{' '}
+        <Text weight={400}>Software Development Engineer</Text>,
         <br />
         at <Text weight={400}>Tanda</Text> as a{' '}
         <Text weight={400}>Software Development Engineer</Text> and{' '}
