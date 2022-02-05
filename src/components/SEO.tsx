@@ -47,6 +47,10 @@ export default function SEO({
       titleTemplate={title ? `%s | ${data.site.siteMetadata.title}` : ''}
       meta={[
         {
+          name: 'title',
+          content: title || data.site.siteMetadata.title,
+        },
+        {
           name: 'description',
           content: metaDescription,
         },
