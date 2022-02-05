@@ -26,6 +26,7 @@ const plugins = [
           resolve: 'gatsby-remark-images',
           options: {
             maxWidth: 1200,
+            disableBgImageOnAlpha: true,
           },
         },
         'gatsby-remark-copy-linked-files',
