@@ -5,13 +5,14 @@ async function createBlogPages({ graphql, createPage }) {
     query loadPagesQuery {
       allMdx${
         process.env.NODE_ENV === 'production'
-          ? '(filter: {frontmatter: {published: {eq: true}}})'
+          ? '(filter: { frontmatter: { published: { eq: true } } })'
           : ''
       } {
         nodes {
           id
           frontmatter {
             slug
+            unlisted
           }
           parent {
             ... on File {
@@ -43,7 +44,12 @@ async function createBlogPages({ graphql, createPage }) {
 
   nodes.forEach((node) =>
     createPage({
-      path: `/${node.frontmatter.slug}`,
+      path: [
+        process.env.NODE_ENV === 'projection' && node.frontmatter.unlisted
+          ? '/draft/'
+          : '/',
+        node.frontmatter.slug,
+      ].join(''),
       component: blogPostTemplate,
       context: { id: node.id },
     })

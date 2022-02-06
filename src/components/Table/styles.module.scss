@@ -1,0 +1,57 @@
+@import "src/assets/styles/colors";
+
+.table {
+  width: 100%;
+  margin: 0;
+  border-spacing: 0;
+
+  thead {
+    text-align: left;
+    color: $headingLight;
+
+    th {
+      background-color: $tableHeaderBackground;
+      border-right: 2px solid $tableHeaderBorder;
+      padding: 1rem 1rem;
+
+      &:first-child {
+        border-top-left-radius: 0.3rem;
+      }
+
+      &:last-child {
+        border-top-right-radius: 0.3rem;
+        border-right: none;
+      }
+    }
+  }
+
+  tbody {
+    td {
+      border-right: 2px solid $tableBodyBorder;
+      padding: 0.5rem 1.5rem;
+
+      &:last-child {
+        border-right: none;
+      }
+    }
+
+    tr {
+      &:nth-child(even) {
+        td {
+          background-color: white;
+        }
+      }
+
+      &:last-child {
+        td {
+          &:first-child {
+            border-bottom-left-radius: 0.3rem;
+          }
+          &:last-child {
+            border-bottom-right-radius: 0.3rem;
+          }
+        }
+      }
+    }
+  }
+}

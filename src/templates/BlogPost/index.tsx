@@ -15,6 +15,7 @@ import P from '~/components/P';
 import PageFooter from '~/components/PageFooter';
 import PageHeader from '~/components/PageHeader';
 import SEO from '~/components/SEO';
+import Table from '~/components/Table';
 import TagBadge from '~/components/TagBadge';
 import Text from '~/components/Text';
 import BlogSignupForm from '~/components/pages/blog/BlogSignupForm';
@@ -111,6 +112,7 @@ export default function BlogPost({ data: { mdx } }: BlogPostProps) {
           h3: H3,
           hr: HR,
           p: P,
+          table: Table,
           ul: ListElement({ ordered: false }),
           ol: ListElement({ ordered: true }),
           BlockQuote: BlockQuoteMDXWrapper,

@@ -8,6 +8,10 @@ const plugins = [
       policy: [
         {
           userAgent: '*',
+          disallow: ['/draft'],
+        },
+        {
+          userAgent: '*',
           ...(process.env.GATSBY_VERCEL_ENV === 'preview'
             ? { disallow: ['/'] }
             : { allow: '/' }),

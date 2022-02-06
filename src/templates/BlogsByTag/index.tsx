@@ -42,7 +42,13 @@ export default function BlogsByTag({ data, pageContext }: BlogsByTagProps) {
 export const pageQuery = graphql`
   query BlogsByTagQuery($tag: String) {
     allMdx(
-      filter: { frontmatter: { published: { eq: true }, tags: { eq: $tag } } }
+      filter: {
+        frontmatter: {
+          published: { eq: true }
+          unlisted: { ne: true }
+          tags: { eq: $tag }
+        }
+      }
       sort: { fields: frontmatter___date, order: DESC }
     ) {
       nodes {

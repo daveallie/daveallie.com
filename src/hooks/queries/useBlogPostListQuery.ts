@@ -21,7 +21,9 @@ export default function useBlogPostListQuery(): BlogPostListQueryResult {
   return useStaticQuery(graphql`
     query BlogPostListQuery {
       allMdx(
-        filter: { frontmatter: { published: { eq: true } } }
+        filter: {
+          frontmatter: { published: { eq: true }, unlisted: { ne: true } }
+        }
         sort: { fields: frontmatter___date, order: DESC }
       ) {
         nodes {

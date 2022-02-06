@@ -6,7 +6,7 @@ async function createBlogPages({ graphql, createPage }) {
     query loadTagsQuery {
       allMdx${
         process.env.NODE_ENV === 'production'
-          ? '(filter: {frontmatter: {published: {eq: true}}})'
+          ? '(filter: { frontmatter: { published: { eq: true }, unlisted: { ne: true } } })'
           : ''
       } {
         group(field: frontmatter___tags) {
