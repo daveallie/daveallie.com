@@ -20,7 +20,7 @@ export default function BlogIndexPage() {
 
   return (
     <>
-      <SEO />
+      <SEO mailerLite />
       <PageHeader title="Dave Allie" titleStandalone />
       <Text container="div" color="dark">
         <BlogPostList data={nodes} />

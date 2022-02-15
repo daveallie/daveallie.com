@@ -71,6 +71,7 @@ export default function BlogPost({ data: { mdx } }: BlogPostProps) {
       <SEO
         title={mdx.frontmatter.title}
         description={mdx.frontmatter.description}
+        mailerLite
         path={`/${mdx.frontmatter.slug}`}
         imageUrl={mdx.frontmatter.imageUrl?.childImageSharp?.fluid?.src}
         meta={[

@@ -29,7 +29,11 @@ export default function BlogsByTag({ data, pageContext }: BlogsByTagProps) {
 
   return (
     <>
-      <SEO title={`Tag: ${pageContext.tag}`} path={pageContext.tagPath} />
+      <SEO
+        title={`Tag: ${pageContext.tag}`}
+        path={pageContext.tagPath}
+        mailerLite
+      />
       <PageHeader title={`Tag: ${pageContext.tag}`} />
       <Text container="div" color="dark">
         <BlogPostList data={data.allMdx.nodes} />
