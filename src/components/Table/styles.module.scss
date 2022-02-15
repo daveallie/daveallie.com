@@ -1,5 +1,9 @@
 @import "src/assets/styles/colors";
 
+.tableContainer {
+  overflow-x: scroll;
+}
+
 .table {
   width: 100%;
   margin: 0;

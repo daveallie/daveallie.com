@@ -45,7 +45,7 @@ async function createBlogPages({ graphql, createPage }) {
   nodes.forEach((node) =>
     createPage({
       path: [
-        process.env.NODE_ENV === 'projection' && node.frontmatter.unlisted
+        process.env.NODE_ENV === 'production' && node.frontmatter.unlisted
           ? '/draft/'
           : '/',
         node.frontmatter.slug,

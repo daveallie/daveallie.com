@@ -14,7 +14,7 @@ export default function Table({
 }) {
   return (
     <ContentBlock spaceBefore={spaceBefore} spaceAfter={spaceAfter}>
-      <Text size="1.2rem" container="div">
+      <Text size="1.2rem" container="div" className={styles.tableContainer}>
         <table className={styles.table}>{children}</table>
       </Text>
     </ContentBlock>

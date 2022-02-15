@@ -17,15 +17,20 @@ const getIcon = (type: AlertType) => {
 
 export default function AlertBox({
   type,
+  zIndex = 0,
   children,
 }: {
   type: AlertType;
+  zIndex?: number;
   children: ReactNode;
 }) {
   return (
     <ContentBlock>
       <Text>
-        <div className={cn(styles.alertContainer, styles[type])}>
+        <div
+          className={cn(styles.alertContainer, styles[type])}
+          style={{ zIndex }}
+        >
           <div className={cn(styles.alertIcon, styles[type])}>
             <span className="material-icons">{getIcon(type)}</span>
           </div>

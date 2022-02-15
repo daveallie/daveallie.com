@@ -6,13 +6,21 @@ import * as styles from './styles.module.scss';
 type ButtonProps = {
   onClick: () => void;
   disabled?: boolean;
+  variant?: 'default' | 'thin';
   children: ReactNode;
 };
 
-export default function Button({ children, onClick, disabled }: ButtonProps) {
+export default function Button({
+  children,
+  onClick,
+  disabled,
+  variant = 'default',
+}: ButtonProps) {
   return (
     <button
-      className={cn(styles.button, { [styles.disabled]: disabled })}
+      className={cn(styles.button, styles[`variant_${variant}`], {
+        [styles.disabled]: disabled,
+      })}
       onClick={disabled ? noop : onClick}
     >
       {children}
