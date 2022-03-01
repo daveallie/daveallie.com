@@ -31,6 +31,7 @@ const plugins = [
           options: {
             maxWidth: 1200,
             disableBgImageOnAlpha: true,
+            backgroundColor: 'transparent',
           },
         },
         'gatsby-remark-copy-linked-files',
