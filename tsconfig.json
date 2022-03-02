@@ -23,8 +23,5 @@
       "~*": ["./src/*"]
     }
   },
-  "include": ["src/**/*", "api/**/*"],
-  "exclude": [
-    "node_modules",
-  ]
+  "include": ["src/**/*", "api/**/*"]
 }
