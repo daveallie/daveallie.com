@@ -13,8 +13,6 @@ export default function DeckNavigation({ children }: { children: ReactNode }) {
 
   const updatePath = useCallback(
     (newPath: string) => {
-      console.log(pathname);
-      console.log(newPath);
       if (pathname !== newPath) {
         navigate(newPath);
       }
