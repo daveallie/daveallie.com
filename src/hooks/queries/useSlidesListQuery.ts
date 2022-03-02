@@ -7,8 +7,6 @@ export type SlidesListQueryNode = {
   frontmatter: {
     title: string;
     slug: string;
-    date: string;
-    year: string;
   };
 };
 
@@ -33,8 +31,6 @@ export default function useSlidesListQuery(): SlidesListQueryResult {
           frontmatter {
             title
             slug
-            date(formatString: "ll")
-            year: date(formatString: "YYYY")
           }
         }
       }

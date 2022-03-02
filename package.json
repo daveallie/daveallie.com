@@ -9,7 +9,8 @@
     "build": "gatsby build",
     "clean": "rm -r public",
     "develop": "gatsby develop",
-    "lint": "yarn lint:prettier && yarn lint:stylelint",
+    "check-types": "tsc --noEmit",
+    "lint": "yarn lint:prettier && yarn lint:stylelint && yarn check-types",
     "lint:stylelint": "stylelint 'src/**/*.scss' --customSyntax postcss-scss",
     "lint:prettier": "prettier --write '{src,api,config,gatsby}/**/*.{ts,tsx,js,jsx,json,md}' '*.{ts,tsx,js,jsx,json,md}'",
     "prepare": "husky install"
@@ -44,8 +45,8 @@
     "jsonp": "^0.2.1",
     "lodash": "^4.17.21",
     "node-sass": "^5.0.0",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
     "react-helmet": "^6.1.0",
     "react-router-dom": "^6.2.2",
     "react-swipeable": "^6.2.0",
@@ -56,8 +57,8 @@
     "@trivago/prettier-plugin-sort-imports": "^3.2.0",
     "@types/jsonp": "^0.2.1",
     "@types/node": "^17.0.21",
-    "@types/react": "^17.0.39",
-    "@types/react-dom": "^17.0.11",
+    "@types/react": "17.0.2",
+    "@types/react-dom": "17.0.12",
     "@types/react-helmet": "^6.1.5",
     "@types/react-syntax-highlighter": "^13.5.2",
     "@vercel/node": "^1.13.0",
@@ -73,6 +74,7 @@
   },
   "lint-staged": {
     "*.scss": "yarn lint:stylelint",
-    "*.{ts,tsx,js,jsx,json,md}": "yarn lint:prettier"
+    "*.{ts,tsx,js,jsx,json,md}": "yarn lint:prettier",
+    "*.{ts,tsx}": "bash -c 'tsc --noEmit --pretty'"
   }
 }

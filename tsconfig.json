@@ -18,9 +18,13 @@
     "noUnusedParameters": true,
     "removeComments": false,
     "preserveConstEnums": true,
+    "skipLibCheck": true,
     "paths": {
       "~*": ["./src/*"]
     }
   },
-  "include": ["src/**/*", "api/**/*"]
+  "include": ["src/**/*", "api/**/*"],
+  "exclude": [
+    "node_modules",
+  ]
 }
