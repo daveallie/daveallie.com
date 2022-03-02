@@ -8,6 +8,7 @@ type LinkProps = {
   color?: 'light' | 'ultraLight' | 'normal';
   underline?: boolean;
   gatsby?: boolean;
+  newTab?: boolean;
   children: ReactNode;
 };
 
@@ -16,6 +17,7 @@ export default function Link({
   gatsby,
   underline = true,
   color = 'normal',
+  newTab = false,
   children,
 }: LinkProps) {
   const linkStyles = cn({
@@ -25,7 +27,7 @@ export default function Link({
     [styles.noUnderline]: !underline,
   });
 
-  if (gatsby) {
+  if (gatsby && !newTab) {
     return (
       <GatsbyLink to={href} className={linkStyles}>
         {children}
@@ -34,7 +36,11 @@ export default function Link({
   }
 
   return (
-    <a href={href} className={linkStyles}>
+    <a
+      href={href}
+      className={linkStyles}
+      target={newTab ? '_blank' : undefined}
+    >
       {children}
     </a>
   );

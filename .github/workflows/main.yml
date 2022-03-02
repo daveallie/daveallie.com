@@ -24,9 +24,28 @@ jobs:
 
       - name: Checkout
         uses: actions/checkout@v2
+
+      - name: Clone blog submodule
+        uses: actions/checkout@v2
         with:
-          ssh-key: ${{ secrets.SUBMODULE_DEPLOY_KEY }}
-          submodules: 'recursive'
+          repository: daveallie/blog
+          path: blog
+          ssh-key: ${{ secrets.BLOG_SUBMODULE_DEPLOY_KEY }}
+          persist-credentials: true
+
+      - name: checkout blog submodule
+        run: git submodule update --init blog
+
+      - name: Clone slides submodule
+        uses: actions/checkout@v2
+        with:
+          repository: daveallie/slides
+          path: slides
+          ssh-key: ${{ secrets.SLIDES_SUBMODULE_DEPLOY_KEY }}
+          persist-credentials: true
+
+      - name: checkout slides submodule
+        run: git submodule update --init slides
 
       - name: Vercel Deploy - Home
         uses: amondnet/vercel-action@v20.0.0
@@ -50,9 +69,28 @@ jobs:
 
       - name: Checkout
         uses: actions/checkout@v2
+
+      - name: Clone blog submodule
+        uses: actions/checkout@v2
         with:
-          ssh-key: ${{ secrets.SUBMODULE_DEPLOY_KEY }}
-          submodules: 'recursive'
+          repository: daveallie/blog
+          path: blog
+          ssh-key: ${{ secrets.BLOG_SUBMODULE_DEPLOY_KEY }}
+          persist-credentials: true
+
+      - name: checkout blog submodule
+        run: git submodule update --init blog
+
+      - name: Clone slides submodule
+        uses: actions/checkout@v2
+        with:
+          repository: daveallie/slides
+          path: slides
+          ssh-key: ${{ secrets.SLIDES_SUBMODULE_DEPLOY_KEY }}
+          persist-credentials: true
+
+      - name: checkout slides submodule
+        run: git submodule update --init slides
 
       - name: Vercel Deploy - Blog
         uses: amondnet/vercel-action@v20.0.0
@@ -60,6 +98,51 @@ jobs:
           vercel-token: ${{ secrets.VERCEL_DEPLOY_TOKEN }}
           github-comment: false
           vercel-project-id: ${{ secrets.VERCEL_BLOG_PROJECT_ID }}
+          vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
+          vercel-args: ${{ env.VERCEL_ARGS }}
+
+  deploy-slides:
+    env:
+      VERCEL_ARGS: ${{ github.event.inputs.vercelArgs }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set VERCEL_ARGS environment variable
+        if: env.VERCEL_ARGS == null
+        run: echo "VERCEL_ARGS=--prod" >> $GITHUB_ENV
+      - name: Test VERCEL_ARGS environment variable
+        run: echo "VERCEL_ARGS=$VERCEL_ARGS"
+
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Clone blog submodule
+        uses: actions/checkout@v2
+        with:
+          repository: daveallie/blog
+          path: blog
+          ssh-key: ${{ secrets.BLOG_SUBMODULE_DEPLOY_KEY }}
+          persist-credentials: true
+
+      - name: checkout blog submodule
+        run: git submodule update --init blog
+
+      - name: Clone slides submodule
+        uses: actions/checkout@v2
+        with:
+          repository: daveallie/slides
+          path: slides
+          ssh-key: ${{ secrets.SLIDES_SUBMODULE_DEPLOY_KEY }}
+          persist-credentials: true
+
+      - name: checkout slides submodule
+        run: git submodule update --init slides
+
+      - name: Vercel Deploy - Slides
+        uses: amondnet/vercel-action@v20.0.0
+        with:
+          vercel-token: ${{ secrets.VERCEL_DEPLOY_TOKEN }}
+          github-comment: false
+          vercel-project-id: ${{ secrets.VERCEL_SLIDES_PROJECT_ID }}
           vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
           vercel-args: ${{ env.VERCEL_ARGS }}
 
@@ -76,9 +159,28 @@ jobs:
 
       - name: Checkout
         uses: actions/checkout@v2
+
+      - name: Clone blog submodule
+        uses: actions/checkout@v2
         with:
-          ssh-key: ${{ secrets.SUBMODULE_DEPLOY_KEY }}
-          submodules: 'recursive'
+          repository: daveallie/blog
+          path: blog
+          ssh-key: ${{ secrets.BLOG_SUBMODULE_DEPLOY_KEY }}
+          persist-credentials: true
+
+      - name: checkout blog submodule
+        run: git submodule update --init blog
+
+      - name: Clone slides submodule
+        uses: actions/checkout@v2
+        with:
+          repository: daveallie/slides
+          path: slides
+          ssh-key: ${{ secrets.SLIDES_SUBMODULE_DEPLOY_KEY }}
+          persist-credentials: true
+
+      - name: checkout slides submodule
+        run: git submodule update --init slides
 
       - name: Vercel Deploy - Meet
         uses: amondnet/vercel-action@v20.0.0

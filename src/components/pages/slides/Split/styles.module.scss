@@ -1,0 +1,73 @@
+.split_row, .split_column {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.split_row {
+  flex-direction: row;
+}
+
+.split_column {
+  flex-direction: column;
+}
+
+.splitChild, .splitChild_noGrow {
+  position: relative;
+  background-color: var(--bg-color);
+}
+
+.splitChild {
+  flex: 1;
+}
+
+.splitChild_noGrow {
+  flex: 0;
+}
+
+.overflow_rowLeft, .overflow_rowMiddle, .overflow_rowRight, .overflow_columnTop, .overflow_columnMiddle, .overflow_columnBottom {
+  &::before {
+    content: " ";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: var(--bg-overflow-z-index);
+    background-color: var(--bg-color);
+  }
+}
+
+.overflow_rowLeft::before {
+  top: -5000px;
+  bottom: -5000px;
+  left: -5000px;
+}
+
+.overflow_rowMiddle::before {
+  top: -5000px;
+  bottom: -5000px;
+}
+
+.overflow_rowRight::before {
+  top: -5000px;
+  bottom: -5000px;
+  right: -5000px;
+}
+
+.overflow_columnTop::before {
+  top: -5000px;
+  left: -5000px;
+  right: -5000px;
+}
+
+.overflow_columnMiddle::before {
+  left: -5000px;
+  right: -5000px;
+}
+
+.overflow_columnBottom::before {
+  bottom: -5000px;
+  left: -5000px;
+  right: -5000px;
+}

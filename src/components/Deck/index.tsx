@@ -12,6 +12,9 @@ import { Ol, Ul } from '~/components/List';
 import P from '~/components/P';
 import Table from '~/components/Table';
 import Text from '~/components/Text';
+import Split from '~/components/pages/slides/Split';
+import Step from '~/components/pages/slides/Step';
+import TitleSlide from '~/components/pages/slides/TitleSlide';
 import DeckWrapper from './DeckWrapper';
 import { SlideConfig } from './Slide';
 
@@ -29,6 +32,9 @@ export default function Deck({
       components={{
         wrapper: DeckWrapper,
         SlideConfig,
+        Split,
+        Step,
+        TitleSlide,
         a: Link,
         blockquote: BlockQuoteMDXWrapper,
         code: CodeMDXWrapper,

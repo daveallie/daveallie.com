@@ -1,0 +1,64 @@
+.sparkleContainerContainerC {
+  position: absolute;
+  pointer-events: none;
+  animation: moveY 400ms ease-in-out alternate infinite;
+  bottom: 0;
+}
+
+.sparkleContainerContainer {
+  animation: moveX 800ms linear forwards;
+}
+
+.sparkleContainer {
+  width: 100%;
+  height: 100%;
+  transform-origin: center;
+  animation: growShrink 800ms ease-in-out forwards;
+}
+
+.sparkle {
+  transform-origin: center;
+  animation: rotate 800ms linear forwards;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(var(--rotation));
+  }
+}
+
+@keyframes growShrink {
+  0% {
+    transform: scale(0);
+  }
+  35% {
+    transform: scale(1);
+  }
+  65% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+
+@keyframes moveX {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(calc(var(--x-distance) - 50%));
+  }
+}
+
+@keyframes moveY {
+  from {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(var(--y-distance));
+  }
+}

@@ -14,7 +14,11 @@ export default function RSS({
 
   return (
     <div className={styles.container}>
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 8">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 8 8"
+        style={{ width: '100%', height: '100%' }}
+      >
         <title>RSS feed icon</title>
 
         <rect className={styles.noStroke} width="8" height="8" rx="1.5" />

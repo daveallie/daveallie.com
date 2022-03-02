@@ -21,11 +21,8 @@ export default function HomeHero() {
     }
   }, []);
 
-  const {
-    firstNameStyles,
-    firstNameLetterStyles,
-    lastNameStyles,
-  } = getNameStyles(animationState, scrollY);
+  const { firstNameStyles, firstNameLetterStyles, lastNameStyles } =
+    getNameStyles(animationState, scrollY);
   const animatingStyle = {
     [styles.preAnimation]: animationState === AnimationState.notStarted,
     [styles.animation]: animationState === AnimationState.started,
