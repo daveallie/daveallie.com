@@ -9,13 +9,20 @@
   overflow: hidden;
 }
 
-.slideWrapper_title {
-  background-color: $heroBackground;
+.slideWrapper {
+  background-color: black;
 }
 
-.slide_title {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+.slide {
+  background-color: $bodyBackground;
+}
+
+.slideWrapper_title {
+  .slide {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: $heroBackground;
+  }
 }

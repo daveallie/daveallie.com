@@ -7,6 +7,7 @@ import React, {
   useEffect,
   useState,
 } from 'react';
+import cn from 'classnames';
 import * as styles from './styles.module.scss';
 
 type SlideConfigProps = {
@@ -96,7 +97,9 @@ export default function Slide({ children }: SlideProps) {
   return (
     <div
       ref={setContainer}
-      className={styles[`slideWrapper_${config.variant}`]}
+      className={cn(styles.slideWrapper, {
+        [styles[`slideWrapper_${config.variant}`]]: config.variant,
+      })}
       style={{
         position: 'absolute',
         top: 0,
@@ -107,7 +110,7 @@ export default function Slide({ children }: SlideProps) {
         background: config.bgColor,
       }}
     >
-      <div className={styles[`slide_${config.variant}`]} style={slideStyles}>
+      <div className={styles.slide} style={slideStyles}>
         {childrenArr}
       </div>
     </div>
