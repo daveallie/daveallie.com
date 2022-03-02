@@ -1,36 +1,40 @@
+import { ReactNode } from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 
-export type BlogPostListQueryNode = {
+export type SlidesListQueryNode = {
   id: string;
+  body: string & ReactNode;
   frontmatter: {
     title: string;
-    description: string;
     slug: string;
+    date: string;
+    year: string;
   };
 };
 
-export type BlogPostListQueryResult = {
-  allMdx: {
-    nodes: BlogPostListQueryNode[];
+export type SlidesListQueryResult = {
+  allDeck: {
+    nodes: SlidesListQueryNode[];
   };
 };
 
-export default function useBlogPostListQuery(): BlogPostListQueryResult {
+export default function useSlidesListQuery(): SlidesListQueryResult {
   return useStaticQuery(graphql`
-    query BlogPostListQuery {
-      allMdx(
+    query SlidesListQuery {
+      allDeck(
         filter: {
           frontmatter: { published: { eq: true }, unlisted: { ne: true } }
-          fields: { source: { eq: "blog" } }
         }
         sort: { fields: frontmatter___date, order: DESC }
       ) {
         nodes {
           id
+          body
           frontmatter {
             title
-            description
             slug
+            date(formatString: "ll")
+            year: date(formatString: "YYYY")
           }
         }
       }

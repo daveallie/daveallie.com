@@ -1,13 +1,17 @@
 const path = require('path');
 
 async function createBlogPages({ graphql, createPage }) {
+  const blogPostTemplate = path.resolve(`src/templates/BlogPost/index.tsx`);
+
   const result = await graphql(`
     query loadPagesQuery {
-      allMdx${
-        process.env.NODE_ENV === 'production'
-          ? '(filter: { frontmatter: { published: { eq: true } } })'
-          : ''
-      } {
+      allMdx(
+        filter: { ${[
+          'fields: { source: { eq: "blog" } }',
+          ...(process.env.NODE_ENV === 'production'
+            ? ['frontmatter: { published: { eq: true } }']
+            : []),
+        ].join(', ')} }) {
         nodes {
           id
           frontmatter {
@@ -28,12 +32,7 @@ async function createBlogPages({ graphql, createPage }) {
     throw result.errors;
   }
 
-  const blogPostTemplate = path.resolve(`src/templates/BlogPost/index.tsx`);
-
-  const nodes = result.data.allMdx.nodes.filter(
-    (node) => node.parent.sourceInstanceName === 'blog-posts'
-  );
-
+  const { nodes } = result.data.allMdx;
   const slugs = nodes.map((node) => node.frontmatter.slug);
   const duplicatedSlug = slugs.find(
     (slug) => slugs.indexOf(slug) !== slugs.lastIndexOf(slug)

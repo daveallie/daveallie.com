@@ -11,6 +11,7 @@ import { FigureMDXWrapper } from '~/components/Figure';
 import HR from '~/components/HR';
 import InlineCode from '~/components/InlineCode';
 import Link from '~/components/Link';
+import { Ol, Ul } from '~/components/List';
 import P from '~/components/P';
 import PageFooter from '~/components/PageFooter';
 import PageHeader from '~/components/PageHeader';
@@ -21,17 +22,6 @@ import Text from '~/components/Text';
 import BlogSignupForm from '~/components/pages/blog/BlogSignupForm';
 import useAlternateBodyBackground from '~/hooks/useAlternateBodyBackground';
 import usePageTracking from '~/hooks/usePageTracking';
-
-const ListElement = ({ ordered }: { ordered: boolean }) => ({
-  children,
-}: {
-  children: ReactNode;
-}) => (
-  <P spaceBefore="none">
-    {ordered && <ol>{children}</ol>}
-    {!ordered && <ul>{children}</ul>}
-  </P>
-);
 
 type BlogPostQueryResult = {
   mdx: {
@@ -114,8 +104,8 @@ export default function BlogPost({ data: { mdx } }: BlogPostProps) {
           hr: HR,
           p: P,
           table: Table,
-          ul: ListElement({ ordered: false }),
-          ol: ListElement({ ordered: true }),
+          ul: Ul,
+          ol: Ol,
           BlockQuote: BlockQuoteMDXWrapper,
           Figure: FigureMDXWrapper,
           AlertBox,

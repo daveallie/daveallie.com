@@ -5,6 +5,9 @@ const SUBSITES = {
   blog: {
     url: 'https://blog.daveallie.com',
   },
+  slides: {
+    url: 'https://slides.daveallie.com',
+  },
   meet: {
     url: 'https://meet.daveallie.com',
   },

@@ -1,0 +1,21 @@
+@import "src/assets/styles/colors";
+
+.slideTouchTarget {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  overflow: hidden;
+}
+
+.slideWrapper_title {
+  background-color: $heroBackground;
+}
+
+.slide_title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}

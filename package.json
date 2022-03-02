@@ -10,7 +10,7 @@
     "clean": "rm -r public",
     "develop": "gatsby develop",
     "lint": "yarn lint:prettier && yarn lint:stylelint",
-    "lint:stylelint": "stylelint 'src/**/*.scss' --syntax scss",
+    "lint:stylelint": "stylelint 'src/**/*.scss' --customSyntax postcss-scss",
     "lint:prettier": "prettier --write '{src,api,config,gatsby}/**/*.{ts,tsx,js,jsx,json,md}' '*.{ts,tsx,js,jsx,json,md}'",
     "prepare": "husky install"
   },
@@ -30,6 +30,7 @@
     "gatsby-plugin-google-gtag": "^4.8.0",
     "gatsby-plugin-manifest": "^4.8.1",
     "gatsby-plugin-mdx": "^3.8.1",
+    "gatsby-plugin-mdx-source-name": "^1.0.1",
     "gatsby-plugin-react-helmet": "^5.8.0",
     "gatsby-plugin-robots-txt": "^1.7.0",
     "gatsby-plugin-sass": "^5.8.0",
@@ -46,6 +47,8 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-helmet": "^6.1.0",
+    "react-router-dom": "^6.2.2",
+    "react-swipeable": "^6.2.0",
     "react-syntax-highlighter": "^15.4.5",
     "sass": "^1.49.9"
   },
@@ -62,6 +65,7 @@
     "classnames": "^2.3.1",
     "husky": "^7.0.4",
     "lint-staged": ">=12.3.4",
+    "postcss-scss": "^4.0.3",
     "prettier": "^2.5.1",
     "stylelint": "14.5.3",
     "stylelint-config-recommended": "^7.0.0",

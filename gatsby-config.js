@@ -12,14 +12,15 @@ const plugins = [
         },
         {
           userAgent: '*',
-          ...(process.env.GATSBY_VERCEL_ENV === 'preview'
+          ...(process.env.GATSBY_VERCEL_ENV === 'preview' ||
+          process.env.SUBSITE === 'slides'
             ? { disallow: ['/'] }
             : { allow: '/' }),
         },
       ],
     },
   },
-  'gatsby-plugin-sitemap',
+  (SUBSITE === 'blog' || SUBSITE === 'home') && 'gatsby-plugin-sitemap',
   'gatsby-plugin-react-helmet',
   'gatsby-plugin-typescript',
   {
@@ -75,11 +76,19 @@ const plugins = [
       fonts: ['material icons'],
     },
   },
+  'gatsby-plugin-mdx-source-name',
   {
     resolve: 'gatsby-source-filesystem',
     options: {
-      name: 'blog-posts',
+      name: 'blog',
       path: `${__dirname}/blog/posts/`,
+    },
+  },
+  {
+    resolve: 'gatsby-source-filesystem',
+    options: {
+      name: 'slides',
+      path: `${__dirname}/slides/`,
     },
   },
   {
@@ -94,11 +103,8 @@ const plugins = [
       trackingIds: ['G-VC4JCPT7M2'],
     },
   },
+  SUBSITE === 'blog' && pluginFeedConfig,
 ];
-
-if (SUBSITE === 'blog') {
-  plugins.push(pluginFeedConfig);
-}
 
 module.exports = {
   siteMetadata: {
@@ -107,5 +113,5 @@ module.exports = {
     author: '@daveallie',
     siteUrl: SUBSITE_URL,
   },
-  plugins,
+  plugins: plugins.filter(Boolean),
 };

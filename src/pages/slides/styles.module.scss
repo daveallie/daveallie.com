@@ -1,0 +1,21 @@
+.deckGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(auto, 500px));
+  grid-gap: 2rem;
+  justify-content: center;
+  margin: 4rem 2rem;
+
+  @media (max-width: 800px) {
+    grid-template-columns: repeat(1, minmax(auto, 500px));
+  }
+}
+
+.deckContainer {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  user-select: none;
+}

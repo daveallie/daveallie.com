@@ -21,9 +21,10 @@ export default function Input({
   onChange,
   onEnter,
 }: InputProps) {
-  const innerOnChange = useCallback((event) => onChange(event.target.value), [
-    onChange,
-  ]);
+  const innerOnChange = useCallback(
+    (event) => onChange(event.target.value),
+    [onChange]
+  );
 
   const onKeyDown = useCallback(
     (event) => {
