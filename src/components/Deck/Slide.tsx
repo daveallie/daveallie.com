@@ -8,6 +8,8 @@ import React, {
   useState,
 } from 'react';
 import cn from 'classnames';
+import Link from '~/components/Link';
+import Logo from '~/components/Logo';
 import * as styles from './styles.module.scss';
 
 type SlideConfigProps = {
@@ -112,6 +114,15 @@ export default function Slide({ children }: SlideProps) {
     >
       <div className={styles.slide} style={slideStyles}>
         {childrenArr}
+        <Link href={'https://daveallie.com'} newTab>
+          <div
+            className={cn(styles.logoContainer, {
+              [styles.logoContainerTitle]: config.variant === 'title',
+            })}
+          >
+            <Logo />
+          </div>
+        </Link>
       </div>
     </div>
   );
