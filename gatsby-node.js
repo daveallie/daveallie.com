@@ -1,5 +1,6 @@
 const path = require('path');
 const createBlogPages = require('./gatsby/node/createBlogPages');
+const createTimeToReadNodeField = require('./gatsby/node/createTimeToReadNodeField');
 const createDeckNode = require('./gatsby/node/createDeckNode');
 const createSlidesPages = require('./gatsby/node/createSlidesPages');
 const createTagPages = require('./gatsby/node/createTagPages');
@@ -47,8 +48,9 @@ exports.onCreateNode = ({
   createNodeId,
   createContentDigest,
 }) => {
-  const { createNode, createParentChildLink } = actions;
+  const { createNode, createNodeField, createParentChildLink } = actions;
 
+  createTimeToReadNodeField(node, { createNodeField });
   if (SUBSITE === 'slides') {
     createDeckNode(node, {
       getNode,

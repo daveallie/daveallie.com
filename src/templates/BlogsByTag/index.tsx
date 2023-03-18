@@ -53,7 +53,7 @@ export const pageQuery = graphql`
           tags: { eq: $tag }
         }
       }
-      sort: { fields: frontmatter___date, order: DESC }
+      sort: { frontmatter: { date: DESC } }
     ) {
       nodes {
         id

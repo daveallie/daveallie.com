@@ -29,9 +29,10 @@ type SlideshowQueryResult = {
 
 type SlideshowProps = {
   data: SlideshowQueryResult;
+  children: ReactNode;
 };
 
-export default function Slides({ data: { deck } }: SlideshowProps) {
+export default function Slides({ data: { deck }, children }: SlideshowProps) {
   usePageTracking();
 
   return (
@@ -42,7 +43,7 @@ export default function Slides({ data: { deck } }: SlideshowProps) {
         imageUrl={deck.frontmatter.imageUrl?.childImageSharp?.fluid?.src}
       />
       <SSRGate clientOnly>
-        <Deck slug={deck.frontmatter.slug} body={deck.body} />
+        <Deck>{children}</Deck>
       </SSRGate>
     </>
   );
@@ -52,7 +53,6 @@ export const pageQuery = graphql`
   query DeckQuery($id: String) {
     deck(id: { eq: $id }) {
       id
-      body
       frontmatter {
         title
         imageUrl {

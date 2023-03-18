@@ -1,6 +1,5 @@
 import React, { ReactNode } from 'react';
 import { MDXProvider } from '@mdx-js/react';
-import { MDXRenderer } from 'gatsby-plugin-mdx';
 import AlertBox from '~/components/AlertBox';
 import { BlockQuoteMDXWrapper } from '~/components/BlockQuote';
 import { CodeMDXWrapper } from '~/components/Code';
@@ -18,45 +17,35 @@ import TitleSlide from '~/components/pages/slides/TitleSlide';
 import DeckWrapper from './DeckWrapper';
 import { SlideConfig } from './Slide';
 
-export default function Deck({
-  slug,
-  body,
-  navDisabled,
-}: {
-  slug: string;
-  body: string & ReactNode;
-  navDisabled?: boolean;
-}) {
+const components = {
+  wrapper: DeckWrapper,
+  SlideConfig,
+  Split,
+  Step,
+  TitleSlide,
+  a: Link,
+  blockquote: BlockQuoteMDXWrapper,
+  code: CodeMDXWrapper,
+  inlineCode: InlineCode,
+  h1: H1,
+  h2: H2,
+  h3: H3,
+  p: P,
+  table: Table,
+  ul: Ul,
+  ol: Ol,
+  BlockQuote: BlockQuoteMDXWrapper,
+  Figure: FigureMDXWrapper,
+  AlertBox,
+  Link,
+  Text,
+};
+
+export default function Deck({ children }: { children: ReactNode }) {
   return (
-    <MDXProvider
-      components={{
-        wrapper: DeckWrapper,
-        SlideConfig,
-        Split,
-        Step,
-        TitleSlide,
-        a: Link,
-        blockquote: BlockQuoteMDXWrapper,
-        code: CodeMDXWrapper,
-        inlineCode: InlineCode,
-        h1: H1,
-        h2: H2,
-        h3: H3,
-        p: P,
-        table: Table,
-        ul: Ul,
-        ol: Ol,
-        BlockQuote: BlockQuoteMDXWrapper,
-        Figure: FigureMDXWrapper,
-        AlertBox,
-        Link,
-        Text,
-      }}
-    >
+    <MDXProvider components={components}>
       <Text container="div" color="dark">
-        <MDXRenderer navDisabled={navDisabled} slug={slug}>
-          {body}
-        </MDXRenderer>
+        {children}
       </Text>
     </MDXProvider>
   );

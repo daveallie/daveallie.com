@@ -1,7 +1,6 @@
 import React, { ReactNode } from 'react';
 import { MDXProvider } from '@mdx-js/react';
 import { graphql } from 'gatsby';
-import { MDXRenderer } from 'gatsby-plugin-mdx';
 import AlertBox from '~/components/AlertBox';
 import { BlockQuoteMDXWrapper } from '~/components/BlockQuote';
 import { CodeMDXWrapper } from '~/components/Code';
@@ -23,11 +22,34 @@ import BlogSignupForm from '~/components/pages/blog/BlogSignupForm';
 import useAlternateBodyBackground from '~/hooks/useAlternateBodyBackground';
 import usePageTracking from '~/hooks/usePageTracking';
 
+const components = {
+  a: Link,
+  blockquote: BlockQuoteMDXWrapper,
+  code: CodeMDXWrapper,
+  inlineCode: InlineCode,
+  h1: H1,
+  h2: H2,
+  h3: H3,
+  hr: HR,
+  p: P,
+  table: Table,
+  ul: Ul,
+  ol: Ol,
+  BlockQuote: BlockQuoteMDXWrapper,
+  Figure: FigureMDXWrapper,
+  AlertBox,
+  Link,
+  Text,
+};
+
 type BlogPostQueryResult = {
   mdx: {
     id: string;
-    body: string & ReactNode;
-    timeToRead: number;
+    fields: {
+      timeToRead: {
+        minutes: number;
+      };
+    };
     frontmatter: {
       title: string;
       description: string;
@@ -50,11 +72,14 @@ type BlogPostQueryResult = {
 
 type BlogPostProps = {
   data: BlogPostQueryResult;
+  children: ReactNode;
 };
 
-export default function BlogPost({ data: { mdx } }: BlogPostProps) {
+export default function BlogPost({ data: { mdx }, children }: BlogPostProps) {
   useAlternateBodyBackground('Offwhite');
   usePageTracking();
+
+  const minRead = Math.round(mdx.fields.timeToRead.minutes);
 
   return (
     <>
@@ -84,7 +109,7 @@ export default function BlogPost({ data: { mdx } }: BlogPostProps) {
         <Text size="0.9rem" weight={300} color="accent" container="div">
           By {mdx.frontmatter.author}
           <br />
-          Published {mdx.frontmatter.date} • {mdx.timeToRead} min read
+          Published {mdx.frontmatter.date} • {minRead} min read
         </Text>
         <Text container="div">
           {mdx.frontmatter.tags.map((tag) => (
@@ -92,29 +117,9 @@ export default function BlogPost({ data: { mdx } }: BlogPostProps) {
           ))}
         </Text>
       </ContentBlock>
-      <MDXProvider
-        components={{
-          a: Link,
-          blockquote: BlockQuoteMDXWrapper,
-          code: CodeMDXWrapper,
-          inlineCode: InlineCode,
-          h1: H1,
-          h2: H2,
-          h3: H3,
-          hr: HR,
-          p: P,
-          table: Table,
-          ul: Ul,
-          ol: Ol,
-          BlockQuote: BlockQuoteMDXWrapper,
-          Figure: FigureMDXWrapper,
-          AlertBox,
-          Link,
-          Text,
-        }}
-      >
+      <MDXProvider components={components}>
         <Text container="div" color="dark">
-          <MDXRenderer>{mdx.body}</MDXRenderer>
+          {children}
         </Text>
       </MDXProvider>
       <HR />
@@ -129,7 +134,11 @@ export const pageQuery = graphql`
     mdx(id: { eq: $id }) {
       id
       body
-      timeToRead
+      fields {
+        timeToRead {
+          minutes
+        }
+      }
       frontmatter {
         title
         description

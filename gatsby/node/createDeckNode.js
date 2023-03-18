@@ -13,7 +13,7 @@ function createDeckNode(
   const fileNode = getNode(node.parent);
   const source = fileNode.sourceInstanceName;
 
-  if (node.internal.type !== `Mdx` || source !== 'slides') return;
+  if (source !== 'slides') return;
 
   const id = createNodeId(`${node.id} >>> Deck`);
 

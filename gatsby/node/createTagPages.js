@@ -9,7 +9,7 @@ async function createBlogPages({ graphql, createPage }) {
           ? '(filter: { frontmatter: { published: { eq: true }, unlisted: { ne: true } } })'
           : ''
       } {
-        group(field: frontmatter___tags) {
+        group(field: {frontmatter: {tags: SELECT}}) {
           tag: fieldValue
           totalCount
         }
