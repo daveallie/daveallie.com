@@ -76,5 +76,5 @@
     "*.{ts,tsx,js,jsx,json,md}": "yarn lint:prettier",
     "*.{ts,tsx}": "bash -c 'tsc --noEmit --pretty'"
   },
-  "packageManager": "yarn@3.5.0"
+  "packageManager": "yarn@3.6.2"
 }
