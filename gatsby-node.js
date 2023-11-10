@@ -98,6 +98,6 @@ exports.createSchemaCustomization = ({ actions, schema }) => {
         },
       },
       interfaces: ['Node'],
-    })
+    }),
   );
 };

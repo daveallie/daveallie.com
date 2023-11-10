@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react';
+import React from 'react';
 import { MDXProvider } from '@mdx-js/react';
 import { graphql } from 'gatsby';
 import AlertBox from '~/components/AlertBox';
@@ -42,40 +42,43 @@ const components = {
   Text,
 };
 
-type BlogPostQueryResult = {
-  mdx: {
-    id: string;
-    fields: {
-      timeToRead: {
-        minutes: number;
-      };
-    };
-    frontmatter: {
-      title: string;
-      description: string;
-      imageUrl?: {
-        childImageSharp: {
-          fluid: {
-            src: string;
-          };
-        };
-      };
-      author: string;
-      slug: string;
-      date: string;
-      datestamp: string;
-      updatestamp: string;
-      tags: string[];
-    };
-  };
-};
+// There are currently issues with including types in this file
 
-type BlogPostProps = {
-  data: BlogPostQueryResult;
-  children: ReactNode;
-};
+// type BlogPostQueryResult = {
+//   mdx: {
+//     id: string;
+//     fields: {
+//       timeToRead: {
+//         minutes: number;
+//       };
+//     };
+//     frontmatter: {
+//       title: string;
+//       description: string;
+//       imageUrl?: {
+//         childImageSharp: {
+//           fluid: {
+//             src: string;
+//           };
+//         };
+//       };
+//       author: string;
+//       slug: string;
+//       date: string;
+//       datestamp: string;
+//       updatestamp: string;
+//       tags: string[];
+//     };
+//   };
+// };
+//
+// type BlogPostProps = {
+//   data: BlogPostQueryResult;
+//   children: ReactNode;
+// };
 
-export default function BlogPost({ data: { mdx }, children }: BlogPostProps) {
+// @ts-ignore
+export default function BlogPost({ data: { mdx }, children }) {
   useAlternateBodyBackground('Offwhite');
   usePageTracking();
 
@@ -112,11 +115,13 @@ export default function BlogPost({ data: { mdx }, children }: BlogPostProps) {
           Published {mdx.frontmatter.date} • {minRead} min read
         </Text>
         <Text container="div">
+          {/* @ts-ignore */}
           {mdx.frontmatter.tags.map((tag) => (
             <TagBadge key={tag} tag={tag} />
           ))}
         </Text>
       </ContentBlock>
+      {/* @ts-ignore */}
       <MDXProvider components={components}>
         <Text container="div" color="dark">
           {children}
@@ -133,7 +138,6 @@ export const pageQuery = graphql`
   query BlogPostQuery($id: String) {
     mdx(id: { eq: $id }) {
       id
-      body
       fields {
         timeToRead {
           minutes

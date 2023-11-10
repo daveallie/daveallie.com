@@ -43,6 +43,7 @@ const components = {
 
 export default function Deck({ children }: { children: ReactNode }) {
   return (
+    // @ts-ignore
     <MDXProvider components={components}>
       <Text container="div" color="dark">
         {children}

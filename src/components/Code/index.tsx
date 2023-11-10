@@ -16,7 +16,7 @@ export default function Code({
   language?: string;
   filename?: string;
   showLineNumbers?: boolean;
-  children: ReactNode;
+  children: string | string[];
 }) {
   return (
     <ContentBlock>
@@ -30,6 +30,7 @@ export default function Code({
               <span className={styles.filename}>{filename}</span>
             </div>
           )}
+          {/* @ts-ignore */}
           <SyntaxHighlighter
             showLineNumbers={showLineNumbers}
             language={language}
@@ -52,18 +53,20 @@ export function CodeMDXWrapper({
 }) {
   let trimmedContent = children?.toString()?.trimEnd();
   const filenameMatch = trimmedContent?.match(
-    /^--filename:([^\n]+)--\n((?:.|[\n\r])*)/
+    /^--filename:([^\n]+)--\n((?:.|[\n\r])*)/,
   );
   const filename = filenameMatch ? filenameMatch[1] : undefined;
   trimmedContent = filenameMatch ? filenameMatch[2] : trimmedContent;
 
   const lineNumbersMatch = trimmedContent?.match(
-    /^--linenumbers:([^\n]+)--\n((?:.|[\n\r])*)/
+    /^--linenumbers:([^\n]+)--\n((?:.|[\n\r])*)/,
   );
   const lineNumbers = lineNumbersMatch
     ? lineNumbersMatch[1] === 'true'
     : undefined;
   trimmedContent = lineNumbersMatch ? lineNumbersMatch[2] : trimmedContent;
+
+  if (!trimmedContent) return null;
 
   return (
     <Code
