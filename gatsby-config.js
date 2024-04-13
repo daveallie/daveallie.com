@@ -1,3 +1,4 @@
+const remarkGfm = require('remark-gfm');
 const pluginFeedConfig = require('./gatsby/config/gatsbyPluginFeed');
 const { SUBSITE, SUBSITE_URL } = require('./config/util/subsite');
 
@@ -23,6 +24,8 @@ const plugins = [
   (SUBSITE === 'blog' || SUBSITE === 'home') && 'gatsby-plugin-sitemap',
   'gatsby-plugin-react-helmet',
   'gatsby-plugin-typescript',
+  `gatsby-plugin-sharp`,
+  `gatsby-plugin-image`,
   {
     resolve: 'gatsby-plugin-mdx',
     options: {
@@ -37,16 +40,16 @@ const plugins = [
         },
         'gatsby-remark-copy-linked-files',
       ],
+      mdxOptions: {
+        remarkPlugins: [remarkGfm],
+      },
     },
   },
-  'gatsby-plugin-sharp',
-  'gatsby-transformer-sharp',
   {
     resolve: 'gatsby-plugin-sass',
     options: {
-      implementation: require('node-sass'),
       sassOptions: {
-        outputStyle: 'compact',
+        outputStyle: 'compressed',
       },
       cssLoaderOptions: {
         modules: {

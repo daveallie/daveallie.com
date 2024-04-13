@@ -17,6 +17,10 @@
   justify-content: center;
 }
 
+.row > span:not(:global(.gatsby-resp-image-wrapper)) {
+  display: contents;
+}
+
 .container.grid {
   .row {
     &:first-child {

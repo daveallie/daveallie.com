@@ -18,7 +18,7 @@ export default function BlogPostList({ data }: BlogPostListProps) {
       ...acc,
       [node.frontmatter.year]: [...(acc[node.frontmatter.year] || []), node],
     }),
-    {}
+    {},
   );
   const keys = Object.keys(yearData).sort((a, b) => (a > b ? -1 : 1));
 

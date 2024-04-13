@@ -17,7 +17,7 @@ export default function DeckNavigation({ children }: { children: ReactNode }) {
         navigate(newPath);
       }
     },
-    [pathname, navigate]
+    [pathname, navigate],
   );
 
   const prevRoute = useCallback(() => {

@@ -41,6 +41,7 @@ export default function SEO({
   const metaDescription = description || data.site.siteMetadata.description;
 
   return (
+    // @ts-ignore
     <Helmet
       htmlAttributes={{
         lang: 'en',
@@ -96,7 +97,7 @@ export default function SEO({
                 name: 'keywords',
                 content: keywords.join(', '),
               }
-            : []
+            : [],
         )
         .concat(
           imageUrl
@@ -110,7 +111,7 @@ export default function SEO({
                   content: `${data.site.siteMetadata.siteUrl}${imageUrl}`,
                 },
               ]
-            : []
+            : [],
         )
         .concat(meta || [])}
     >

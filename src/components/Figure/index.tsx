@@ -1,4 +1,4 @@
-import React, { Children, ReactElement, ReactNode } from 'react';
+import React, { Children, ReactNode } from 'react';
 import cn from 'classnames';
 import { chunk } from 'lodash';
 import Text from '~/components/Text';
@@ -10,27 +10,10 @@ type FigureProps = {
   children: ReactNode;
 };
 
-const removeWrappingP = (children: ReactNode) => {
-  if (Children.count(children) !== 1) {
-    return children;
-  }
-
-  const onlyChild = Children.only(children)!! as ReactElement;
-  if (
-    // @ts-ignore
-    onlyChild.type.displayName === 'MDXCreateElement' &&
-    onlyChild.props.originalType === 'p'
-  ) {
-    return Children.toArray(onlyChild.props.children).filter((c) => c !== '\n');
-  }
-
-  return children;
-};
-
 export default function Figure(props: FigureProps) {
   const childrenChunks = chunk(
     Children.toArray(props.children),
-    props.grid ? 2 : 1
+    props.grid ? 2 : 1,
   );
 
   return (
@@ -38,7 +21,7 @@ export default function Figure(props: FigureProps) {
       <div
         className={cn(
           styles.container,
-          props.grid ? styles.grid : styles.notGrid
+          props.grid ? styles.grid : styles.notGrid,
         )}
       >
         {childrenChunks.map((cc, index) => (
@@ -59,5 +42,10 @@ export default function Figure(props: FigureProps) {
 }
 
 export function FigureMDXWrapper({ children, ...rest }: FigureProps) {
-  return <Figure {...rest} children={removeWrappingP(children)} />;
+  return (
+    <Figure
+      {...rest}
+      children={Children.toArray(children).filter((c) => c !== '\n')}
+    />
+  );
 }

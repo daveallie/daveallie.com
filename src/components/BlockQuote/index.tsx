@@ -1,4 +1,4 @@
-import React, { Children, ReactElement, ReactNode } from 'react';
+import React, { Children, isValidElement, ReactNode } from 'react';
 import ContentBlock from '~/components/ContentBlock';
 import Text from '~/components/Text';
 import * as styles from './styles.module.scss';
@@ -19,8 +19,12 @@ export default function BlockQuote({ large, children }: BlockQuoteProps) {
 }
 
 export function BlockQuoteMDXWrapper({ children, ...rest }: BlockQuoteProps) {
-  if (Children.count(children) === 1) {
-    children = (Children.only(children) as ReactElement).props.children;
+  const filteredChildren = Children.toArray(children).filter(
+    (child) => child !== '\n',
+  );
+  const [firstFilteredChild] = filteredChildren;
+  if (filteredChildren.length === 1 && isValidElement(firstFilteredChild)) {
+    children = firstFilteredChild.props.children;
   }
 
   return <BlockQuote {...rest} children={children} />;

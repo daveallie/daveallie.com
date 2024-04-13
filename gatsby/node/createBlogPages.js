@@ -1,8 +1,6 @@
 const path = require('path');
 
 async function createBlogPages({ graphql, createPage }) {
-  const blogPostTemplate = path.resolve(`src/templates/BlogPost/index.tsx`);
-
   const result = await graphql(`
     query loadPagesQuery {
       allMdx(
@@ -14,6 +12,9 @@ async function createBlogPages({ graphql, createPage }) {
         ].join(', ')} }) {
         nodes {
           id
+          internal {
+            contentFilePath
+          }
           frontmatter {
             slug
             unlisted
@@ -32,10 +33,11 @@ async function createBlogPages({ graphql, createPage }) {
     throw result.errors;
   }
 
+  const blogPostTemplate = path.resolve(`src/templates/BlogPost/index.tsx`);
   const { nodes } = result.data.allMdx;
   const slugs = nodes.map((node) => node.frontmatter.slug);
   const duplicatedSlug = slugs.find(
-    (slug) => slugs.indexOf(slug) !== slugs.lastIndexOf(slug)
+    (slug) => slugs.indexOf(slug) !== slugs.lastIndexOf(slug),
   );
   if (duplicatedSlug) {
     throw `Duplicated slug: ${duplicatedSlug}`;
@@ -49,9 +51,9 @@ async function createBlogPages({ graphql, createPage }) {
           : '/',
         node.frontmatter.slug,
       ].join(''),
-      component: blogPostTemplate,
+      component: `${blogPostTemplate}?__contentFilePath=${node.internal.contentFilePath}`,
       context: { id: node.id },
-    })
+    }),
   );
 }
 

@@ -25,7 +25,7 @@ export default function useBlogPostListQuery(): BlogPostListQueryResult {
           frontmatter: { published: { eq: true }, unlisted: { ne: true } }
           fields: { source: { eq: "blog" } }
         }
-        sort: { fields: frontmatter___date, order: DESC }
+        sort: { frontmatter: { date: DESC } }
       ) {
         nodes {
           id

@@ -2,7 +2,7 @@ import { AnimationState } from './useAnimationLifecycle';
 
 export default function getNameStyles(
   animationState: AnimationState,
-  scrollY: number
+  scrollY: number,
 ) {
   if (animationState !== AnimationState.finished) {
     return { firstNameStyles: {}, lastNameStyles: {} };

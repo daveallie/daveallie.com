@@ -30,7 +30,7 @@ export default function DeckController({
         ...routes.slice(slideIndex + 1),
       ]);
     },
-    [routes]
+    [routes],
   );
 
   if (navDisabled) {

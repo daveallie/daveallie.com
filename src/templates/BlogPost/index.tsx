@@ -1,7 +1,6 @@
-import React, { ReactNode } from 'react';
+import React from 'react';
 import { MDXProvider } from '@mdx-js/react';
 import { graphql } from 'gatsby';
-import { MDXRenderer } from 'gatsby-plugin-mdx';
 import AlertBox from '~/components/AlertBox';
 import { BlockQuoteMDXWrapper } from '~/components/BlockQuote';
 import { CodeMDXWrapper } from '~/components/Code';
@@ -9,52 +8,76 @@ import ContentBlock from '~/components/ContentBlock';
 import { H1, H2, H3 } from '~/components/ContentHeader';
 import { FigureMDXWrapper } from '~/components/Figure';
 import HR from '~/components/HR';
-import InlineCode from '~/components/InlineCode';
 import Link from '~/components/Link';
 import { Ol, Ul } from '~/components/List';
 import P from '~/components/P';
 import PageFooter from '~/components/PageFooter';
 import PageHeader from '~/components/PageHeader';
+import BlogSignupForm from '~/components/pages/blog/BlogSignupForm';
 import SEO from '~/components/SEO';
 import Table from '~/components/Table';
 import TagBadge from '~/components/TagBadge';
 import Text from '~/components/Text';
-import BlogSignupForm from '~/components/pages/blog/BlogSignupForm';
 import useAlternateBodyBackground from '~/hooks/useAlternateBodyBackground';
 import usePageTracking from '~/hooks/usePageTracking';
 
-type BlogPostQueryResult = {
-  mdx: {
-    id: string;
-    body: string & ReactNode;
-    timeToRead: number;
-    frontmatter: {
-      title: string;
-      description: string;
-      imageUrl?: {
-        childImageSharp: {
-          fluid: {
-            src: string;
-          };
-        };
-      };
-      author: string;
-      slug: string;
-      date: string;
-      datestamp: string;
-      updatestamp: string;
-      tags: string[];
-    };
-  };
+const components = {
+  a: Link,
+  blockquote: BlockQuoteMDXWrapper,
+  code: CodeMDXWrapper,
+  h1: H1,
+  h2: H2,
+  h3: H3,
+  hr: HR,
+  p: P,
+  table: Table,
+  ul: Ul,
+  ol: Ol,
+  BlockQuote: BlockQuoteMDXWrapper,
+  Figure: FigureMDXWrapper,
+  AlertBox,
+  Link,
+  Text,
+  ContentBlock,
 };
 
-type BlogPostProps = {
-  data: BlogPostQueryResult;
-};
+// There are currently issues with including types in this file
 
-export default function BlogPost({ data: { mdx } }: BlogPostProps) {
+// type BlogPostQueryResult = {
+//   mdx: {
+//     id: string;
+//     fields: {
+//       timeToRead: {
+//         minutes: number;
+//       };
+//     };
+//     frontmatter: {
+//       title: string;
+//       description: string;
+//       imageUrl?: {
+//         publicURL: string;
+//       };
+//       author: string;
+//       slug: string;
+//       date: string;
+//       datestamp: string;
+//       updatestamp: string;
+//       tags: string[];
+//     };
+//   };
+// };
+//
+// type BlogPostProps = {
+//   data: BlogPostQueryResult;
+//   children: ReactNode;
+// };
+
+// @ts-ignore
+export default function BlogPost({ data: { mdx }, children }) {
   useAlternateBodyBackground('Offwhite');
   usePageTracking();
+
+  const minRead = Math.round(mdx.fields.timeToRead.minutes);
 
   return (
     <>
@@ -63,7 +86,7 @@ export default function BlogPost({ data: { mdx } }: BlogPostProps) {
         description={mdx.frontmatter.description}
         mailerLite
         path={`/${mdx.frontmatter.slug}`}
-        imageUrl={mdx.frontmatter.imageUrl?.childImageSharp?.fluid?.src}
+        imageUrl={mdx.frontmatter.imageUrl?.publicURL}
         meta={[
           {
             property: 'article:published_time',
@@ -84,37 +107,19 @@ export default function BlogPost({ data: { mdx } }: BlogPostProps) {
         <Text size="0.9rem" weight={300} color="accent" container="div">
           By {mdx.frontmatter.author}
           <br />
-          Published {mdx.frontmatter.date} • {mdx.timeToRead} min read
+          Published {mdx.frontmatter.date} • {minRead} min read
         </Text>
         <Text container="div">
+          {/* @ts-ignore */}
           {mdx.frontmatter.tags.map((tag) => (
             <TagBadge key={tag} tag={tag} />
           ))}
         </Text>
       </ContentBlock>
-      <MDXProvider
-        components={{
-          a: Link,
-          blockquote: BlockQuoteMDXWrapper,
-          code: CodeMDXWrapper,
-          inlineCode: InlineCode,
-          h1: H1,
-          h2: H2,
-          h3: H3,
-          hr: HR,
-          p: P,
-          table: Table,
-          ul: Ul,
-          ol: Ol,
-          BlockQuote: BlockQuoteMDXWrapper,
-          Figure: FigureMDXWrapper,
-          AlertBox,
-          Link,
-          Text,
-        }}
-      >
+      {/* @ts-ignore */}
+      <MDXProvider components={components}>
         <Text container="div" color="dark">
-          <MDXRenderer>{mdx.body}</MDXRenderer>
+          {children}
         </Text>
       </MDXProvider>
       <HR />
@@ -128,17 +133,16 @@ export const pageQuery = graphql`
   query BlogPostQuery($id: String) {
     mdx(id: { eq: $id }) {
       id
-      body
-      timeToRead
+      fields {
+        timeToRead {
+          minutes
+        }
+      }
       frontmatter {
         title
         description
         imageUrl {
-          childImageSharp {
-            fluid {
-              src
-            }
-          }
+          publicURL
         }
         author
         slug

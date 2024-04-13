@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react';
+import React, { ChangeEvent, KeyboardEvent, useCallback } from 'react';
 import Text from '~/components/Text';
 import * as styles from './styles.module.scss';
 
@@ -22,12 +22,12 @@ export default function Input({
   onEnter,
 }: InputProps) {
   const innerOnChange = useCallback(
-    (event) => onChange(event.target.value),
-    [onChange]
+    (event: ChangeEvent<HTMLInputElement>) => onChange(event.target.value),
+    [onChange],
   );
 
   const onKeyDown = useCallback(
-    (event) => {
+    (event: KeyboardEvent<HTMLInputElement>) => {
       if (!onEnter) {
         return;
       }
@@ -36,7 +36,7 @@ export default function Input({
         onEnter();
       }
     },
-    [onEnter]
+    [onEnter],
   );
 
   return (

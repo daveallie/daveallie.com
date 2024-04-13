@@ -2,9 +2,9 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import PageFooter from '~/components/PageFooter';
 import PageHeader from '~/components/PageHeader';
+import BlogPostList from '~/components/pages/blog/BlogPostList';
 import SEO from '~/components/SEO';
 import Text from '~/components/Text';
-import BlogPostList from '~/components/pages/blog/BlogPostList';
 import { BlogPostListQueryNode } from '~/hooks/queries/useBlogPostListQuery';
 import useAlternateBodyBackground from '~/hooks/useAlternateBodyBackground';
 import usePageTracking from '~/hooks/usePageTracking';
@@ -53,7 +53,7 @@ export const pageQuery = graphql`
           tags: { eq: $tag }
         }
       }
-      sort: { fields: frontmatter___date, order: DESC }
+      sort: { frontmatter: { date: DESC } }
     ) {
       nodes {
         id

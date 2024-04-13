@@ -15,7 +15,7 @@ export default function FireText({ children }: { children: ReactNode }) {
   const wordRef = useRef<HTMLElement>(null);
   const drawnCanvas = useRef<HTMLCanvasElement>(null);
   const reserveCanvas = useRef<HTMLCanvasElement>(
-    document.createElement('canvas')
+    document.createElement('canvas'),
   );
   const reserveContext = reserveCanvas.current.getContext('2d');
   const center = useRef([0, 0]);
@@ -51,7 +51,7 @@ export default function FireText({ children }: { children: ReactNode }) {
       this.position = [
         randIn(
           reserveCanvas.current.width * 0.1,
-          reserveCanvas.current.width * 0.9
+          reserveCanvas.current.width * 0.9,
         ),
         center.current[1] + randIn(-10, -30),
       ];
@@ -75,9 +75,9 @@ export default function FireText({ children }: { children: ReactNode }) {
             center.current[0],
             center.current[1],
             this.position[0],
-            this.position[1]
+            this.position[1],
           ),
-          0.5 * reserveCanvas.current.height
+          0.5 * reserveCanvas.current.height,
         ) * 20;
       this.velocity[1] *= 1.01;
       this.position[0] += this.velocity[0];
@@ -95,7 +95,7 @@ export default function FireText({ children }: { children: ReactNode }) {
           this.position[0],
           this.position[1],
           this.size,
-          this.size * 1.5
+          this.size * 1.5,
         );
         reserveContext.restore();
       }
@@ -155,7 +155,7 @@ export default function FireText({ children }: { children: ReactNode }) {
         0,
         0,
         reserveCanvas.current.width,
-        reserveCanvas.current.height
+        reserveCanvas.current.height,
       );
 
       reserveContext.save();
@@ -167,7 +167,7 @@ export default function FireText({ children }: { children: ReactNode }) {
         0,
         0,
         drawnCanvas.current.width,
-        drawnCanvas.current.height
+        drawnCanvas.current.height,
       );
 
       drawnContext.save();
@@ -178,7 +178,7 @@ export default function FireText({ children }: { children: ReactNode }) {
         0,
         0,
         reserveCanvas.current.width,
-        reserveCanvas.current.height
+        reserveCanvas.current.height,
       );
 
       for (let i = 0; i < particles.current.length; i++) {
@@ -190,7 +190,7 @@ export default function FireText({ children }: { children: ReactNode }) {
 
     renderTimeout.current = window.setTimeout(
       () => window.requestAnimationFrame(draw),
-      30
+      30,
     );
   }
 

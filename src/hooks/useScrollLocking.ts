@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useState } from 'react';
 
 export default function useScrollLocking(
-  initialScrollLocked: boolean
+  initialScrollLocked: boolean,
 ): [number, (scrollLocked: boolean) => void] {
   const [scrollY, setScrollY] = useState(0);
   const [isScrollLocked, setScrollLocked] = useState(initialScrollLocked);

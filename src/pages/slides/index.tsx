@@ -1,6 +1,6 @@
 import React from 'react';
 import { navigate } from 'gatsby';
-import Deck from '~/components/Deck';
+import DeckWrapper from '~/components/Deck/DeckWrapper';
 import PageFooter from '~/components/PageFooter';
 import PageHeader from '~/components/PageHeader';
 import SEO from '~/components/SEO';
@@ -32,7 +32,9 @@ export default function SlidesIndexPage() {
             }}
           >
             <SSRGate clientOnly>
-              <Deck slug={node.frontmatter.slug} body={node.body} navDisabled />
+              <DeckWrapper slug={node.frontmatter.slug} navDisabled>
+                Missing
+              </DeckWrapper>
             </SSRGate>
           </div>
         ))}

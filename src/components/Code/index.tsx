@@ -4,6 +4,7 @@ import SyntaxHighlighter from 'react-syntax-highlighter';
 import { githubGist } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import ContentBlock from '~/components/ContentBlock';
 import FileIcon from '~/components/FileIcon';
+import InlineCode from '~/components/InlineCode';
 import Text from '~/components/Text';
 import * as styles from './styles.module.scss';
 
@@ -30,6 +31,7 @@ export default function Code({
               <span className={styles.filename}>{filename}</span>
             </div>
           )}
+          {/* @ts-ignore */}
           <SyntaxHighlighter
             showLineNumbers={showLineNumbers}
             language={language}
@@ -52,25 +54,31 @@ export function CodeMDXWrapper({
 }) {
   let trimmedContent = children?.toString()?.trimEnd();
   const filenameMatch = trimmedContent?.match(
-    /^--filename:([^\n]+)--\n((?:.|[\n\r])*)/
+    /^--filename:([^\n]+)--\n((?:.|[\n\r])*)/,
   );
   const filename = filenameMatch ? filenameMatch[1] : undefined;
   trimmedContent = filenameMatch ? filenameMatch[2] : trimmedContent;
 
   const lineNumbersMatch = trimmedContent?.match(
-    /^--linenumbers:([^\n]+)--\n((?:.|[\n\r])*)/
+    /^--linenumbers:([^\n]+)--\n((?:.|[\n\r])*)/,
   );
   const lineNumbers = lineNumbersMatch
     ? lineNumbersMatch[1] === 'true'
     : undefined;
   trimmedContent = lineNumbersMatch ? lineNumbersMatch[2] : trimmedContent;
 
-  return (
-    <Code
-      language={className?.replace('language-', '')}
-      filename={filename}
-      showLineNumbers={lineNumbers}
-      children={trimmedContent}
-    />
-  );
+  if (!trimmedContent) return null;
+
+  if (className?.startsWith('language-') || filename) {
+    return (
+      <Code
+        language={className?.replace('language-', '')}
+        filename={filename}
+        showLineNumbers={lineNumbers}
+        children={trimmedContent}
+      />
+    );
+  } else {
+    return <InlineCode>{children}</InlineCode>;
+  }
 }

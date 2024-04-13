@@ -20,7 +20,7 @@ type SlideConfigProps = {
 export const SlideConfig = (_props: SlideConfigProps) => null;
 
 const useSlideConfig = (
-  children: ReactNode
+  children: ReactNode,
 ): [Array<ReactNode>, SlideConfigProps] => {
   let childrenArr = Children.toArray(children);
   const configIndex = childrenArr.findIndex((child) => {
@@ -62,7 +62,7 @@ function useWindowSize() {
 
 const useSlideStyles = (
   container: HTMLDivElement | null,
-  _variant?: string
+  _variant?: string,
 ): CSSProperties => {
   let { width, height } = useWindowSize();
 
