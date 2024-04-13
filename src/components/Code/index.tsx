@@ -17,7 +17,7 @@ export default function Code({
   language?: string;
   filename?: string;
   showLineNumbers?: boolean;
-  children: string | string[];
+  children: ReactNode;
 }) {
   return (
     <ContentBlock>
