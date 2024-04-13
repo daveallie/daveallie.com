@@ -23,10 +23,10 @@ jobs:
         run: echo "VERCEL_ARGS=$VERCEL_ARGS"
 
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Clone blog submodule
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         with:
           repository: daveallie/blog
           path: blog
@@ -37,7 +37,7 @@ jobs:
         run: git submodule update --init blog
 
       - name: Clone slides submodule
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         with:
           repository: daveallie/slides
           path: slides
@@ -48,7 +48,7 @@ jobs:
         run: git submodule update --init slides
 
       - name: Vercel Deploy - Home
-        uses: amondnet/vercel-action@v20.0.0
+        uses: amondnet/vercel-action@v25.2.0
         with:
           vercel-token: ${{ secrets.VERCEL_DEPLOY_TOKEN }}
           github-comment: false
@@ -68,10 +68,10 @@ jobs:
         run: echo "VERCEL_ARGS=$VERCEL_ARGS"
 
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Clone blog submodule
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         with:
           repository: daveallie/blog
           path: blog
@@ -82,7 +82,7 @@ jobs:
         run: git submodule update --init blog
 
       - name: Clone slides submodule
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         with:
           repository: daveallie/slides
           path: slides
@@ -93,7 +93,7 @@ jobs:
         run: git submodule update --init slides
 
       - name: Vercel Deploy - Blog
-        uses: amondnet/vercel-action@v20.0.0
+        uses: amondnet/vercel-action@v25.2.0
         with:
           vercel-token: ${{ secrets.VERCEL_DEPLOY_TOKEN }}
           github-comment: false
@@ -113,10 +113,10 @@ jobs:
         run: echo "VERCEL_ARGS=$VERCEL_ARGS"
 
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Clone blog submodule
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         with:
           repository: daveallie/blog
           path: blog
@@ -127,7 +127,7 @@ jobs:
         run: git submodule update --init blog
 
       - name: Clone slides submodule
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         with:
           repository: daveallie/slides
           path: slides
@@ -138,7 +138,7 @@ jobs:
         run: git submodule update --init slides
 
       - name: Vercel Deploy - Slides
-        uses: amondnet/vercel-action@v20.0.0
+        uses: amondnet/vercel-action@v25.2.0
         with:
           vercel-token: ${{ secrets.VERCEL_DEPLOY_TOKEN }}
           github-comment: false
@@ -158,10 +158,10 @@ jobs:
         run: echo "VERCEL_ARGS=$VERCEL_ARGS"
 
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Clone blog submodule
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         with:
           repository: daveallie/blog
           path: blog
@@ -172,7 +172,7 @@ jobs:
         run: git submodule update --init blog
 
       - name: Clone slides submodule
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         with:
           repository: daveallie/slides
           path: slides
@@ -183,7 +183,7 @@ jobs:
         run: git submodule update --init slides
 
       - name: Vercel Deploy - Meet
-        uses: amondnet/vercel-action@v20.0.0
+        uses: amondnet/vercel-action@v25.2.0
         with:
           vercel-token: ${{ secrets.VERCEL_DEPLOY_TOKEN }}
           github-comment: false
