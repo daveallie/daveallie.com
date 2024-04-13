@@ -1,30 +1,26 @@
 function createDeckNode(
   node,
-  {
-    getNode,
-    createContentDigest,
-    createNodeId,
-    createNode,
-    createParentChildLink,
-  },
+  { getNode, createNodeId, createNode, createParentChildLink },
 ) {
   if (node.internal.type !== `Mdx`) return;
 
   const fileNode = getNode(node.parent);
   const source = fileNode.sourceInstanceName;
 
-  if (source !== 'slides') return;
+  if (node.internal.type !== `Mdx` || source !== 'slides') return;
 
   const id = createNodeId(`${node.id} >>> Deck`);
+  const { contentDigest, contentFilePath } = node.internal;
 
   createNode({
     id,
     parent: node.id,
     children: [],
     internal: {
+      contentDigest,
+      contentFilePath,
       type: `Deck`,
-      contentDigest: createContentDigest(node.rawBody),
-      content: node.rawBody,
+      content: node.body,
       description: `Slide Decks`,
     },
   });

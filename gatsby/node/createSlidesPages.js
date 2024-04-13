@@ -25,8 +25,6 @@ async function createSlidesPages({ graphql, createPage }) {
     throw result.errors;
   }
 
-  console.log(result);
-
   const slidesTemplate = path.resolve(`src/templates/Slideshow/index.tsx`);
   const { nodes } = result.data.allDeck;
   const slugs = nodes.map((node) => node.frontmatter.slug);

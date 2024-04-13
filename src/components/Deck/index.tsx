@@ -5,7 +5,6 @@ import { BlockQuoteMDXWrapper } from '~/components/BlockQuote';
 import { CodeMDXWrapper } from '~/components/Code';
 import { H1, H2, H3 } from '~/components/ContentHeader';
 import { FigureMDXWrapper } from '~/components/Figure';
-import InlineCode from '~/components/InlineCode';
 import Link from '~/components/Link';
 import { Ol, Ul } from '~/components/List';
 import P from '~/components/P';
@@ -26,7 +25,6 @@ const components = {
   a: Link,
   blockquote: BlockQuoteMDXWrapper,
   code: CodeMDXWrapper,
-  inlineCode: InlineCode,
   h1: H1,
   h2: H2,
   h3: H3,
