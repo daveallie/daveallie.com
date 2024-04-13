@@ -1,3 +1,4 @@
+const remarkGfm = require('remark-gfm');
 const pluginFeedConfig = require('./gatsby/config/gatsbyPluginFeed');
 const { SUBSITE, SUBSITE_URL } = require('./config/util/subsite');
 
@@ -37,6 +38,9 @@ const plugins = [
         },
         'gatsby-remark-copy-linked-files',
       ],
+      mdxOptions: {
+        remarkPlugins: [remarkGfm],
+      },
     },
   },
   'gatsby-plugin-sharp',

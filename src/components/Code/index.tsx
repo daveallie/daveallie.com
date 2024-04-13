@@ -4,6 +4,7 @@ import SyntaxHighlighter from 'react-syntax-highlighter';
 import { githubGist } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import ContentBlock from '~/components/ContentBlock';
 import FileIcon from '~/components/FileIcon';
+import InlineCode from '~/components/InlineCode';
 import Text from '~/components/Text';
 import * as styles from './styles.module.scss';
 
@@ -68,12 +69,16 @@ export function CodeMDXWrapper({
 
   if (!trimmedContent) return null;
 
-  return (
-    <Code
-      language={className?.replace('language-', '')}
-      filename={filename}
-      showLineNumbers={lineNumbers}
-      children={trimmedContent}
-    />
-  );
+  if (className?.startsWith('language-') || filename) {
+    return (
+      <Code
+        language={className?.replace('language-', '')}
+        filename={filename}
+        showLineNumbers={lineNumbers}
+        children={trimmedContent}
+      />
+    );
+  } else {
+    return <InlineCode>{children}</InlineCode>;
+  }
 }
