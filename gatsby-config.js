@@ -24,6 +24,9 @@ const plugins = [
   (SUBSITE === 'blog' || SUBSITE === 'home') && 'gatsby-plugin-sitemap',
   'gatsby-plugin-react-helmet',
   'gatsby-plugin-typescript',
+  `gatsby-plugin-sharp`,
+  `gatsby-transformer-sharp`,
+  `gatsby-plugin-image`,
   {
     resolve: 'gatsby-plugin-mdx',
     options: {
@@ -43,8 +46,6 @@ const plugins = [
       },
     },
   },
-  'gatsby-plugin-sharp',
-  'gatsby-transformer-sharp',
   {
     resolve: 'gatsby-plugin-sass',
     options: {

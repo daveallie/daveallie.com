@@ -38,6 +38,7 @@ const components = {
   AlertBox,
   Link,
   Text,
+  ContentBlock,
 };
 
 // There are currently issues with including types in this file
