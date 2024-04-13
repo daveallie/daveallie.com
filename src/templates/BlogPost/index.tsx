@@ -13,11 +13,11 @@ import { Ol, Ul } from '~/components/List';
 import P from '~/components/P';
 import PageFooter from '~/components/PageFooter';
 import PageHeader from '~/components/PageHeader';
+import BlogSignupForm from '~/components/pages/blog/BlogSignupForm';
 import SEO from '~/components/SEO';
 import Table from '~/components/Table';
 import TagBadge from '~/components/TagBadge';
 import Text from '~/components/Text';
-import BlogSignupForm from '~/components/pages/blog/BlogSignupForm';
 import useAlternateBodyBackground from '~/hooks/useAlternateBodyBackground';
 import usePageTracking from '~/hooks/usePageTracking';
 

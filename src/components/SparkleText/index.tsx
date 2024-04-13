@@ -20,7 +20,7 @@ type SparkleProps = {
 const useRandomInterval = (
   callback: () => void,
   minDelay: number,
-  maxDelay: number
+  maxDelay: number,
 ) => {
   const timeoutId = useRef<number | null>(null);
   const savedCallback = useRef(callback);
@@ -132,7 +132,7 @@ export default function SparkleText({ children }: { children: ReactNode }) {
       setSparkles([...nextSparkles, generateSparkle()]);
     },
     100,
-    400
+    400,
   );
 
   return (

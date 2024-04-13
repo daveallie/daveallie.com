@@ -6,7 +6,7 @@ function createDeckNode(
     createNodeId,
     createNode,
     createParentChildLink,
-  }
+  },
 ) {
   if (node.internal.type !== `Mdx`) return;
 

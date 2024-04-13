@@ -9,11 +9,11 @@ import InlineCode from '~/components/InlineCode';
 import Link from '~/components/Link';
 import { Ol, Ul } from '~/components/List';
 import P from '~/components/P';
-import Table from '~/components/Table';
-import Text from '~/components/Text';
 import Split from '~/components/pages/slides/Split';
 import Step from '~/components/pages/slides/Step';
 import TitleSlide from '~/components/pages/slides/TitleSlide';
+import Table from '~/components/Table';
+import Text from '~/components/Text';
 import DeckWrapper from './DeckWrapper';
 import { SlideConfig } from './Slide';
 

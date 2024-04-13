@@ -68,7 +68,7 @@ export default function Text({
       // @ts-ignore
       [styles[`color_${color}`]]: color != null,
     },
-    className
+    className,
   );
 
   return createElement(
@@ -81,6 +81,6 @@ export default function Text({
         ...style,
       },
     },
-    children
+    children,
   );
 }

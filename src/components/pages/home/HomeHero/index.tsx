@@ -76,7 +76,7 @@ export default function HomeHero() {
                 className={cn(
                   styles.clickPromptItem,
                   styles.clickPromptFirst,
-                  styles.clickPromptFadeIn
+                  styles.clickPromptFadeIn,
                 )}
               >
                 Go on, click the D...
@@ -88,7 +88,7 @@ export default function HomeHero() {
                 className={cn(
                   styles.clickPromptItem,
                   styles.clickPromptSecond,
-                  styles.clickPromptFadeIn
+                  styles.clickPromptFadeIn,
                 )}
               >
                 You know you want to...

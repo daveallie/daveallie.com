@@ -31,7 +31,7 @@ async function createSlidesPages({ graphql, createPage }) {
   const { nodes } = result.data.allDeck;
   const slugs = nodes.map((node) => node.frontmatter.slug);
   const duplicatedSlug = slugs.find(
-    (slug) => slugs.indexOf(slug) !== slugs.lastIndexOf(slug)
+    (slug) => slugs.indexOf(slug) !== slugs.lastIndexOf(slug),
   );
   if (duplicatedSlug) {
     throw `Duplicated slug: ${duplicatedSlug}`;
@@ -43,7 +43,7 @@ async function createSlidesPages({ graphql, createPage }) {
       matchPath: `/${node.frontmatter.slug}/*`,
       component: `${slidesTemplate}?__contentFilePath=${node.internal.contentFilePath}`,
       context: { id: node.id },
-    })
+    }),
   );
 }
 

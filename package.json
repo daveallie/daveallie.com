@@ -12,9 +12,9 @@
     "develop": "gatsby develop",
     "check-types": "tsc --noEmit",
     "lint": "yarn lint:prettier && yarn lint:stylelint && yarn check-types",
-    "lint:stylelint": "stylelint 'src/**/*.scss' --customSyntax postcss-scss",
-    "lint:prettier": "prettier '{src,api,config,gatsby}/**/*.{ts,tsx,js,jsx,json,md}' '*.{ts,tsx,js,jsx,json,md}'",
-    "lint:prettier:fix": "yarn lint:prettier --write"
+    "lint:stylelint": "stylelint 'src/**/*.scss'",
+    "lint:prettier": "prettier '{src,api,config,gatsby}/**/*.{ts,tsx,js,jsx,json,md}' '*.{ts,tsx,js,jsx,json,md}' --check",
+    "lint:prettier:fix": "prettier '{src,api,config,gatsby}/**/*.{ts,tsx,js,jsx,json,md}' '*.{ts,tsx,js,jsx,json,md}' --write"
   },
   "repository": {
     "type": "git",
@@ -55,7 +55,7 @@
     "sass": "^1.75.0"
   },
   "devDependencies": {
-    "@trivago/prettier-plugin-sort-imports": "^4.3.0",
+    "@ianvs/prettier-plugin-sort-imports": "^4.2.1",
     "@types/jsonp": "^0.2.3",
     "@types/node": "~20.12.7",
     "@types/react": "18.2.77",
@@ -69,7 +69,7 @@
     "lint-staged": "^15.2.2",
     "prettier": "^3.2.5",
     "stylelint": "16.3.1",
-    "stylelint-config-recommended": "^14.0.0",
+    "stylelint-config-recommended-scss": "^14.0.0",
     "typescript": "^5.4.5"
   },
   "lint-staged": {

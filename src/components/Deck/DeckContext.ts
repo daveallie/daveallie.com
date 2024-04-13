@@ -18,8 +18,10 @@ export const useDeckContext = () => useContext(DeckContext);
 export const useDeckRoutes = () =>
   flatten(
     useDeckContext().routes.map((slideRoutes, i) =>
-      slideRoutes.map((step) => `/${i}/${step}`.replace(/(?:\/0)+$/, '') || '/')
-    )
+      slideRoutes.map(
+        (step) => `/${i}/${step}`.replace(/(?:\/0)+$/, '') || '/',
+      ),
+    ),
   );
 
 export default DeckContext;

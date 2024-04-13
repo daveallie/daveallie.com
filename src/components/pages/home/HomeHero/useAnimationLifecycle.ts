@@ -8,7 +8,7 @@ export enum AnimationState {
 }
 
 export default function useAnimationLifecycle(
-  initialAnimationState: AnimationState
+  initialAnimationState: AnimationState,
 ) {
   const [scrollY, setScrollLocked] = useScrollLocking(true);
   const [animationState, setAnimationState] = useState(initialAnimationState);
@@ -29,7 +29,7 @@ export default function useAnimationLifecycle(
 
   const skipAnimation = useCallback(
     () => setAnimationState(AnimationState.finished),
-    [setAnimationState]
+    [setAnimationState],
   );
 
   // Show the 'click' prompt 1.5 seconds after idle in not started state

@@ -1,5 +1,6 @@
 {
   "singleQuote": true,
+  plugins: ['@ianvs/prettier-plugin-sort-imports'],
   "importOrder": [
     "^react$",
     "^[^.~/]",

@@ -6,7 +6,7 @@ export default function useAlternateBodyStyle(className: string) {
     document.body.className = cn(document.body.className, className);
     return () => {
       document.body.className = cn(
-        document.body.className.split(' ').filter((c) => c !== className)
+        document.body.className.split(' ').filter((c) => c !== className),
       );
     };
   }, []);

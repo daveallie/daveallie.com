@@ -10,7 +10,7 @@ export default function FileIcon({ filename }: { filename: string }) {
     <span
       className={cn(
         styles.icon,
-        fileIconJsStyles[camelCase(FileIconsJs.getClass(filename) || '')]
+        fileIconJsStyles[camelCase(FileIconsJs.getClass(filename) || '')],
       )}
     />
   );
