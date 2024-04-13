@@ -25,7 +25,6 @@ const plugins = [
   'gatsby-plugin-react-helmet',
   'gatsby-plugin-typescript',
   `gatsby-plugin-sharp`,
-  `gatsby-transformer-sharp`,
   `gatsby-plugin-image`,
   {
     resolve: 'gatsby-plugin-mdx',

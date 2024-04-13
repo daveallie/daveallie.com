@@ -55,11 +55,7 @@ const components = {
 //       title: string;
 //       description: string;
 //       imageUrl?: {
-//         childImageSharp: {
-//           fluid: {
-//             src: string;
-//           };
-//         };
+//         publicURL: string;
 //       };
 //       author: string;
 //       slug: string;
@@ -90,7 +86,7 @@ export default function BlogPost({ data: { mdx }, children }) {
         description={mdx.frontmatter.description}
         mailerLite
         path={`/${mdx.frontmatter.slug}`}
-        imageUrl={mdx.frontmatter.imageUrl?.childImageSharp?.fluid?.src}
+        imageUrl={mdx.frontmatter.imageUrl?.publicURL}
         meta={[
           {
             property: 'article:published_time',
@@ -146,11 +142,7 @@ export const pageQuery = graphql`
         title
         description
         imageUrl {
-          childImageSharp {
-            fluid {
-              src
-            }
-          }
+          publicURL
         }
         author
         slug

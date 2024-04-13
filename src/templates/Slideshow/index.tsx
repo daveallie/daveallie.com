@@ -12,11 +12,7 @@ type SlideshowQueryResult = {
     frontmatter: {
       title: string;
       imageUrl?: {
-        childImageSharp: {
-          fluid: {
-            src: string;
-          };
-        };
+        publicURL: string;
       };
       author: string;
       slug: string;
@@ -40,7 +36,7 @@ export default function Slides({ data: { deck }, children }: SlideshowProps) {
       <SEO
         title={deck.frontmatter.title}
         path={`/${deck.frontmatter.slug}`}
-        imageUrl={deck.frontmatter.imageUrl?.childImageSharp?.fluid?.src}
+        imageUrl={deck.frontmatter.imageUrl?.publicURL}
       />
       <SSRGate clientOnly>
         <Deck>{children}</Deck>
@@ -56,11 +52,7 @@ export const pageQuery = graphql`
       frontmatter {
         title
         imageUrl {
-          childImageSharp {
-            fluid {
-              src
-            }
-          }
+          publicURL
         }
         author
         slug
