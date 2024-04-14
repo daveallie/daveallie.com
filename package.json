@@ -21,7 +21,7 @@
     "url": "https://github.com/daveallie/daveallie.com"
   },
   "dependencies": {
-    "@mdx-js/react": "^2.3.0",
+    "@mdx-js/react": "^3.0.0",
     "file-icons-js": "^1.1.0",
     "gatsby": "^5.13.4",
     "gatsby-plugin-env-variables": "^2.3.0",
