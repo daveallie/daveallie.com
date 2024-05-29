@@ -1,4 +1,5 @@
 name: Vercel Deploy
+concurrency: unique-key-here
 
 on:
   push:
