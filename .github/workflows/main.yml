@@ -3,7 +3,7 @@ concurrency: unique-key-here
 
 on:
   push:
-    branches: [ master ]
+    branches: [master]
   workflow_dispatch:
     inputs:
       vercelArgs:
