@@ -4293,8 +4293,8 @@ __metadata:
   linkType: hard
 
 "aws-sdk@npm:^2.1599.0":
-  version: 2.1633.0
-  resolution: "aws-sdk@npm:2.1633.0"
+  version: 2.1634.0
+  resolution: "aws-sdk@npm:2.1634.0"
   dependencies:
     buffer: "npm:4.9.2"
     events: "npm:1.1.1"
@@ -4306,7 +4306,7 @@ __metadata:
     util: "npm:^0.12.4"
     uuid: "npm:8.0.0"
     xml2js: "npm:0.6.2"
-  checksum: 10/6aa8ce41c124b531a40ec604988961a1ff0f76c7f7f0d9eb634a9849da71bb08fe4f0b62e55fa5dc7ee5d49be1e152903e070f89e1294e974cee04de46d56536
+  checksum: 10/400d7596b5869bb20d5d85684f6e503d1cadda5021e7a53684926984e521e00c40b86827f4b9d66682f30a586a58b45dacf430a66801a468daf95c389b6c93f6
   languageName: node
   linkType: hard
 
