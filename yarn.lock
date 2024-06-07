@@ -3433,10 +3433,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vercel/build-utils@npm:8.2.1":
-  version: 8.2.1
-  resolution: "@vercel/build-utils@npm:8.2.1"
-  checksum: 10/388e69f2de4472712d8f7a291b912af2087547d19902a837c2ad7d3d714280519a896427ac3c004582146cd1e7b89b156bcc78d6b96e0ee1efdeca7bc55a7de4
+"@vercel/build-utils@npm:8.2.2":
+  version: 8.2.2
+  resolution: "@vercel/build-utils@npm:8.2.2"
+  checksum: 10/b1a7d455542a54a6eb8af3b049a90dca056f3674a64f7eec0449c47ee25dbd30190e44d0175baa53ef40269cd1e672e3c2361d57f72652f40ab9e8900bb15f45
   languageName: node
   linkType: hard
 
@@ -3447,9 +3447,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vercel/nft@npm:0.27.0":
-  version: 0.27.0
-  resolution: "@vercel/nft@npm:0.27.0"
+"@vercel/nft@npm:0.27.2":
+  version: 0.27.2
+  resolution: "@vercel/nft@npm:0.27.2"
   dependencies:
     "@mapbox/node-pre-gyp": "npm:^1.0.5"
     "@rollup/pluginutils": "npm:^4.0.0"
@@ -3465,21 +3465,21 @@ __metadata:
     resolve-from: "npm:^5.0.0"
   bin:
     nft: out/cli.js
-  checksum: 10/2f69218f4745b2d6f1347d58cf2ea5c326955614bdb59d69e8e62e8f7c39f019315226d547ac03bb32c7f6c163e95066474efd9110fdb92e958cd90c01a1756f
+  checksum: 10/fcfdf503e58a55658cb22d8d43613eeea5eed4432c47dfbc44812974bc3d3cb21af909a6ef8a50e3ddbc6635b1bd6767159c1413a03202b8045b0254443df594
   languageName: node
   linkType: hard
 
 "@vercel/node@npm:^3.0.26":
-  version: 3.1.6
-  resolution: "@vercel/node@npm:3.1.6"
+  version: 3.1.7
+  resolution: "@vercel/node@npm:3.1.7"
   dependencies:
     "@edge-runtime/node-utils": "npm:2.3.0"
     "@edge-runtime/primitives": "npm:4.1.0"
     "@edge-runtime/vm": "npm:3.2.0"
     "@types/node": "npm:16.18.11"
-    "@vercel/build-utils": "npm:8.2.1"
+    "@vercel/build-utils": "npm:8.2.2"
     "@vercel/error-utils": "npm:2.0.2"
-    "@vercel/nft": "npm:0.27.0"
+    "@vercel/nft": "npm:0.27.2"
     "@vercel/static-config": "npm:3.0.0"
     async-listen: "npm:3.0.0"
     cjs-module-lexer: "npm:1.2.3"
@@ -3493,7 +3493,7 @@ __metadata:
     ts-node: "npm:10.9.1"
     typescript: "npm:4.9.5"
     undici: "npm:5.26.5"
-  checksum: 10/d3ae996d47b0762678c17a0ff48fed994357c4b21c60570de24e6ff469e172b40a66bca3e8774960ec30b37d02a1d85007c9dd6f502c64bdad9261dbc26e866f
+  checksum: 10/40c09b969cae90d4e61bae5fab330454273077c29c5449edae657445b2f755f5c29179ccf8e5827110389f8241b28422c093ea76574ef413f6debb64da0a1261
   languageName: node
   linkType: hard
 
