@@ -3470,8 +3470,8 @@ __metadata:
   linkType: hard
 
 "@vercel/node@npm:^3.0.26":
-  version: 3.1.7
-  resolution: "@vercel/node@npm:3.1.7"
+  version: 3.2.0
+  resolution: "@vercel/node@npm:3.2.0"
   dependencies:
     "@edge-runtime/node-utils": "npm:2.3.0"
     "@edge-runtime/primitives": "npm:4.1.0"
@@ -3492,8 +3492,8 @@ __metadata:
     ts-morph: "npm:12.0.0"
     ts-node: "npm:10.9.1"
     typescript: "npm:4.9.5"
-    undici: "npm:5.26.5"
-  checksum: 10/40c09b969cae90d4e61bae5fab330454273077c29c5449edae657445b2f755f5c29179ccf8e5827110389f8241b28422c093ea76574ef413f6debb64da0a1261
+    undici: "npm:5.28.4"
+  checksum: 10/f6d9092502dfd38a00fd67e35f9c5a51c6ab21b729d2a8ab47cfb049a0bad29e18a4af80b751dae5554c0030565616c5db8bc9357be34d2141109aa8d15bafd2
   languageName: node
   linkType: hard
 
@@ -16937,12 +16937,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"undici@npm:5.26.5":
-  version: 5.26.5
-  resolution: "undici@npm:5.26.5"
+"undici@npm:5.28.4":
+  version: 5.28.4
+  resolution: "undici@npm:5.28.4"
   dependencies:
     "@fastify/busboy": "npm:^2.0.0"
-  checksum: 10/b6fdd5afe34f97c7aeaaddc13ec48c066e6b4d72e64bb755cbcb72c80223131af09763c6650efaf203f391c31a72ffb87bfbc5249bd43b0449ba38a472bc9728
+  checksum: 10/a666a9f5ac4270c659fafc33d78b6b5039a0adbae3e28f934774c85dcc66ea91da907896f12b414bd6f578508b44d5dc206fa636afa0e49a4e1c9e99831ff065
   languageName: node
   linkType: hard
 
