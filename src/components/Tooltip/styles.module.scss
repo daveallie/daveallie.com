@@ -1,0 +1,38 @@
+@import "src/assets/styles/colors";
+
+.tooltip {
+  display: none;
+  position: absolute;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  padding: 5px 10px;
+  border-radius: 6px;
+  z-index: 1;
+  box-sizing: border-box;
+}
+
+.tooltipPointer {
+  display: none;
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 5px solid black;
+}
+
+.link {
+  text-decoration: none;
+  color: $linkColor;
+  border-bottom: dashed 1px $linkColor;
+
+  &:hover {
+    border-bottom-color: $linkHover;
+    color: $linkHover;
+
+    .tooltip, .tooltipPointer {
+      display: block;
+    }
+  }
+}

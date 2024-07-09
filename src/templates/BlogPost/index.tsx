@@ -18,6 +18,7 @@ import SEO from '~/components/SEO';
 import Table from '~/components/Table';
 import TagBadge from '~/components/TagBadge';
 import Text from '~/components/Text';
+import Tooltip from '~/components/Tooltip';
 import useAlternateBodyBackground from '~/hooks/useAlternateBodyBackground';
 import usePageTracking from '~/hooks/usePageTracking';
 
@@ -39,6 +40,7 @@ const components = {
   Link,
   Text,
   ContentBlock,
+  Tooltip,
 };
 
 // There are currently issues with including types in this file
