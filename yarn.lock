@@ -3433,10 +3433,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vercel/build-utils@npm:8.3.1":
-  version: 8.3.1
-  resolution: "@vercel/build-utils@npm:8.3.1"
-  checksum: 10/885e02eb1d4f1a134d4f4889d7da134fee031d4ad3f68c8d88a4ee9169299e567c16cd1c1737e39ee17a71fc98226100296baac3752b090f2f3974c62167a98c
+"@vercel/build-utils@npm:8.3.2":
+  version: 8.3.2
+  resolution: "@vercel/build-utils@npm:8.3.2"
+  checksum: 10/b999e9ff5204f8447710b5b06b021b1fd4ded9595fec2a85820ce1de88fb0ea9e5d129f5376d3bebdd6495007899c603e1b86557685a0e4f1a8c058467c5658e
   languageName: node
   linkType: hard
 
@@ -3470,14 +3470,14 @@ __metadata:
   linkType: hard
 
 "@vercel/node@npm:^3.0.26":
-  version: 3.2.2
-  resolution: "@vercel/node@npm:3.2.2"
+  version: 3.2.3
+  resolution: "@vercel/node@npm:3.2.3"
   dependencies:
     "@edge-runtime/node-utils": "npm:2.3.0"
     "@edge-runtime/primitives": "npm:4.1.0"
     "@edge-runtime/vm": "npm:3.2.0"
     "@types/node": "npm:16.18.11"
-    "@vercel/build-utils": "npm:8.3.1"
+    "@vercel/build-utils": "npm:8.3.2"
     "@vercel/error-utils": "npm:2.0.2"
     "@vercel/nft": "npm:0.27.2"
     "@vercel/static-config": "npm:3.0.0"
@@ -3493,7 +3493,7 @@ __metadata:
     ts-node: "npm:10.9.1"
     typescript: "npm:4.9.5"
     undici: "npm:5.28.4"
-  checksum: 10/84ae74b794a6c487d3f2600024a14d0e07966e767ab49cf3090219ed56b0b193304404d8d83d464d509f505a5a2edf4b71c12c651c188222ccc2986fe96332e7
+  checksum: 10/b71444fea98ff4389452f1e3543445b9894b20be123eb2270406073adc9453b467559c47de7e9c9c622bdbcda3f7d34e5039ed62c0e37471999ccf5fd05e3a12
   languageName: node
   linkType: hard
 
