@@ -3447,9 +3447,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vercel/nft@npm:0.27.2":
-  version: 0.27.2
-  resolution: "@vercel/nft@npm:0.27.2"
+"@vercel/nft@npm:0.27.3":
+  version: 0.27.3
+  resolution: "@vercel/nft@npm:0.27.3"
   dependencies:
     "@mapbox/node-pre-gyp": "npm:^1.0.5"
     "@rollup/pluginutils": "npm:^4.0.0"
@@ -3465,13 +3465,13 @@ __metadata:
     resolve-from: "npm:^5.0.0"
   bin:
     nft: out/cli.js
-  checksum: 10/fcfdf503e58a55658cb22d8d43613eeea5eed4432c47dfbc44812974bc3d3cb21af909a6ef8a50e3ddbc6635b1bd6767159c1413a03202b8045b0254443df594
+  checksum: 10/ba0600ac07fdab0cb93c1ec638be118c9ab2c1aa836907c0c43b644296b99c5436cf24c47db391f3a218455f8058505ac971d173ff722a6e9428dfb3a7e897bd
   languageName: node
   linkType: hard
 
 "@vercel/node@npm:^3.0.26":
-  version: 3.2.3
-  resolution: "@vercel/node@npm:3.2.3"
+  version: 3.2.4
+  resolution: "@vercel/node@npm:3.2.4"
   dependencies:
     "@edge-runtime/node-utils": "npm:2.3.0"
     "@edge-runtime/primitives": "npm:4.1.0"
@@ -3479,7 +3479,7 @@ __metadata:
     "@types/node": "npm:16.18.11"
     "@vercel/build-utils": "npm:8.3.2"
     "@vercel/error-utils": "npm:2.0.2"
-    "@vercel/nft": "npm:0.27.2"
+    "@vercel/nft": "npm:0.27.3"
     "@vercel/static-config": "npm:3.0.0"
     async-listen: "npm:3.0.0"
     cjs-module-lexer: "npm:1.2.3"
@@ -3493,7 +3493,7 @@ __metadata:
     ts-node: "npm:10.9.1"
     typescript: "npm:4.9.5"
     undici: "npm:5.28.4"
-  checksum: 10/b71444fea98ff4389452f1e3543445b9894b20be123eb2270406073adc9453b467559c47de7e9c9c622bdbcda3f7d34e5039ed62c0e37471999ccf5fd05e3a12
+  checksum: 10/90ad1f61384a99cba5a477a741c9795f5ba4dee8f57b897219b0bed9534d256e8ff5b93f411097011e3b290cf0d34e0abc59a9a2dc903ab3f211cdda8b5f5d51
   languageName: node
   linkType: hard
 
