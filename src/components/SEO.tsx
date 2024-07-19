@@ -51,40 +51,47 @@ export default function SEO({
       meta={[
         {
           name: 'title',
-          content: title || data.site.siteMetadata.title,
-        },
-        {
-          name: 'description',
-          content: metaDescription,
-        },
-        {
           property: 'og:title',
           content: title || data.site.siteMetadata.title,
         },
         {
-          property: 'og:description',
-          content: metaDescription,
-        },
-        {
-          property: 'og:type',
-          content: process.env.SUBSITE === 'blog' ? 'article' : 'website',
+          name: 'twitter:title',
+          content: title || data.site.siteMetadata.title,
         },
         {
           property: 'og:site_name',
           content: 'Dave Allie',
         },
         {
+          property: 'og:type',
+          content: process.env.SUBSITE === 'blog' ? 'article' : 'website',
+        },
+        {
           property: 'og:url',
           content: `${data.site.siteMetadata.siteUrl}${path}`,
         },
-
         {
           name: 'twitter:card',
           content: 'summary_large_image',
         },
+        ...(imageUrl
+          ? [
+              {
+                name: 'image',
+                property: 'og:image',
+                content: `${data.site.siteMetadata.siteUrl}${imageUrl}`,
+              },
+              {
+                name: 'twitter:image',
+                content: `${data.site.siteMetadata.siteUrl}${imageUrl}`,
+              },
+            ]
+          : []),
+        // Description last to avoid pushing image out of content window
         {
-          name: 'twitter:title',
-          content: title || data.site.siteMetadata.title,
+          name: 'description',
+          property: 'og:description',
+          content: metaDescription,
         },
         {
           name: 'twitter:description',
@@ -97,20 +104,6 @@ export default function SEO({
                 name: 'keywords',
                 content: keywords.join(', '),
               }
-            : [],
-        )
-        .concat(
-          imageUrl
-            ? [
-                {
-                  name: 'twitter:image',
-                  content: `${data.site.siteMetadata.siteUrl}${imageUrl}`,
-                },
-                {
-                  name: 'og:image',
-                  content: `${data.site.siteMetadata.siteUrl}${imageUrl}`,
-                },
-              ]
             : [],
         )
         .concat(meta || [])}
