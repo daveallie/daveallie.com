@@ -24,7 +24,10 @@ const pluginFeedConfig = {
         query: `
             {
               allMdx(
-                filter: { frontmatter: { published: { eq: true }, unlisted: { ne: true } } }
+                filter: {
+                  frontmatter: { published: { eq: true }, unlisted: { ne: true } } 
+                  fields: { source: { eq: "blog" } } 
+                }
                 sort: { frontmatter: { date: DESC } }
               ) {
                 nodes {

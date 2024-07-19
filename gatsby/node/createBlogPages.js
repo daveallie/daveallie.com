@@ -4,12 +4,10 @@ async function createBlogPages({ graphql, createPage }) {
   const result = await graphql(`
     query loadPagesQuery {
       allMdx(
-        filter: { ${[
-          'fields: { source: { eq: "blog" } }',
-          ...(process.env.NODE_ENV === 'production'
-            ? ['frontmatter: { published: { eq: true } }']
-            : []),
-        ].join(', ')} }) {
+        filter: {
+          ${process.env.NODE_ENV === 'production' ? 'frontmatter: { published: { eq: true } }' : ''}
+          fields: { source: { eq: "blog" } }
+        }) {
         nodes {
           id
           internal {

@@ -4,11 +4,12 @@ const lodash = require('lodash');
 async function createBlogPages({ graphql, createPage }) {
   const result = await graphql(`
     query loadTagsQuery {
-      allMdx${
-        process.env.NODE_ENV === 'production'
-          ? '(filter: { frontmatter: { published: { eq: true }, unlisted: { ne: true } } })'
-          : ''
-      } {
+      allMdx(
+          filter: {
+            ${process.env.NODE_ENV === 'production' ? 'frontmatter: { published: { eq: true }, unlisted: { ne: true } }' : ''}
+            fields: { source: { eq: "blog" } }
+          }
+      ) {
         group(field: {frontmatter: {tags: SELECT}}) {
           tag: fieldValue
           totalCount

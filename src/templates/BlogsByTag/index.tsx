@@ -52,6 +52,7 @@ export const pageQuery = graphql`
           unlisted: { ne: true }
           tags: { eq: $tag }
         }
+        fields: { source: { eq: "blog" } }
       }
       sort: { frontmatter: { date: DESC } }
     ) {
