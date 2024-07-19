@@ -6,7 +6,7 @@
   "author": "Dave Allie <dave@daveallie.com>",
   "license": "MIT",
   "scripts": {
-    "postinstall": "husky install",
+    "prepare": "husky",
     "build": "gatsby build",
     "clean": "rm -r public",
     "develop": "gatsby develop",
