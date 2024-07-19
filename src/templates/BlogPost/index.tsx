@@ -111,12 +111,14 @@ export default function BlogPost({ data: { mdx }, children }) {
           <br />
           Published {mdx.frontmatter.date} • {minRead} min read
         </Text>
-        <Text container="div">
-          {/* @ts-ignore */}
-          {mdx.frontmatter.tags.map((tag) => (
-            <TagBadge key={tag} tag={tag} />
-          ))}
-        </Text>
+        {mdx.frontmatter.tags ? (
+          <Text container="div">
+            {/* @ts-ignore */}
+            {mdx.frontmatter.tags.map((tag) => (
+              <TagBadge key={tag} tag={tag} />
+            ))}
+          </Text>
+        ) : null}
       </ContentBlock>
       {/* @ts-ignore */}
       <MDXProvider components={components}>

@@ -17,7 +17,7 @@ export default function Code({
   language?: string;
   filename?: string;
   showLineNumbers?: boolean;
-  children: ReactNode;
+  children: string | string[];
 }) {
   return (
     <ContentBlock>
@@ -31,7 +31,6 @@ export default function Code({
               <span className={styles.filename}>{filename}</span>
             </div>
           )}
-          {/* @ts-ignore */}
           <SyntaxHighlighter
             showLineNumbers={showLineNumbers}
             language={language}
