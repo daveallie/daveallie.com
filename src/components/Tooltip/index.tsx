@@ -55,8 +55,6 @@ export default function Tooltip({ tooltip, text }: TooltipProps) {
     setLocations({ pointer, tooltip });
   };
 
-  console.log(locations);
-
   return (
     <>
       <span className={styles.link} onMouseEnter={getPosition}>
