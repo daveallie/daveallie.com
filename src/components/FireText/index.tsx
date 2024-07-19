@@ -10,7 +10,13 @@ const fadeInOut = (t: number, m: number) => {
 const dist = (x1: number, y1: number, x2: number, y2: number) =>
   sqrt(pow(x2 - x1, 2) + pow(y2 - y1, 2));
 
-export default function FireText({ children }: { children: ReactNode }) {
+const canUseDOM = !!(
+  typeof window !== 'undefined' &&
+  window.document &&
+  window.document.createElement
+);
+
+function ClientFireText({ children }: { children: ReactNode }) {
   const renderTimeout = useRef<number | null>(null);
   const wordRef = useRef<HTMLElement>(null);
   const drawnCanvas = useRef<HTMLCanvasElement>(null);
@@ -222,4 +228,12 @@ export default function FireText({ children }: { children: ReactNode }) {
       />
     </span>
   );
+}
+
+export default function FireText({ children }: { children: ReactNode }) {
+  if (canUseDOM) {
+    return <ClientFireText>{children}</ClientFireText>;
+  }
+
+  return <b>{children}</b>;
 }
