@@ -6060,7 +6060,7 @@ __metadata:
     reading-time: "npm:^1.5.0"
     remark-gfm: "npm:^1.0.0"
     sass: "npm:^1.75.0"
-    stylelint: "npm:16.8.0"
+    stylelint: "npm:16.8.1"
     stylelint-config-recommended-scss: "npm:^14.0.0"
     typescript: "npm:^5.4.5"
   languageName: unknown
@@ -16210,9 +16210,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"stylelint@npm:16.8.0":
-  version: 16.8.0
-  resolution: "stylelint@npm:16.8.0"
+"stylelint@npm:16.8.1":
+  version: 16.8.1
+  resolution: "stylelint@npm:16.8.1"
   dependencies:
     "@csstools/css-parser-algorithms": "npm:^2.7.1"
     "@csstools/css-tokenizer": "npm:^2.4.1"
@@ -16255,7 +16255,7 @@ __metadata:
     write-file-atomic: "npm:^5.0.1"
   bin:
     stylelint: bin/stylelint.mjs
-  checksum: 10/3367445214e91baf588aff2dc1afad9f115068fef5c07a114446631581044420818fdccc46ddec812ad9265ef431bbd8d491d3587a41637d8b5f7b995f1e7ffc
+  checksum: 10/834d10490866b8472047938790f68cdc5bd298057ef7bfcf3be2e56259a8d3d05cbb66eefa235d603652fee92126e74d737ad40012721556c54d707407cbf7f1
   languageName: node
   linkType: hard
 
