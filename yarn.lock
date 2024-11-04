@@ -14677,11 +14677,11 @@ __metadata:
   linkType: hard
 
 "react-swipeable@npm:^7.0.1":
-  version: 7.0.1
-  resolution: "react-swipeable@npm:7.0.1"
+  version: 7.0.2
+  resolution: "react-swipeable@npm:7.0.2"
   peerDependencies:
-    react: ^16.8.3 || ^17 || ^18
-  checksum: 10/b4aa3e8222e34d53f98df80075bdd7a034b33e733952844931a520158c49a892e53fdd497e53ee0f74c502eec21db3d6c9dbc97e251881c2032fe7fd5a0145c8
+    react: ^16.8.3 || ^17 || ^18 || ^19.0.0 || ^19.0.0-rc
+  checksum: 10/c142190244865c321751b0ca5f14ac186cf8a5d49bd577b16b1d22ea4f673d1e85cd7ad1962736be4575df320a6081c2b2b36799236c777b1a3ffb8682f4993c
   languageName: node
   linkType: hard
 
