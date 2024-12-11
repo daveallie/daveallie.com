@@ -3338,12 +3338,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react-dom@npm:18.3.4":
-  version: 18.3.4
-  resolution: "@types/react-dom@npm:18.3.4"
+"@types/react-dom@npm:18.3.5":
+  version: 18.3.5
+  resolution: "@types/react-dom@npm:18.3.5"
   peerDependencies:
     "@types/react": ^18.0.0
-  checksum: 10/63cba08fd7962067ababb4c54d66f88ad9ca3770c22c45852bdb847fa051bc024db2c4bb18e7ed68c9a21eed8e825006d5e5f6e0eb317a4dfbc74ceef81a9eec
+  checksum: 10/02095b326f373867498e0eb2b5ebb60f9bd9535db0d757ea13504c4b7d75e16605cf1d43ce7a2e67893d177b51db4357cabb2842fb4257c49427d02da1a14e09
   languageName: node
   linkType: hard
 
@@ -3365,13 +3365,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react@npm:*, @types/react@npm:18.3.15, @types/react@npm:>=16":
-  version: 18.3.15
-  resolution: "@types/react@npm:18.3.15"
+"@types/react@npm:*, @types/react@npm:18.3.16, @types/react@npm:>=16":
+  version: 18.3.16
+  resolution: "@types/react@npm:18.3.16"
   dependencies:
     "@types/prop-types": "npm:*"
     csstype: "npm:^3.0.2"
-  checksum: 10/e8a4fb28ee1cf11f2b01210b91321f6e6a4f633b81e523ff31fb2f1a9b2b67fff692914de66c4b207e6cda87a670ff416e955859f75e1df82350a6cca6b36575
+  checksum: 10/971b4f46af9aeda85326000ba4a78973db6a1f11e10665c014e1274a68ae801469f057b56d850512694cf04a69cc264c07e6a507b4613874e8bf6ab4df7904f1
   languageName: node
   linkType: hard
 
@@ -6157,8 +6157,8 @@ __metadata:
     "@mdx-js/react": "npm:^2.3.0"
     "@types/jsonp": "npm:^0.2.3"
     "@types/node": "npm:~20.17.0"
-    "@types/react": "npm:18.3.15"
-    "@types/react-dom": "npm:18.3.4"
+    "@types/react": "npm:18.3.16"
+    "@types/react-dom": "npm:18.3.5"
     "@types/react-helmet": "npm:^6.1.11"
     "@types/react-syntax-highlighter": "npm:^15.5.11"
     "@vercel/node": "npm:^3.0.26"
