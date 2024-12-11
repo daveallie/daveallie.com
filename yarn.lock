@@ -1904,6 +1904,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@hapi/topo@npm:^5.0.0":
+  version: 5.0.0
+  resolution: "@hapi/topo@npm:5.0.0"
+  dependencies:
+    "@hapi/hoek": "npm:^9.0.0"
+  checksum: 10/3cb6c5d655b7fec01ac301699b908567b13acb8016f00fd82c075a8e7bfbb522eb62d4b1a8c3df542cc23f92b7e51bc2657602d5f04cfe0b080d4827aff1f988
+  languageName: node
+  linkType: hard
+
 "@hapi/topo@npm:^5.1.0":
   version: 5.1.0
   resolution: "@hapi/topo@npm:5.1.0"
@@ -2823,6 +2832,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@sideway/address@npm:^4.1.3":
+  version: 4.1.3
+  resolution: "@sideway/address@npm:4.1.3"
+  dependencies:
+    "@hapi/hoek": "npm:^9.0.0"
+  checksum: 10/7224cd7127abb315573bd697836a1277edaaf4a93043e0ea76d5584191937e350dab85191176e19e3dbaa0ece888267bfcaa6e2c41541e151bdb0f7209a814f3
+  languageName: node
+  linkType: hard
+
 "@sideway/address@npm:^4.1.5":
   version: 4.1.5
   resolution: "@sideway/address@npm:4.1.5"
@@ -3241,7 +3259,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*, @types/node@npm:>=10.0.0":
+"@types/node@npm:*, @types/node@npm:>=10.0.0, @types/node@npm:~22.10.0":
   version: 22.10.2
   resolution: "@types/node@npm:22.10.2"
   dependencies:
@@ -3268,15 +3286,6 @@ __metadata:
   version: 8.10.66
   resolution: "@types/node@npm:8.10.66"
   checksum: 10/49a93cbeeca74e247970b5c2130abe8204587b6d3c5ec259543e7511234e5fa340341668155807ade7a86c22dab1ec8ee18c0ac745e4d54679de1b2dabd99363
-  languageName: node
-  linkType: hard
-
-"@types/node@npm:~20.17.0":
-  version: 20.17.10
-  resolution: "@types/node@npm:20.17.10"
-  dependencies:
-    undici-types: "npm:~6.19.2"
-  checksum: 10/9a1bcb2f25ce1ad249497e5f10ed984bf0ec476439fad2e965c3d6cc4642abb23c5e8400f7e48e55ff121d2b80b14bdc1bd4eac7ff6848154033a2be25fffb17
   languageName: node
   linkType: hard
 
@@ -6236,7 +6245,7 @@ __metadata:
     "@ianvs/prettier-plugin-sort-imports": "npm:^4.2.1"
     "@mdx-js/react": "npm:^2.3.0"
     "@types/jsonp": "npm:^0.2.3"
-    "@types/node": "npm:~20.17.0"
+    "@types/node": "npm:~22.10.0"
     "@types/react": "npm:18.3.16"
     "@types/react-dom": "npm:18.3.5"
     "@types/react-helmet": "npm:^6.1.11"
@@ -8026,7 +8035,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fastq@npm:^1.15.0, fastq@npm:^1.16.0, fastq@npm:^1.6.0":
+"fastq@npm:^1.15.0, fastq@npm:^1.6.0":
+  version: 1.15.0
+  resolution: "fastq@npm:1.15.0"
+  dependencies:
+    reusify: "npm:^1.0.4"
+  checksum: 10/67c01b1c972e2d5b6fea197a1a39d5d582982aea69ff4c504badac71080d8396d4843b165a9686e907c233048f15a86bbccb0e7f83ba771f6fa24bcde059d0c3
+  languageName: node
+  linkType: hard
+
+"fastq@npm:^1.16.0":
   version: 1.17.1
   resolution: "fastq@npm:1.17.1"
   dependencies:
@@ -10904,7 +10922,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"joi@npm:^17.11.0, joi@npm:^17.9.2":
+"joi@npm:^17.11.0":
   version: 17.13.3
   resolution: "joi@npm:17.13.3"
   dependencies:
@@ -10914,6 +10932,19 @@ __metadata:
     "@sideway/formula": "npm:^3.0.1"
     "@sideway/pinpoint": "npm:^2.0.0"
   checksum: 10/4c150db0c820c3a52f4a55c82c1fc5e144a5b5f4da9ffebc7339a15469d1a447ebb427ced446efcb9709ab56bd71a06c4c67c9381bc1b9f9ae63fc7c89209bdf
+  languageName: node
+  linkType: hard
+
+"joi@npm:^17.9.2":
+  version: 17.9.2
+  resolution: "joi@npm:17.9.2"
+  dependencies:
+    "@hapi/hoek": "npm:^9.0.0"
+    "@hapi/topo": "npm:^5.0.0"
+    "@sideway/address": "npm:^4.1.3"
+    "@sideway/formula": "npm:^3.0.1"
+    "@sideway/pinpoint": "npm:^2.0.0"
+  checksum: 10/c6c679643195c7c7eaada2ac51bef84032d4de8f9ebf3ead66079d07eccae6639b658f336358d5b9c70537cc7f3669ae8ac2a290ba832f944e4f85264c38d9e6
   languageName: node
   linkType: hard
 
@@ -17327,13 +17358,6 @@ __metadata:
   version: 0.1.2
   resolution: "unc-path-regex@npm:0.1.2"
   checksum: 10/a05fa2006bf4606051c10fc7968f08ce7b28fa646befafa282813aeb1ac1a56f65cb1b577ca7851af2726198d59475bb49b11776036257b843eaacee2860a4ec
-  languageName: node
-  linkType: hard
-
-"undici-types@npm:~6.19.2":
-  version: 6.19.8
-  resolution: "undici-types@npm:6.19.8"
-  checksum: 10/cf0b48ed4fc99baf56584afa91aaffa5010c268b8842f62e02f752df209e3dea138b372a60a963b3b2576ed932f32329ce7ddb9cb5f27a6c83040d8cd74b7a70
   languageName: node
   linkType: hard
 
