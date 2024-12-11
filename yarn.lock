@@ -3338,12 +3338,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react-dom@npm:18.3.3":
-  version: 18.3.3
-  resolution: "@types/react-dom@npm:18.3.3"
+"@types/react-dom@npm:18.3.4":
+  version: 18.3.4
+  resolution: "@types/react-dom@npm:18.3.4"
   peerDependencies:
     "@types/react": ^18.0.0
-  checksum: 10/696e271386113b5d018d3760b39dad10b5659833d625432d4ce903d74d1b956183ffa77a11a809a6ef65b28a1ea3273d5405e0fa77e9411c77254ece1bb41b95
+  checksum: 10/63cba08fd7962067ababb4c54d66f88ad9ca3770c22c45852bdb847fa051bc024db2c4bb18e7ed68c9a21eed8e825006d5e5f6e0eb317a4dfbc74ceef81a9eec
   languageName: node
   linkType: hard
 
@@ -6158,7 +6158,7 @@ __metadata:
     "@types/jsonp": "npm:^0.2.3"
     "@types/node": "npm:~20.17.0"
     "@types/react": "npm:18.3.15"
-    "@types/react-dom": "npm:18.3.3"
+    "@types/react-dom": "npm:18.3.4"
     "@types/react-helmet": "npm:^6.1.11"
     "@types/react-syntax-highlighter": "npm:^15.5.11"
     "@vercel/node": "npm:^3.0.26"
