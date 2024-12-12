@@ -3562,10 +3562,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vercel/build-utils@npm:8.7.0":
-  version: 8.7.0
-  resolution: "@vercel/build-utils@npm:8.7.0"
-  checksum: 10/532a4d127c8e98edeba9980dbe01f38ac4aad13ef77474c66416fad1d5f51581e7c9cc47873d506062154454a51cc547ace1334bf09e9343caba297d52542dc4
+"@vercel/build-utils@npm:8.8.0":
+  version: 8.8.0
+  resolution: "@vercel/build-utils@npm:8.8.0"
+  checksum: 10/ec09ba42e577b9d1770e61db8520170cf1c6461298a950722ad3ada3a196b04583c2af0c1efd52b0cef82df554dcbdc7be0d9c135095ce0bf845ec08af039817
   languageName: node
   linkType: hard
 
@@ -3598,15 +3598,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vercel/node@npm:^3.0.26":
-  version: 3.2.29
-  resolution: "@vercel/node@npm:3.2.29"
+"@vercel/node@npm:^4.0.0":
+  version: 4.0.0
+  resolution: "@vercel/node@npm:4.0.0"
   dependencies:
     "@edge-runtime/node-utils": "npm:2.3.0"
     "@edge-runtime/primitives": "npm:4.1.0"
     "@edge-runtime/vm": "npm:3.2.0"
     "@types/node": "npm:16.18.11"
-    "@vercel/build-utils": "npm:8.7.0"
+    "@vercel/build-utils": "npm:8.8.0"
     "@vercel/error-utils": "npm:2.0.3"
     "@vercel/nft": "npm:0.27.3"
     "@vercel/static-config": "npm:3.0.0"
@@ -3617,12 +3617,12 @@ __metadata:
     esbuild: "npm:0.14.47"
     etag: "npm:1.8.1"
     node-fetch: "npm:2.6.9"
-    path-to-regexp: "npm:6.2.1"
+    path-to-regexp: "npm:6.3.0"
     ts-morph: "npm:12.0.0"
     ts-node: "npm:10.9.1"
     typescript: "npm:4.9.5"
     undici: "npm:5.28.4"
-  checksum: 10/4a76375d81d0fa64bde6ccd762cc7be1ec97297311d1bb3cabd825a0e6dbb8d596da10bf696c62d6653e3d0498864fb885c025495f984d1ef2cbced76001182a
+  checksum: 10/62d8dfcae6536377055d938ff92f1cf9af36183e44b12a79f265d74b5e68a392abb253d8d97c234c3b0b9bc73a0ce8437b9cbdfc0a711053c178b676634f1dff
   languageName: node
   linkType: hard
 
@@ -6161,7 +6161,7 @@ __metadata:
     "@types/react-dom": "npm:18.3.5"
     "@types/react-helmet": "npm:^6.1.11"
     "@types/react-syntax-highlighter": "npm:^15.5.11"
-    "@vercel/node": "npm:^3.0.26"
+    "@vercel/node": "npm:^4.0.0"
     aws-sdk: "npm:^2.1599.0"
     classnames: "npm:^2.5.1"
     file-icons-js: "npm:^1.1.0"
@@ -13683,10 +13683,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"path-to-regexp@npm:6.2.1":
-  version: 6.2.1
-  resolution: "path-to-regexp@npm:6.2.1"
-  checksum: 10/1e266be712d1a08086ee77beab12a1804842ec635dfed44f9ee1ba960a0e01cec8063fb8c92561115cdc0ce73158cdc7766e353ffa039340b4a85b370084c4d4
+"path-to-regexp@npm:6.3.0":
+  version: 6.3.0
+  resolution: "path-to-regexp@npm:6.3.0"
+  checksum: 10/6822f686f01556d99538b350722ef761541ec0ce95ca40ce4c29e20a5b492fe8361961f57993c71b2418de12e604478dcf7c430de34b2c31a688363a7a944d9c
   languageName: node
   linkType: hard
 
