@@ -28,6 +28,7 @@ export default function SlidesIndexPage() {
             key={node.id}
             className={styles.deckContainer}
             onClick={() => {
+              // @ts-ignore
               navigate(`/${node.frontmatter.slug}`);
             }}
           >
