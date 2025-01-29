@@ -3605,8 +3605,8 @@ __metadata:
   linkType: hard
 
 "@vercel/node@npm:^5.0.0":
-  version: 5.0.3
-  resolution: "@vercel/node@npm:5.0.3"
+  version: 5.0.4
+  resolution: "@vercel/node@npm:5.0.4"
   dependencies:
     "@edge-runtime/node-utils": "npm:2.3.0"
     "@edge-runtime/primitives": "npm:4.1.0"
@@ -3624,11 +3624,12 @@ __metadata:
     etag: "npm:1.8.1"
     node-fetch: "npm:2.6.9"
     path-to-regexp: "npm:6.2.1"
+    path-to-regexp-updated: "npm:path-to-regexp@6.3.0"
     ts-morph: "npm:12.0.0"
     ts-node: "npm:10.9.1"
     typescript: "npm:4.9.5"
     undici: "npm:5.28.4"
-  checksum: 10/e97f1c9537162a01ed39fd8869f778583b366a3e23fb25d842d8135c2ff8d027e05a451c35f929674193414191412cc296290f46269d66615087e8b7cdf7f773
+  checksum: 10/9c5d5913089779e9ac9adb0747a0fb2d6f6655d0bc2d75ac4c1a97260a1ff776aca9168d542abc74402c1c917aab43aae52f2a2d96a683b289e0adb8e2eb2c61
   languageName: node
   linkType: hard
 
@@ -13877,6 +13878,13 @@ __metadata:
     lru-cache: "npm:^10.2.0"
     minipass: "npm:^5.0.0 || ^6.0.2 || ^7.0.0"
   checksum: 10/5e8845c159261adda6f09814d7725683257fcc85a18f329880ab4d7cc1d12830967eae5d5894e453f341710d5484b8fdbbd4d75181b4d6e1eb2f4dc7aeadc434
+  languageName: node
+  linkType: hard
+
+"path-to-regexp-updated@npm:path-to-regexp@6.3.0":
+  version: 6.3.0
+  resolution: "path-to-regexp@npm:6.3.0"
+  checksum: 10/6822f686f01556d99538b350722ef761541ec0ce95ca40ce4c29e20a5b492fe8361961f57993c71b2418de12e604478dcf7c430de34b2c31a688363a7a944d9c
   languageName: node
   linkType: hard
 
