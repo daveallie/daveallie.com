@@ -59,7 +59,7 @@
     "@types/jsonp": "^0.2.3",
     "@types/node": "~22.15.0",
     "@types/react": "18.3.20",
-    "@types/react-dom": "18.3.6",
+    "@types/react-dom": "18.3.7",
     "@types/react-helmet": "^6.1.11",
     "@types/react-syntax-highlighter": "^15.5.11",
     "@vercel/node": "^5.0.0",
