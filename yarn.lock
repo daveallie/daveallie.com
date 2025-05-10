@@ -2154,9 +2154,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@mapbox/node-pre-gyp@npm:^2.0.0-rc.0":
-  version: 2.0.0-rc.0
-  resolution: "@mapbox/node-pre-gyp@npm:2.0.0-rc.0"
+"@mapbox/node-pre-gyp@npm:^2.0.0":
+  version: 2.0.0
+  resolution: "@mapbox/node-pre-gyp@npm:2.0.0"
   dependencies:
     consola: "npm:^3.2.3"
     detect-libc: "npm:^2.0.0"
@@ -2167,7 +2167,7 @@ __metadata:
     tar: "npm:^7.4.0"
   bin:
     node-pre-gyp: bin/node-pre-gyp
-  checksum: 10/527802a6fb208599c816e4c9ca2421175dbcf54f252fe60965d31b7cab748f31ae48467eac910378fd374b6b93b33ca742ade4949a8f17a82a49e95f33b54247
+  checksum: 10/c08eb199cca4cfb8f938216c9b6d63ca47c06260626a2a02ffc946aefec61ec93b75d0a718fb8f6fa8326035ecea6048062bf451ca1579280b1cb37ec4856629
   languageName: node
   linkType: hard
 
@@ -3582,31 +3582,31 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vercel/nft@npm:0.27.10":
-  version: 0.27.10
-  resolution: "@vercel/nft@npm:0.27.10"
+"@vercel/nft@npm:0.29.2":
+  version: 0.29.2
+  resolution: "@vercel/nft@npm:0.29.2"
   dependencies:
-    "@mapbox/node-pre-gyp": "npm:^2.0.0-rc.0"
+    "@mapbox/node-pre-gyp": "npm:^2.0.0"
     "@rollup/pluginutils": "npm:^5.1.3"
     acorn: "npm:^8.6.0"
     acorn-import-attributes: "npm:^1.9.5"
     async-sema: "npm:^3.1.1"
     bindings: "npm:^1.4.0"
     estree-walker: "npm:2.0.2"
-    glob: "npm:^7.1.3"
+    glob: "npm:^10.4.5"
     graceful-fs: "npm:^4.2.9"
     node-gyp-build: "npm:^4.2.2"
     picomatch: "npm:^4.0.2"
     resolve-from: "npm:^5.0.0"
   bin:
     nft: out/cli.js
-  checksum: 10/237f769bb888f528fbbe767e0dddd9aa5f2251540dd92c7c3d00bd6cf44cb992745fa8f75cdcad67d89f8a54335e5a6c8dc5973aac18312703dba62cccb97895
+  checksum: 10/6ae416b263a0ded96675346ab71c502a7ed6fbdce24ac79e68b43da741b05e165f3ea2e327dad1bc77261d91e7cd60c87005bdefd51991d190347efa71f38837
   languageName: node
   linkType: hard
 
 "@vercel/node@npm:^5.0.0":
-  version: 5.1.15
-  resolution: "@vercel/node@npm:5.1.15"
+  version: 5.1.16
+  resolution: "@vercel/node@npm:5.1.16"
   dependencies:
     "@edge-runtime/node-utils": "npm:2.3.0"
     "@edge-runtime/primitives": "npm:4.1.0"
@@ -3614,7 +3614,7 @@ __metadata:
     "@types/node": "npm:16.18.11"
     "@vercel/build-utils": "npm:10.5.1"
     "@vercel/error-utils": "npm:2.0.3"
-    "@vercel/nft": "npm:0.27.10"
+    "@vercel/nft": "npm:0.29.2"
     "@vercel/static-config": "npm:3.0.0"
     async-listen: "npm:3.0.0"
     cjs-module-lexer: "npm:1.2.3"
@@ -3629,7 +3629,7 @@ __metadata:
     ts-node: "npm:10.9.1"
     typescript: "npm:4.9.5"
     undici: "npm:5.28.4"
-  checksum: 10/600a167a4e191e882ffc63aabf1db6ce1bd898d1a9ec97de579fd0cf4eaef0c19e72f2a7a45216be0d261f80260500d34a8b575029c7da8bb9670347559191d6
+  checksum: 10/b64cea73bfe40cb81abc87f02065046b45b9b8aa6819204d7afc92176e31abc446e4f45b4657a793a41eb9ae6e0030c8383229dd94d0d872f30bfb80042d532b
   languageName: node
   linkType: hard
 
@@ -9415,7 +9415,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"glob@npm:^10.3.7":
+"glob@npm:^10.3.7, glob@npm:^10.4.5":
   version: 10.4.5
   resolution: "glob@npm:10.4.5"
   dependencies:
