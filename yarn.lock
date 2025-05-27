@@ -3568,10 +3568,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vercel/build-utils@npm:10.5.1":
-  version: 10.5.1
-  resolution: "@vercel/build-utils@npm:10.5.1"
-  checksum: 10/e49c64ee4640dbb2ae7cd4345f73c2fd1f5da4ae252a9dbc40ceba76f50b4d16ac27357418d33be652a719d41e9c20798e59cc5b5f5f922fd53c4e1effab9372
+"@vercel/build-utils@npm:10.6.0":
+  version: 10.6.0
+  resolution: "@vercel/build-utils@npm:10.6.0"
+  checksum: 10/a399433aa93e9ef0a95e3678d66aae5f88a17313733fe088c40472d06a62b97aa80cd2e35e8bfff7e902c4919cf013312a8a4d1727be9568d903e3fcf2ab8bf5
   languageName: node
   linkType: hard
 
@@ -3605,17 +3605,17 @@ __metadata:
   linkType: hard
 
 "@vercel/node@npm:^5.0.0":
-  version: 5.1.16
-  resolution: "@vercel/node@npm:5.1.16"
+  version: 5.2.0
+  resolution: "@vercel/node@npm:5.2.0"
   dependencies:
     "@edge-runtime/node-utils": "npm:2.3.0"
     "@edge-runtime/primitives": "npm:4.1.0"
     "@edge-runtime/vm": "npm:3.2.0"
     "@types/node": "npm:16.18.11"
-    "@vercel/build-utils": "npm:10.5.1"
+    "@vercel/build-utils": "npm:10.6.0"
     "@vercel/error-utils": "npm:2.0.3"
     "@vercel/nft": "npm:0.29.2"
-    "@vercel/static-config": "npm:3.0.0"
+    "@vercel/static-config": "npm:3.1.0"
     async-listen: "npm:3.0.0"
     cjs-module-lexer: "npm:1.2.3"
     edge-runtime: "npm:2.5.9"
@@ -3629,18 +3629,18 @@ __metadata:
     ts-node: "npm:10.9.1"
     typescript: "npm:4.9.5"
     undici: "npm:5.28.4"
-  checksum: 10/b64cea73bfe40cb81abc87f02065046b45b9b8aa6819204d7afc92176e31abc446e4f45b4657a793a41eb9ae6e0030c8383229dd94d0d872f30bfb80042d532b
+  checksum: 10/60c0ecaec49355b268ac4efa8f45cbe834102780620f341ba444e06acae926cb4f1bb716cf6daee5acba75618cae0f00f71af2a05e4822046e72a1c3e9b70f7b
   languageName: node
   linkType: hard
 
-"@vercel/static-config@npm:3.0.0":
-  version: 3.0.0
-  resolution: "@vercel/static-config@npm:3.0.0"
+"@vercel/static-config@npm:3.1.0":
+  version: 3.1.0
+  resolution: "@vercel/static-config@npm:3.1.0"
   dependencies:
     ajv: "npm:8.6.3"
     json-schema-to-ts: "npm:1.6.4"
     ts-morph: "npm:12.0.0"
-  checksum: 10/69d9b0a4b1edd4dec767c512963a2000563c3923ce4343bf6f12bcfb30c8689338eb6216ab16d52f5ff16d4839fcc53ae6d4898a02582db8359d1ead5abd4cf1
+  checksum: 10/4741a05caa09a95cbd2b28231c7906d0cb2a4a6f0eee7410086c03b33a64a273b132b5b5095c6d7f506b7f4ed260c59195465232ba0f9b3940059a404baeacc8
   languageName: node
   linkType: hard
 
