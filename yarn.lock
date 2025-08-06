@@ -1932,8 +1932,8 @@ __metadata:
   linkType: hard
 
 "@ianvs/prettier-plugin-sort-imports@npm:^4.2.1":
-  version: 4.5.1
-  resolution: "@ianvs/prettier-plugin-sort-imports@npm:4.5.1"
+  version: 4.6.0
+  resolution: "@ianvs/prettier-plugin-sort-imports@npm:4.6.0"
   dependencies:
     "@babel/generator": "npm:^7.26.2"
     "@babel/parser": "npm:^7.26.2"
@@ -1943,13 +1943,19 @@ __metadata:
   peerDependencies:
     "@prettier/plugin-oxc": ^0.0.4
     "@vue/compiler-sfc": 2.7.x || 3.x
+    content-tag: ^4.0.0
     prettier: 2 || 3 || ^4.0.0-0
+    prettier-plugin-ember-template-tag: ^2.1.0
   peerDependenciesMeta:
     "@prettier/plugin-oxc":
       optional: true
     "@vue/compiler-sfc":
       optional: true
-  checksum: 10/244d7c61a7b25b5b4ffe66e5204c35d06d58f353931f96208c6482de27589c1ce1dbce017427bc7ff771b1c57dd73f661be7e1338dbff1f18ffc513f7fa8c8cd
+    content-tag:
+      optional: true
+    prettier-plugin-ember-template-tag:
+      optional: true
+  checksum: 10/fad0b69db9584d3e3abc6f2c7830e0643d390f9823936a4dcf14d58f8d736cd35e607fd99fd948a308326459f7ed3d25a3a4449ef67d5de69e0d64a2f1f11275
   languageName: node
   linkType: hard
 
