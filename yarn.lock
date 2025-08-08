@@ -1932,8 +1932,8 @@ __metadata:
   linkType: hard
 
 "@ianvs/prettier-plugin-sort-imports@npm:^4.2.1":
-  version: 4.6.0
-  resolution: "@ianvs/prettier-plugin-sort-imports@npm:4.6.0"
+  version: 4.6.1
+  resolution: "@ianvs/prettier-plugin-sort-imports@npm:4.6.1"
   dependencies:
     "@babel/generator": "npm:^7.26.2"
     "@babel/parser": "npm:^7.26.2"
@@ -1955,7 +1955,7 @@ __metadata:
       optional: true
     prettier-plugin-ember-template-tag:
       optional: true
-  checksum: 10/fad0b69db9584d3e3abc6f2c7830e0643d390f9823936a4dcf14d58f8d736cd35e607fd99fd948a308326459f7ed3d25a3a4449ef67d5de69e0d64a2f1f11275
+  checksum: 10/380a8f80690fe16508e2f08a485032e49d8b14c9c636b94bbbbaa5225e8cb73e6d8d5438e0f5a7ce8ef755db7e077bc132151bd8e8bde143e32ba60b5ca3cce4
   languageName: node
   linkType: hard
 
