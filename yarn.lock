@@ -14516,10 +14516,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prismjs@npm:^1.27.0":
-  version: 1.28.0
-  resolution: "prismjs@npm:1.28.0"
-  checksum: 10/b64ea33cc2174827f5721c590089e782e74880ce1513d9c401022cf3d72d3523a562117631e5e7c47ce1eaaf324b0838713073d2be5e70a42710e23719954404
+"prismjs@npm:^1.30.0":
+  version: 1.30.0
+  resolution: "prismjs@npm:1.30.0"
+  checksum: 10/6b48a2439a82e5c6882f48ebc1564c3890e16463ba17ac10c3ad4f62d98dea5b5c915b172b63b83023a70ad4f5d7be3e8a60304420db34a161fae69dd4e3e2da
   languageName: node
   linkType: hard
 
@@ -14951,18 +14951,18 @@ __metadata:
   linkType: hard
 
 "react-syntax-highlighter@npm:^15.5.0":
-  version: 15.6.1
-  resolution: "react-syntax-highlighter@npm:15.6.1"
+  version: 15.6.3
+  resolution: "react-syntax-highlighter@npm:15.6.3"
   dependencies:
     "@babel/runtime": "npm:^7.3.1"
     highlight.js: "npm:^10.4.1"
     highlightjs-vue: "npm:^1.0.0"
     lowlight: "npm:^1.17.0"
-    prismjs: "npm:^1.27.0"
+    prismjs: "npm:^1.30.0"
     refractor: "npm:^3.6.0"
   peerDependencies:
     react: ">= 0.14.0"
-  checksum: 10/9a89c81f7dcc109b038dc2a73189fa1ea916e6485d8a39856ab3d01d2c753449b5ae1c0df9c9ee0ed5c8c9808a68422b19af9a168ec091a274bddc7ad092eb86
+  checksum: 10/0e2afaa47afb2e60106b17d0f166cbc77383cb4be616928c2ac8f8307ce5e0f88ae396c4e8d1ecafebb2e5d506b1457d65131cae48dcf9de383952c31bb323a3
   languageName: node
   linkType: hard
 
