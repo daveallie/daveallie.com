@@ -14951,8 +14951,8 @@ __metadata:
   linkType: hard
 
 "react-syntax-highlighter@npm:^15.5.0":
-  version: 15.6.5
-  resolution: "react-syntax-highlighter@npm:15.6.5"
+  version: 15.6.6
+  resolution: "react-syntax-highlighter@npm:15.6.6"
   dependencies:
     "@babel/runtime": "npm:^7.3.1"
     highlight.js: "npm:^10.4.1"
@@ -14962,7 +14962,7 @@ __metadata:
     refractor: "npm:^3.6.0"
   peerDependencies:
     react: ">= 0.14.0"
-  checksum: 10/868e1c68d70615eecb2fed6db4841fd88d84f2ddffd38b7560db9db1e485e45c348785295308ed6f598c7a3328e525cb687b2ff7c2350a4d41bfcf1d37a83041
+  checksum: 10/8b7e60bc7df7218248e17dfc3c44b8f45cd9e363a763477753d5c39242910ff822180db59098e1cc74d0d2ced54ed1ca79a32d67e1afa0c8227ca918a7e0c692
   languageName: node
   linkType: hard
 
