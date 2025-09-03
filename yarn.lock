@@ -3621,8 +3621,8 @@ __metadata:
   linkType: hard
 
 "@vercel/node@npm:^5.0.0":
-  version: 5.3.18
-  resolution: "@vercel/node@npm:5.3.18"
+  version: 5.3.19
+  resolution: "@vercel/node@npm:5.3.19"
   dependencies:
     "@edge-runtime/node-utils": "npm:2.3.0"
     "@edge-runtime/primitives": "npm:4.1.0"
@@ -3645,7 +3645,7 @@ __metadata:
     ts-node: "npm:10.9.1"
     typescript: "npm:4.9.5"
     undici: "npm:5.28.4"
-  checksum: 10/61f3965cf23a36c9857ed672c2f0b6fa9756e909e636895f9b03e65f869723a4361e83a2a8cd3453a5227c1ab4c90119d7303bfeba288d0962d7b2cb075266a8
+  checksum: 10/f5b0db706764aee992e6eeb73cdebf7db6f6bc052ea15bc29576990b8f7f2d565e7ff465d27f6843a71196110d24135ce0d66881b757263f9c1b6cd7feb31a28
   languageName: node
   linkType: hard
 
