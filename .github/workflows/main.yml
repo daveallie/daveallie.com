@@ -24,10 +24,10 @@ jobs:
         run: echo "VERCEL_ARGS=$VERCEL_ARGS"
 
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Clone blog submodule
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           repository: daveallie/blog
           path: blog
@@ -38,7 +38,7 @@ jobs:
         run: git submodule update --init blog
 
       - name: Clone slides submodule
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           repository: daveallie/slides
           path: slides
@@ -69,10 +69,10 @@ jobs:
         run: echo "VERCEL_ARGS=$VERCEL_ARGS"
 
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Clone blog submodule
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           repository: daveallie/blog
           path: blog
@@ -83,7 +83,7 @@ jobs:
         run: git submodule update --init blog
 
       - name: Clone slides submodule
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           repository: daveallie/slides
           path: slides
@@ -114,10 +114,10 @@ jobs:
         run: echo "VERCEL_ARGS=$VERCEL_ARGS"
 
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Clone blog submodule
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           repository: daveallie/blog
           path: blog
@@ -128,7 +128,7 @@ jobs:
         run: git submodule update --init blog
 
       - name: Clone slides submodule
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           repository: daveallie/slides
           path: slides
@@ -159,10 +159,10 @@ jobs:
         run: echo "VERCEL_ARGS=$VERCEL_ARGS"
 
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Clone blog submodule
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           repository: daveallie/blog
           path: blog
@@ -173,7 +173,7 @@ jobs:
         run: git submodule update --init blog
 
       - name: Clone slides submodule
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           repository: daveallie/slides
           path: slides
