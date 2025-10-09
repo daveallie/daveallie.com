@@ -16,7 +16,7 @@ jobs:
         run: echo "NODE_VERSION=$(cat .node-version | cut -c 2-)" >> $GITHUB_OUTPUT
         id: nvm
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v5
         with:
           node-version: ${{ steps.nvm.outputs.NODE_VERSION }}
           cache: yarn
