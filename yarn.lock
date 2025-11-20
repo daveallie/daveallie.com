@@ -3584,10 +3584,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vercel/build-utils@npm:12.2.0":
-  version: 12.2.0
-  resolution: "@vercel/build-utils@npm:12.2.0"
-  checksum: 10/b1bc981e06c1a4cae89b08582a5ed276c92562c1579818e7603716342fc1a313791eaef8b584917cd0c79eb54307d84b64c5f4cc4b44b812568deb2e49289122
+"@vercel/build-utils@npm:13.1.0":
+  version: 13.1.0
+  resolution: "@vercel/build-utils@npm:13.1.0"
+  checksum: 10/fe5a3c164c01969b9aaa1629952d95518cc3c77b85ee7d834a0097503d3d49aee4bcb39e4f6691b60d589fb8c5faa3d7a96a598ba606aa2affb3993af42361b4
   languageName: node
   linkType: hard
 
@@ -3621,14 +3621,14 @@ __metadata:
   linkType: hard
 
 "@vercel/node@npm:^5.0.0":
-  version: 5.5.0
-  resolution: "@vercel/node@npm:5.5.0"
+  version: 5.5.8
+  resolution: "@vercel/node@npm:5.5.8"
   dependencies:
     "@edge-runtime/node-utils": "npm:2.3.0"
     "@edge-runtime/primitives": "npm:4.1.0"
     "@edge-runtime/vm": "npm:3.2.0"
     "@types/node": "npm:16.18.11"
-    "@vercel/build-utils": "npm:12.2.0"
+    "@vercel/build-utils": "npm:13.1.0"
     "@vercel/error-utils": "npm:2.0.3"
     "@vercel/nft": "npm:0.30.1"
     "@vercel/static-config": "npm:3.1.2"
@@ -3645,8 +3645,9 @@ __metadata:
     ts-morph: "npm:12.0.0"
     ts-node: "npm:10.9.1"
     typescript: "npm:4.9.5"
+    typescript5: "npm:typescript@5.9.3"
     undici: "npm:5.28.4"
-  checksum: 10/cd4a4452a08ea6465f0eeb3c0ac08e8d1e537d97201fe73d740209364a1c0107955144e803af66802c2a4b3e1be8d0e999f01fe39b6d86a1c66d75c6195ea607
+  checksum: 10/615ed36aa2125616e799d702ba4ea206a3d778492da03ade1f25a024c29d50e08fdaa16b56f5e1266259f7d0ffc647878fa2680d810b90aad824c17c1126c0a6
   languageName: node
   linkType: hard
 
@@ -17450,6 +17451,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"typescript5@npm:typescript@5.9.3, typescript@npm:^5.4.5":
+  version: 5.9.3
+  resolution: "typescript@npm:5.9.3"
+  bin:
+    tsc: bin/tsc
+    tsserver: bin/tsserver
+  checksum: 10/c089d9d3da2729fd4ac517f9b0e0485914c4b3c26f80dc0cffcb5de1719a17951e92425d55db59515c1a7ddab65808466debb864d0d56dcf43f27007d0709594
+  languageName: node
+  linkType: hard
+
 "typescript@npm:4.9.5":
   version: 4.9.5
   resolution: "typescript@npm:4.9.5"
@@ -17457,16 +17468,6 @@ __metadata:
     tsc: bin/tsc
     tsserver: bin/tsserver
   checksum: 10/458f7220ab11e0fc191514cc41be1707645ec9a8c2d609448a448e18c522cef9646f58728f6811185a4c35613dacdf6c98cf8965c88b3541d0288c47291e4300
-  languageName: node
-  linkType: hard
-
-"typescript@npm:^5.4.5":
-  version: 5.9.3
-  resolution: "typescript@npm:5.9.3"
-  bin:
-    tsc: bin/tsc
-    tsserver: bin/tsserver
-  checksum: 10/c089d9d3da2729fd4ac517f9b0e0485914c4b3c26f80dc0cffcb5de1719a17951e92425d55db59515c1a7ddab65808466debb864d0d56dcf43f27007d0709594
   languageName: node
   linkType: hard
 
