@@ -1422,12 +1422,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/runtime@npm:^7.0.0, @babel/runtime@npm:^7.12.5, @babel/runtime@npm:^7.17.9, @babel/runtime@npm:^7.20.13, @babel/runtime@npm:^7.21.0, @babel/runtime@npm:^7.3.1, @babel/runtime@npm:^7.8.4, @babel/runtime@npm:^7.9.2":
-  version: 7.22.10
-  resolution: "@babel/runtime@npm:7.22.10"
-  dependencies:
-    regenerator-runtime: "npm:^0.14.0"
-  checksum: 10/88bba6dfdfd6f6e9365199397146a0dd5d04409e7142a0df95125a198eb76c83fd0a52c117aba50f9a61db2f0186780574c071ea48010e5ffa1f157585c8c950
+"@babel/runtime@npm:^7.0.0, @babel/runtime@npm:^7.12.5, @babel/runtime@npm:^7.17.9, @babel/runtime@npm:^7.20.13, @babel/runtime@npm:^7.21.0, @babel/runtime@npm:^7.28.4, @babel/runtime@npm:^7.8.4, @babel/runtime@npm:^7.9.2":
+  version: 7.28.6
+  resolution: "@babel/runtime@npm:7.28.6"
+  checksum: 10/fbcd439cb74d4a681958eb064c509829e3f46d8a4bfaaf441baa81bb6733d1e680bccc676c813883d7741bcaada1d0d04b15aa320ef280b5734e2192b50decf9
   languageName: node
   linkType: hard
 
@@ -3431,6 +3429,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/hast@npm:^3.0.0":
+  version: 3.0.4
+  resolution: "@types/hast@npm:3.0.4"
+  dependencies:
+    "@types/unist": "npm:*"
+  checksum: 10/732920d81bb7605895776841b7658b4d8cc74a43a8fa176017cc0fb0ecc1a4c82a2b75a4fe6b71aa262b649d3fb62858c6789efa3793ea1d40269953af96ecb5
+  languageName: node
+  linkType: hard
+
 "@types/http-cache-semantics@npm:*, @types/http-cache-semantics@npm:^4.0.1":
   version: 4.0.1
   resolution: "@types/http-cache-semantics@npm:4.0.1"
@@ -3580,6 +3587,13 @@ __metadata:
   version: 4.0.0
   resolution: "@types/parse-json@npm:4.0.0"
   checksum: 10/4df9de98150d2978afc2161482a3a8e6617883effba3223324f079de97ba7eabd7d84b90ced11c3f82b0c08d4a8383f678c9f73e9c41258f769b3fa234a2bb4f
+  languageName: node
+  linkType: hard
+
+"@types/prismjs@npm:^1.0.0":
+  version: 1.26.5
+  resolution: "@types/prismjs@npm:1.26.5"
+  checksum: 10/617099479db9550119d0f84272dc79d64b2cf3e0d7a17167fe740d55fdf0f155697d935409464392d164e62080c2c88d649cf4bc4fdd30a87127337536657277
   languageName: node
   linkType: hard
 
@@ -5861,13 +5875,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"comma-separated-tokens@npm:^1.0.0":
-  version: 1.0.8
-  resolution: "comma-separated-tokens@npm:1.0.8"
-  checksum: 10/0adcb07174fa4d08cf0f5c8e3aec40a36b5ff0c2c720e5e23f50fe02e6789d1d00a67036c80e0c1e1539f41d3e7f0101b074039dd833b4e4a59031b659d6ca0d
-  languageName: node
-  linkType: hard
-
 "comma-separated-tokens@npm:^2.0.0":
   version: 2.0.3
   resolution: "comma-separated-tokens@npm:2.0.3"
@@ -6581,7 +6588,7 @@ __metadata:
     react-helmet: "npm:^6.1.0"
     react-router-dom: "npm:^6.22.3"
     react-swipeable: "npm:^7.0.1"
-    react-syntax-highlighter: "npm:^15.5.0"
+    react-syntax-highlighter: "npm:^16.0.0"
     reading-time: "npm:^1.5.0"
     remark-gfm: "npm:^1.0.0"
     sass: "npm:^1.75.0"
@@ -9929,10 +9936,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"hast-util-parse-selector@npm:^2.0.0":
-  version: 2.2.5
-  resolution: "hast-util-parse-selector@npm:2.2.5"
-  checksum: 10/22ee4afbd11754562144cb3c4f3ec52524dafba4d90ee52512902d17cf11066d83b38f7bdf6ca571bbc2541f07ba30db0d234657b6ecb8ca4631587466459605
+"hast-util-parse-selector@npm:^4.0.0":
+  version: 4.0.0
+  resolution: "hast-util-parse-selector@npm:4.0.0"
+  dependencies:
+    "@types/hast": "npm:^3.0.0"
+  checksum: 10/76087670d3b0b50b23a6cb70bca53a6176d6608307ccdbb3ed18b650b82e7c3513bfc40348f1389dc0c5ae872b9a768851f4335f44654abd7deafd6974c52402
   languageName: node
   linkType: hard
 
@@ -10020,16 +10029,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"hastscript@npm:^6.0.0":
-  version: 6.0.0
-  resolution: "hastscript@npm:6.0.0"
+"hastscript@npm:^9.0.0":
+  version: 9.0.1
+  resolution: "hastscript@npm:9.0.1"
   dependencies:
-    "@types/hast": "npm:^2.0.0"
-    comma-separated-tokens: "npm:^1.0.0"
-    hast-util-parse-selector: "npm:^2.0.0"
-    property-information: "npm:^5.0.0"
-    space-separated-tokens: "npm:^1.0.0"
-  checksum: 10/78f91b71e50506f7499c8275d67645f9f4f130e6f12b038853261d1fa7393432da4113baf3508c41b79d933f255089d6d593beea9d4cda89dfd34d0a498cf378
+    "@types/hast": "npm:^3.0.0"
+    comma-separated-tokens: "npm:^2.0.0"
+    hast-util-parse-selector: "npm:^4.0.0"
+    property-information: "npm:^7.0.0"
+    space-separated-tokens: "npm:^2.0.0"
+  checksum: 10/9aa8135faf0307807cca4075bef4e3403ae1ce959ad4b9e6720892ba957d58ff98b2f60b5eb3ac67d88ae897dc918997299cd4249d7ac602a0066dd46442c5d4
   languageName: node
   linkType: hard
 
@@ -14691,13 +14700,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prismjs@npm:~1.27.0":
-  version: 1.27.0
-  resolution: "prismjs@npm:1.27.0"
-  checksum: 10/dc83e2e09170b53526182f5435fae056fc200b109cac39faa88eb48d992311c7f59b94990318962fa93299190a9b33a404920ed150e5b364ce48c897f2ba1e8e
-  languageName: node
-  linkType: hard
-
 "probe-image-size@npm:^7.2.3":
   version: 7.2.3
   resolution: "probe-image-size@npm:7.2.3"
@@ -14774,19 +14776,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"property-information@npm:^5.0.0":
-  version: 5.6.0
-  resolution: "property-information@npm:5.6.0"
-  dependencies:
-    xtend: "npm:^4.0.0"
-  checksum: 10/e4f45b100fec5968126b08102f9567f1b5fc3442aecbb5b4cdeca401f1f447672e7638a08c81c05dd3979c62d084e0cc6acbe2d8b053c05280ac5abaaf666a68
-  languageName: node
-  linkType: hard
-
 "property-information@npm:^6.0.0":
   version: 6.2.0
   resolution: "property-information@npm:6.2.0"
   checksum: 10/ae44c93979957f4dd0c1a8ee230971c5f190bb2cb36a8a4a0548b2f8df488bfacc34d8c35d3c8c2a61c8fd08aa09d75ca68fc0bcda758cfa257590744b99b514
+  languageName: node
+  linkType: hard
+
+"property-information@npm:^7.0.0":
+  version: 7.1.0
+  resolution: "property-information@npm:7.1.0"
+  checksum: 10/896d38a52ad7170de73f832d277c69e76a9605d941ebb3f0d6e56271414a7fdf95ff6d2819e68036b8a0c7d2d4d88bf1d4a5765c032cb19c2343567ee3a14b15
   languageName: node
   linkType: hard
 
@@ -15127,19 +15127,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-syntax-highlighter@npm:^15.5.0":
-  version: 15.6.6
-  resolution: "react-syntax-highlighter@npm:15.6.6"
+"react-syntax-highlighter@npm:^16.0.0":
+  version: 16.1.0
+  resolution: "react-syntax-highlighter@npm:16.1.0"
   dependencies:
-    "@babel/runtime": "npm:^7.3.1"
+    "@babel/runtime": "npm:^7.28.4"
     highlight.js: "npm:^10.4.1"
     highlightjs-vue: "npm:^1.0.0"
     lowlight: "npm:^1.17.0"
     prismjs: "npm:^1.30.0"
-    refractor: "npm:^3.6.0"
+    refractor: "npm:^5.0.0"
   peerDependencies:
     react: ">= 0.14.0"
-  checksum: 10/8b7e60bc7df7218248e17dfc3c44b8f45cd9e363a763477753d5c39242910ff822180db59098e1cc74d0d2ced54ed1ca79a32d67e1afa0c8227ca918a7e0c692
+  checksum: 10/d55bc96802357de2102703fb3ffe86a67d52099e93da9624a900609e4d8b6f5f95472d42423951631348fdee2679d661b17aaf41039035dc3f1bbabf0423d62e
   languageName: node
   linkType: hard
 
@@ -15281,14 +15281,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"refractor@npm:^3.6.0":
-  version: 3.6.0
-  resolution: "refractor@npm:3.6.0"
+"refractor@npm:^5.0.0":
+  version: 5.0.0
+  resolution: "refractor@npm:5.0.0"
   dependencies:
-    hastscript: "npm:^6.0.0"
-    parse-entities: "npm:^2.0.0"
-    prismjs: "npm:~1.27.0"
-  checksum: 10/671bbcf5ae1b4e207f98b9a3dc2cbae215be30effe9f3bdcfd10f565f45fecfe97334cf38c8e4f52d6cc012ff2ec7fb627d3d5678efc388751c8b1e1f7ca2a6c
+    "@types/hast": "npm:^3.0.0"
+    "@types/prismjs": "npm:^1.0.0"
+    hastscript: "npm:^9.0.0"
+    parse-entities: "npm:^4.0.0"
+  checksum: 10/a14ceb938ed6f7f17dfa44660d3f3aff33e8896710bd76af0b411778791918bf20f923a191ff197fbc6a8e3f06c4371b83882f46ce76736f804dbe2b82b0be94
   languageName: node
   linkType: hard
 
@@ -15312,13 +15313,6 @@ __metadata:
   version: 0.13.11
   resolution: "regenerator-runtime@npm:0.13.11"
   checksum: 10/d493e9e118abef5b099c78170834f18540c4933cedf9bfabc32d3af94abfb59a7907bd7950259cbab0a929ebca7db77301e8024e5121e6482a82f78283dfd20c
-  languageName: node
-  linkType: hard
-
-"regenerator-runtime@npm:^0.14.0":
-  version: 0.14.0
-  resolution: "regenerator-runtime@npm:0.14.0"
-  checksum: 10/6c19495baefcf5fbb18a281b56a97f0197b5f219f42e571e80877f095320afac0bdb31dab8f8186858e6126950068c3f17a1226437881e3e70446ea66751897c
   languageName: node
   linkType: hard
 
@@ -16479,13 +16473,6 @@ __metadata:
   version: 0.7.4
   resolution: "source-map@npm:0.7.4"
   checksum: 10/a0f7c9b797eda93139842fd28648e868a9a03ea0ad0d9fa6602a0c1f17b7fb6a7dcca00c144476cccaeaae5042e99a285723b1a201e844ad67221bf5d428f1dc
-  languageName: node
-  linkType: hard
-
-"space-separated-tokens@npm:^1.0.0":
-  version: 1.1.5
-  resolution: "space-separated-tokens@npm:1.1.5"
-  checksum: 10/8ef68f1cfa8ccad316b7f8d0df0919d0f1f6d32101e8faeee34ea3a923ce8509c1ad562f57388585ee4951e92d27afa211ed0a077d3d5995b5ba9180331be708
   languageName: node
   linkType: hard
 
@@ -18563,7 +18550,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"xtend@npm:^4.0.0, xtend@npm:^4.0.2":
+"xtend@npm:^4.0.2":
   version: 4.0.2
   resolution: "xtend@npm:4.0.2"
   checksum: 10/ac5dfa738b21f6e7f0dd6e65e1b3155036d68104e67e5d5d1bde74892e327d7e5636a076f625599dc394330a731861e87343ff184b0047fef1360a7ec0a5a36a
