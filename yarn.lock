@@ -3777,13 +3777,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react@npm:*, @types/react@npm:18.3.28, @types/react@npm:>=16":
-  version: 18.3.28
-  resolution: "@types/react@npm:18.3.28"
+"@types/react@npm:*, @types/react@npm:18.3.31, @types/react@npm:>=16":
+  version: 18.3.31
+  resolution: "@types/react@npm:18.3.31"
   dependencies:
     "@types/prop-types": "npm:*"
     csstype: "npm:^3.2.2"
-  checksum: 10/6db7bb7f19957ee9f530baa7d143527f8befedad1585b064eb80777be0d84621157de75aba4f499ff429b10c5ef0c7d13e89be6bca3296ef71c80472894ff0eb
+  checksum: 10/0a5d73b1ba3ce73273b28cc50da78d520b1a8d4253075820dc5cf6c9e286ff6cb339b56bd613d05885fec214fbecd8137bddcbdb475612fdcc46e061d88f00fc
   languageName: node
   linkType: hard
 
@@ -6699,7 +6699,7 @@ __metadata:
     "@mdx-js/react": "npm:^2.3.0"
     "@types/jsonp": "npm:^0.2.3"
     "@types/node": "npm:~22.19.0"
-    "@types/react": "npm:18.3.28"
+    "@types/react": "npm:18.3.31"
     "@types/react-dom": "npm:18.3.7"
     "@types/react-helmet": "npm:^6.1.11"
     "@types/react-syntax-highlighter": "npm:^15.5.11"
