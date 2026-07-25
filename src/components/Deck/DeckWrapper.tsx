@@ -9,7 +9,10 @@ const useSplitSlides = (children: ReactNode) =>
     const slides: Array<ReactNode> = [];
 
     childrenArr.forEach((child, index) => {
-      if (isValidElement(child) && child.props.mdxType === 'hr') {
+      if (
+        isValidElement<{ mdxType?: string }>(child) &&
+        child.props.mdxType === 'hr'
+      ) {
         hrIndexes.push(index);
       }
     });

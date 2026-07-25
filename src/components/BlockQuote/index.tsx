@@ -23,7 +23,10 @@ export function BlockQuoteMDXWrapper({ children, ...rest }: BlockQuoteProps) {
     (child) => child !== '\n',
   );
   const [firstFilteredChild] = filteredChildren;
-  if (filteredChildren.length === 1 && isValidElement(firstFilteredChild)) {
+  if (
+    filteredChildren.length === 1 &&
+    isValidElement<{ children?: ReactNode }>(firstFilteredChild)
+  ) {
     children = firstFilteredChild.props.children;
   }
 

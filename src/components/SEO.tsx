@@ -1,10 +1,11 @@
-import React from 'react';
-import { graphql, useStaticQuery } from 'gatsby';
-import Helmet from 'react-helmet';
+import React, { ReactNode } from 'react';
+import siteMetadata from '../../config/util/siteMetadata';
 
-type MetaEntry =
-  | { name: string; content: any; property?: undefined }
-  | { property: string; content: any; name?: undefined };
+export type MetaEntry = {
+  name?: string;
+  property?: string;
+  content: string;
+};
 
 type SEOProps = {
   description?: string;
@@ -14,111 +15,79 @@ type SEOProps = {
   path?: string;
   imageUrl?: string | null;
   mailerLite?: boolean;
+  children?: ReactNode;
 };
+
+const MAILER_LITE_SNIPPET = `
+  (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
+  .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
+  n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
+  (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
+  ml('account', '562646');
+`;
 
 export default function SEO({
   description,
-  meta,
+  meta = [],
   keywords,
   title,
   imageUrl = null,
   path = '',
   mailerLite,
+  children,
 }: SEOProps) {
-  const data = useStaticQuery(graphql`
-    query DefaultSEOQuery {
-      site {
-        siteMetadata {
-          title
-          description
-          author
-          siteUrl
-        }
-      }
-    }
-  `);
+  const metaDescription = description || siteMetadata.description;
+  const displayTitle = title || siteMetadata.title;
 
-  const metaDescription = description || data.site.siteMetadata.description;
+  const metaEntries: MetaEntry[] = [
+    { name: 'title', property: 'og:title', content: displayTitle },
+    { name: 'twitter:title', content: displayTitle },
+    { property: 'og:site_name', content: 'Dave Allie' },
+    {
+      property: 'og:type',
+      content: process.env.SUBSITE === 'blog' ? 'article' : 'website',
+    },
+    { property: 'og:url', content: `${siteMetadata.siteUrl}${path}` },
+    { name: 'twitter:card', content: 'summary_large_image' },
+    ...(imageUrl
+      ? [
+          {
+            name: 'image',
+            property: 'og:image',
+            content: `${siteMetadata.siteUrl}${imageUrl}`,
+          },
+          {
+            name: 'twitter:image',
+            content: `${siteMetadata.siteUrl}${imageUrl}`,
+          },
+        ]
+      : []),
+    // Description last to avoid pushing image out of content window
+    {
+      name: 'description',
+      property: 'og:description',
+      content: metaDescription,
+    },
+    { name: 'twitter:description', content: metaDescription },
+    ...(keywords && keywords.length > 0
+      ? [{ name: 'keywords', content: keywords.join(', ') }]
+      : []),
+    ...meta,
+  ];
 
   return (
-    // @ts-ignore
-    <Helmet
-      htmlAttributes={{
-        lang: 'en',
-      }}
-      title={title ? title : data.site.siteMetadata.title}
-      titleTemplate={title ? `%s | ${data.site.siteMetadata.title}` : ''}
-      meta={[
-        {
-          name: 'title',
-          property: 'og:title',
-          content: title || data.site.siteMetadata.title,
-        },
-        {
-          name: 'twitter:title',
-          content: title || data.site.siteMetadata.title,
-        },
-        {
-          property: 'og:site_name',
-          content: 'Dave Allie',
-        },
-        {
-          property: 'og:type',
-          content: process.env.SUBSITE === 'blog' ? 'article' : 'website',
-        },
-        {
-          property: 'og:url',
-          content: `${data.site.siteMetadata.siteUrl}${path}`,
-        },
-        {
-          name: 'twitter:card',
-          content: 'summary_large_image',
-        },
-        ...(imageUrl
-          ? [
-              {
-                name: 'image',
-                property: 'og:image',
-                content: `${data.site.siteMetadata.siteUrl}${imageUrl}`,
-              },
-              {
-                name: 'twitter:image',
-                content: `${data.site.siteMetadata.siteUrl}${imageUrl}`,
-              },
-            ]
-          : []),
-        // Description last to avoid pushing image out of content window
-        {
-          name: 'description',
-          property: 'og:description',
-          content: metaDescription,
-        },
-        {
-          name: 'twitter:description',
-          content: metaDescription,
-        },
-      ]
-        .concat(
-          keywords && keywords.length > 0
-            ? {
-                name: 'keywords',
-                content: keywords.join(', '),
-              }
-            : [],
-        )
-        .concat(meta || [])}
-    >
+    <>
+      <title>
+        {title ? `${title} | ${siteMetadata.title}` : siteMetadata.title}
+      </title>
+      {metaEntries.map((entry) => (
+        <meta key={entry.name || entry.property} {...entry} />
+      ))}
       {mailerLite && (
-        <script
-          children={`
-            (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
-            .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
-            n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
-            (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
-            ml('account', '562646');
-          `}
-        />
+        // eslint-disable-next-line react/no-danger
+        <script dangerouslySetInnerHTML={{ __html: MAILER_LITE_SNIPPET }} />
       )}
-    </Helmet>
+      {children}
+    </>
   );
 }

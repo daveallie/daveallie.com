@@ -1,5 +1,5 @@
-@import "amsipro";
-@import "colors";
+@use "amsipro";
+@use "colors" as *;
 
 body.body_Hero {
   background-color: $heroBackground;

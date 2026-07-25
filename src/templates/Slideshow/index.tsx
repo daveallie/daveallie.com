@@ -1,49 +1,33 @@
-import React, { ReactNode } from 'react';
+import React from 'react';
 import { graphql } from 'gatsby';
 import Deck from '~/components/Deck';
 import SEO from '~/components/SEO';
 import SSRGate from '~/components/SSRGate';
 import usePageTracking from '~/hooks/usePageTracking';
 
-type SlideshowQueryResult = {
-  deck: {
-    id: string;
-    body: string & ReactNode;
-    frontmatter: {
-      title: string;
-      imageUrl?: {
-        publicURL: string;
-      };
-      author: string;
-      slug: string;
-      date: string;
-      datestamp: string;
-      updatestamp: string;
-    };
-  };
-};
+// gatsby-plugin-mdx re-parses templates that render MDX bodies with a plain-JS
+// parser, so this file can't contain any TypeScript syntax — no type aliases
+// and no parameter annotations. templates/BlogPost has the same constraint.
 
-type SlideshowProps = {
-  data: SlideshowQueryResult;
-  children: ReactNode;
-};
-
-export default function Slides({ data: { deck }, children }: SlideshowProps) {
+// @ts-ignore
+export default function Slides({ children }) {
   usePageTracking();
 
   return (
-    <>
-      <SEO
-        title={deck.frontmatter.title}
-        path={`/${deck.frontmatter.slug}`}
-        imageUrl={deck.frontmatter.imageUrl?.publicURL}
-      />
-      <SSRGate clientOnly>
-        <Deck>{children}</Deck>
-      </SSRGate>
-    </>
+    <SSRGate clientOnly>
+      <Deck>{children}</Deck>
+    </SSRGate>
   );
 }
+
+// @ts-ignore
+export const Head = ({ data: { deck } }) => (
+  <SEO
+    title={deck.frontmatter.title}
+    path={`/${deck.frontmatter.slug}`}
+    imageUrl={deck.frontmatter.imageUrl?.publicURL}
+  />
+);
 
 export const pageQuery = graphql`
   query DeckQuery($id: String) {

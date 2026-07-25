@@ -16,7 +16,6 @@ export default function HomeIndexPage() {
 
   return (
     <>
-      <SEO />
       <HomeHero />
       <OffWhiteContainer>
         <AboutMe />
@@ -24,3 +23,5 @@ export default function HomeIndexPage() {
     </>
   );
 }
+
+export const Head = () => <SEO />;

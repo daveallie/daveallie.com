@@ -83,27 +83,6 @@ export default function BlogPost({ data: { mdx }, children }) {
 
   return (
     <>
-      <SEO
-        title={mdx.frontmatter.title}
-        description={mdx.frontmatter.description}
-        mailerLite
-        path={`/${mdx.frontmatter.slug}`}
-        imageUrl={mdx.frontmatter.imageUrl?.publicURL}
-        meta={[
-          {
-            property: 'article:published_time',
-            content: mdx.frontmatter.datestamp,
-          },
-          {
-            property: 'article:modified_time',
-            content: mdx.frontmatter.updatestamp,
-          },
-          {
-            property: 'article:author',
-            content: mdx.frontmatter.author,
-          },
-        ]}
-      />
       <PageHeader title={mdx.frontmatter.title} />
       <ContentBlock>
         <Text size="0.9rem" weight={300} color="accent" container="div">
@@ -132,6 +111,31 @@ export default function BlogPost({ data: { mdx }, children }) {
     </>
   );
 }
+
+// @ts-ignore
+export const Head = ({ data: { mdx } }) => (
+  <SEO
+    title={mdx.frontmatter.title}
+    description={mdx.frontmatter.description}
+    mailerLite
+    path={`/${mdx.frontmatter.slug}`}
+    imageUrl={mdx.frontmatter.imageUrl?.publicURL}
+    meta={[
+      {
+        property: 'article:published_time',
+        content: mdx.frontmatter.datestamp,
+      },
+      {
+        property: 'article:modified_time',
+        content: mdx.frontmatter.updatestamp,
+      },
+      {
+        property: 'article:author',
+        content: mdx.frontmatter.author,
+      },
+    ]}
+  />
+);
 
 export const pageQuery = graphql`
   query BlogPostQuery($id: String) {
