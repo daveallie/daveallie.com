@@ -1,28 +1,10 @@
 {
   "extends": "stylelint-config-recommended-scss",
   "rules": {
-    "at-rule-no-unknown": [
-      true,
-      {
-        "ignoreAtRules": [
-          "if",
-          "else",
-          "mixin",
-          "each",
-          "include",
-          "function",
-          "return",
-          "warn",
-          "for"
-        ]
-      }
-    ],
     "selector-pseudo-class-no-unknown": [
       true,
       {
-        "ignorePseudoClasses": [
-          "global"
-        ]
+        "ignorePseudoClasses": ["global"]
       }
     ]
   }

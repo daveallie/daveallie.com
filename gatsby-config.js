@@ -50,6 +50,11 @@ const plugins = [
     options: {
       sassOptions: {
         outputStyle: 'compressed',
+        // gatsby-plugin-sass pins sass-loader ^10, which only speaks Dart
+        // Sass's legacy JS API. Nothing we can configure switches it to the
+        // modern API, so silence the deprecation until gatsby-plugin-sass
+        // ships a newer sass-loader. Drop this when it does.
+        silenceDeprecations: ['legacy-js-api'],
       },
       cssLoaderOptions: {
         modules: {

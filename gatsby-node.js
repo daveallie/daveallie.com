@@ -77,6 +77,20 @@ exports.onCreateWebpackConfig = ({ getConfig, actions }) => {
       devtool: false,
     });
   }
+
+  // Every stylesheet is a CSS module with hashed class names, so no two of them
+  // can collide and the order they land in the bundle doesn't matter. Without
+  // this, mini-css-extract-plugin warns for every pair of components imported
+  // in a different order on different pages.
+  const config = getConfig();
+  const miniCssExtract = config.plugins?.find(
+    (plugin) => plugin.constructor.name === 'MiniCssExtractPlugin',
+  );
+
+  if (miniCssExtract) {
+    miniCssExtract.options.ignoreOrder = true;
+    actions.replaceWebpackConfig(config);
+  }
 };
 
 exports.createSchemaCustomization = ({ actions, schema }) => {

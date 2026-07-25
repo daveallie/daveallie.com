@@ -1,4 +1,4 @@
-@import "src/assets/styles/colors";
+@use "src/assets/styles/colors" as *;
 
 .bodyOverride_Hero {
   background-color: $heroBackground !important;
