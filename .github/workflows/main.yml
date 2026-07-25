@@ -1,5 +1,5 @@
 name: Vercel Deploy
-concurrency: unique-key-here
+concurrency: ${{ github.workflow }}-${{ github.ref }}
 
 on:
   push:
@@ -12,22 +12,29 @@ on:
         default: '--prod'
 
 jobs:
-  deploy-home:
-    env:
-      VERCEL_ARGS: ${{ github.event.inputs.vercelArgs }}
+  deploy:
+    name: Deploy ${{ matrix.subsite }}
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - subsite: Home
+            projectIdSecret: VERCEL_HOME_PROJECT_ID
+          - subsite: Blog
+            projectIdSecret: VERCEL_BLOG_PROJECT_ID
+          - subsite: Slides
+            projectIdSecret: VERCEL_SLIDES_PROJECT_ID
+          - subsite: Meet
+            projectIdSecret: VERCEL_MEET_PROJECT_ID
     steps:
-      - name: Set VERCEL_ARGS environment variable
-        if: env.VERCEL_ARGS == null
-        run: echo "VERCEL_ARGS=--prod" >> $GITHUB_ENV
-      - name: Test VERCEL_ARGS environment variable
-        run: echo "VERCEL_ARGS=$VERCEL_ARGS"
-
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
+        with:
+          persist-credentials: true
 
       - name: Clone blog submodule
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           repository: daveallie/blog
           path: blog
@@ -38,7 +45,7 @@ jobs:
         run: git submodule update --init blog
 
       - name: Clone slides submodule
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           repository: daveallie/slides
           path: slides
@@ -48,146 +55,11 @@ jobs:
       - name: checkout slides submodule
         run: git submodule update --init slides
 
-      - name: Vercel Deploy - Home
-        uses: amondnet/vercel-action@v25.2.0
+      - name: Vercel Deploy - ${{ matrix.subsite }}
+        uses: amondnet/vercel-action@v42.3.0
         with:
           vercel-token: ${{ secrets.VERCEL_DEPLOY_TOKEN }}
           github-comment: false
-          vercel-project-id: ${{ secrets.VERCEL_HOME_PROJECT_ID }}
+          vercel-project-id: ${{ secrets[matrix.projectIdSecret] }}
           vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
-          vercel-args: ${{ env.VERCEL_ARGS }}
-
-  deploy-blog:
-    env:
-      VERCEL_ARGS: ${{ github.event.inputs.vercelArgs }}
-    runs-on: ubuntu-latest
-    steps:
-      - name: Set VERCEL_ARGS environment variable
-        if: env.VERCEL_ARGS == null
-        run: echo "VERCEL_ARGS=--prod" >> $GITHUB_ENV
-      - name: Test VERCEL_ARGS environment variable
-        run: echo "VERCEL_ARGS=$VERCEL_ARGS"
-
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Clone blog submodule
-        uses: actions/checkout@v4
-        with:
-          repository: daveallie/blog
-          path: blog
-          ssh-key: ${{ secrets.BLOG_SUBMODULE_DEPLOY_KEY }}
-          persist-credentials: true
-
-      - name: checkout blog submodule
-        run: git submodule update --init blog
-
-      - name: Clone slides submodule
-        uses: actions/checkout@v4
-        with:
-          repository: daveallie/slides
-          path: slides
-          ssh-key: ${{ secrets.SLIDES_SUBMODULE_DEPLOY_KEY }}
-          persist-credentials: true
-
-      - name: checkout slides submodule
-        run: git submodule update --init slides
-
-      - name: Vercel Deploy - Blog
-        uses: amondnet/vercel-action@v25.2.0
-        with:
-          vercel-token: ${{ secrets.VERCEL_DEPLOY_TOKEN }}
-          github-comment: false
-          vercel-project-id: ${{ secrets.VERCEL_BLOG_PROJECT_ID }}
-          vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
-          vercel-args: ${{ env.VERCEL_ARGS }}
-
-  deploy-slides:
-    env:
-      VERCEL_ARGS: ${{ github.event.inputs.vercelArgs }}
-    runs-on: ubuntu-latest
-    steps:
-      - name: Set VERCEL_ARGS environment variable
-        if: env.VERCEL_ARGS == null
-        run: echo "VERCEL_ARGS=--prod" >> $GITHUB_ENV
-      - name: Test VERCEL_ARGS environment variable
-        run: echo "VERCEL_ARGS=$VERCEL_ARGS"
-
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Clone blog submodule
-        uses: actions/checkout@v4
-        with:
-          repository: daveallie/blog
-          path: blog
-          ssh-key: ${{ secrets.BLOG_SUBMODULE_DEPLOY_KEY }}
-          persist-credentials: true
-
-      - name: checkout blog submodule
-        run: git submodule update --init blog
-
-      - name: Clone slides submodule
-        uses: actions/checkout@v4
-        with:
-          repository: daveallie/slides
-          path: slides
-          ssh-key: ${{ secrets.SLIDES_SUBMODULE_DEPLOY_KEY }}
-          persist-credentials: true
-
-      - name: checkout slides submodule
-        run: git submodule update --init slides
-
-      - name: Vercel Deploy - Slides
-        uses: amondnet/vercel-action@v25.2.0
-        with:
-          vercel-token: ${{ secrets.VERCEL_DEPLOY_TOKEN }}
-          github-comment: false
-          vercel-project-id: ${{ secrets.VERCEL_SLIDES_PROJECT_ID }}
-          vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
-          vercel-args: ${{ env.VERCEL_ARGS }}
-
-  deploy-meet:
-    env:
-      VERCEL_ARGS: ${{ github.event.inputs.vercelArgs }}
-    runs-on: ubuntu-latest
-    steps:
-      - name: Set VERCEL_ARGS environment variable
-        if: env.VERCEL_ARGS == null
-        run: echo "VERCEL_ARGS=--prod" >> $GITHUB_ENV
-      - name: Test VERCEL_ARGS environment variable
-        run: echo "VERCEL_ARGS=$VERCEL_ARGS"
-
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Clone blog submodule
-        uses: actions/checkout@v4
-        with:
-          repository: daveallie/blog
-          path: blog
-          ssh-key: ${{ secrets.BLOG_SUBMODULE_DEPLOY_KEY }}
-          persist-credentials: true
-
-      - name: checkout blog submodule
-        run: git submodule update --init blog
-
-      - name: Clone slides submodule
-        uses: actions/checkout@v4
-        with:
-          repository: daveallie/slides
-          path: slides
-          ssh-key: ${{ secrets.SLIDES_SUBMODULE_DEPLOY_KEY }}
-          persist-credentials: true
-
-      - name: checkout slides submodule
-        run: git submodule update --init slides
-
-      - name: Vercel Deploy - Meet
-        uses: amondnet/vercel-action@v25.2.0
-        with:
-          vercel-token: ${{ secrets.VERCEL_DEPLOY_TOKEN }}
-          github-comment: false
-          vercel-project-id: ${{ secrets.VERCEL_MEET_PROJECT_ID }}
-          vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
-          vercel-args: ${{ env.VERCEL_ARGS }}
+          vercel-args: ${{ github.event.inputs.vercelArgs || '--prod' }}

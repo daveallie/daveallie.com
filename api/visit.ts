@@ -1,15 +1,20 @@
+import {
+  DynamoDBClient,
+  GetItemCommand,
+  GetItemCommandInput,
+  PutItemCommand,
+  PutItemCommandInput,
+} from '@aws-sdk/client-dynamodb';
 import { VercelRequest, VercelResponse } from '@vercel/node';
-import aws from 'aws-sdk';
-import { GetItemInput, PutItemInput } from 'aws-sdk/clients/dynamodb';
 import { SUBSITE_URL } from '../config/util/subsite';
 
-aws.config.update({
-  accessKeyId: process.env.AWS_ACC_KEY,
-  secretAccessKey: process.env.AWS_SEC_ACC_KEY,
+const ddb = new DynamoDBClient({
   region: process.env.AWS_REG,
+  credentials: {
+    accessKeyId: process.env.AWS_ACC_KEY ?? '',
+    secretAccessKey: process.env.AWS_SEC_ACC_KEY ?? '',
+  },
 });
-
-const ddb = new aws.DynamoDB({ apiVersion: '2012-08-10' });
 
 type DDBRecord = {
   url: string;
@@ -24,7 +29,7 @@ const getViewCount = async (url: string): Promise<DDBRecord> => {
     return { url, month, count: 0 };
   }
 
-  const params: GetItemInput = {
+  const params: GetItemCommandInput = {
     TableName: process.env.DDB_TABLE_NAME,
     Key: {
       url: { S: url },
@@ -32,7 +37,7 @@ const getViewCount = async (url: string): Promise<DDBRecord> => {
     },
   };
 
-  const resp = await ddb.getItem(params).promise();
+  const resp = await ddb.send(new GetItemCommand(params));
 
   if (resp.Item && resp.Item.count && resp.Item.count.N) {
     return { url, month, count: parseInt(resp.Item.count.N) };
@@ -45,7 +50,7 @@ const updateViewCount = async (ddbRecord: DDBRecord) => {
     return;
   }
 
-  const params: PutItemInput = {
+  const params: PutItemCommandInput = {
     TableName: process.env.DDB_TABLE_NAME,
     Item: {
       url: { S: ddbRecord.url },
@@ -54,7 +59,7 @@ const updateViewCount = async (ddbRecord: DDBRecord) => {
     },
   };
 
-  await ddb.putItem(params).promise();
+  await ddb.send(new PutItemCommand(params));
 };
 
 const getUrlString = (request: VercelRequest): string | null => {

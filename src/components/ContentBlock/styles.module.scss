@@ -2,7 +2,7 @@
   width: 90%;
   max-width: 675px;
   margin: 2rem auto;
-  word-wrap: break-word;
+  overflow-wrap: break-word;
 
   &.wide {
     max-width: 800px;

@@ -20,7 +20,6 @@ export default function SlidesIndexPage() {
 
   return (
     <>
-      <SEO />
       <PageHeader title="Dave Allie - Slides" titleStandalone />
       <div className={styles.deckGrid}>
         {nodes.map((node) => (
@@ -44,3 +43,5 @@ export default function SlidesIndexPage() {
     </>
   );
 }
+
+export const Head = () => <SEO />;

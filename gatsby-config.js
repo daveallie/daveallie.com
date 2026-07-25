@@ -1,6 +1,7 @@
 const remarkGfm = require('remark-gfm');
 const pluginFeedConfig = require('./gatsby/config/gatsbyPluginFeed');
-const { SUBSITE, SUBSITE_URL } = require('./config/util/subsite');
+const siteMetadata = require('./config/util/siteMetadata');
+const { SUBSITE } = require('./config/util/subsite');
 
 const plugins = [
   {
@@ -22,7 +23,6 @@ const plugins = [
     },
   },
   (SUBSITE === 'blog' || SUBSITE === 'home') && 'gatsby-plugin-sitemap',
-  'gatsby-plugin-react-helmet',
   'gatsby-plugin-typescript',
   `gatsby-plugin-sharp`,
   `gatsby-plugin-image`,
@@ -110,11 +110,6 @@ const plugins = [
 ];
 
 module.exports = {
-  siteMetadata: {
-    title: 'Dave Allie',
-    description: '',
-    author: '@daveallie',
-    siteUrl: SUBSITE_URL,
-  },
+  siteMetadata,
   plugins: plugins.filter(Boolean),
 };

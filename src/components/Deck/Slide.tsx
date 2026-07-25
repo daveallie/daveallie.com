@@ -24,12 +24,15 @@ const useSlideConfig = (
 ): [Array<ReactNode>, SlideConfigProps] => {
   let childrenArr = Children.toArray(children);
   const configIndex = childrenArr.findIndex((child) => {
-    return isValidElement(child) && child.props.mdxType === 'SlideConfig';
+    return (
+      isValidElement<{ mdxType?: string }>(child) &&
+      child.props.mdxType === 'SlideConfig'
+    );
   });
 
   let config: SlideConfigProps = {};
   if (configIndex >= 0) {
-    config = (childrenArr[configIndex] as ReactElement).props;
+    config = (childrenArr[configIndex] as ReactElement<SlideConfigProps>).props;
     childrenArr.splice(configIndex, 1);
   }
 

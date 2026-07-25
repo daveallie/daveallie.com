@@ -13,10 +13,11 @@ export default function MeetIndexPage() {
 
   return (
     <>
-      <SEO title="Meet" />
       <PageHeader title="Meet Dave Allie" titleStandalone />
       <Calendly />
       <PageFooter includeHomeLink={false} fixed />
     </>
   );
 }
+
+export const Head = () => <SEO title="Meet" />;

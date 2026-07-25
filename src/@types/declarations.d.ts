@@ -5,3 +5,6 @@ declare module '*.module.scss' {
   const classNames: IClassNames;
   export = classNames;
 }
+
+// Plain stylesheets are only ever imported for their side effects.
+declare module '*.scss';

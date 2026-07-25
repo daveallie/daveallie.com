@@ -29,11 +29,6 @@ export default function BlogsByTag({ data, pageContext }: BlogsByTagProps) {
 
   return (
     <>
-      <SEO
-        title={`Tag: ${pageContext.tag}`}
-        path={pageContext.tagPath}
-        mailerLite
-      />
       <PageHeader title={`Tag: ${pageContext.tag}`} />
       <Text container="div" color="dark">
         <BlogPostList data={data.allMdx.nodes} />
@@ -42,6 +37,14 @@ export default function BlogsByTag({ data, pageContext }: BlogsByTagProps) {
     </>
   );
 }
+
+export const Head = ({ pageContext }: Pick<BlogsByTagProps, 'pageContext'>) => (
+  <SEO
+    title={`Tag: ${pageContext.tag}`}
+    path={pageContext.tagPath}
+    mailerLite
+  />
+);
 
 export const pageQuery = graphql`
   query BlogsByTagQuery($tag: String) {

@@ -9,6 +9,7 @@ const BodyPresetBackground = () => {
   return <script dangerouslySetInnerHTML={{ __html: codeToRunOnClient }} />;
 };
 
-exports.onRenderBody = ({ setPreBodyComponents }) => {
+exports.onRenderBody = ({ setHtmlAttributes, setPreBodyComponents }) => {
+  setHtmlAttributes({ lang: 'en' });
   setPreBodyComponents([<BodyPresetBackground key='preset-background' />]);
 };

@@ -1,7 +1,7 @@
 @import "src/assets/styles/colors";
 
 .container pre {
-  word-wrap: normal;
+  overflow-wrap: normal;
   border-radius: 0.3rem;
 }
 
@@ -25,5 +25,6 @@
 .filename {
   padding-left: 0.5rem;
   white-space: normal;
-  word-break: break-word;
+  // Modern equivalent of the deprecated `word-break: break-word`
+  overflow-wrap: anywhere;
 }

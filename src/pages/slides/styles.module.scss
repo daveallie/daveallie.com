@@ -1,7 +1,7 @@
 .deckGrid {
   display: grid;
   grid-template-columns: repeat(2, minmax(auto, 500px));
-  grid-gap: 2rem;
+  gap: 2rem;
   justify-content: center;
   margin: 4rem 2rem;
 

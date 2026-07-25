@@ -20,7 +20,6 @@ export default function BlogIndexPage() {
 
   return (
     <>
-      <SEO mailerLite />
       <PageHeader title="Dave Allie" titleStandalone />
       <Text container="div" color="dark">
         <BlogPostList data={nodes} />
@@ -32,3 +31,5 @@ export default function BlogIndexPage() {
     </>
   );
 }
+
+export const Head = () => <SEO mailerLite />;
