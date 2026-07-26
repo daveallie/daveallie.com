@@ -74,6 +74,11 @@
     "@types/react": "19.2.17",
     "@types/react-dom": "19.2.3"
   },
+  "dependenciesMeta": {
+    "sharp": {
+      "built": true
+    }
+  },
   "lint-staged": {
     "*.scss": "yarn lint:stylelint",
     "*.{ts,tsx,js,jsx,json,md}": "yarn lint:prettier",
