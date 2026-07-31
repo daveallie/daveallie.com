@@ -36,6 +36,17 @@ export default function AboutMe() {
         <Text weight={400}>Software Development Engineer</Text> and{' '}
         <Text weight={400}>CTO</Text>.
       </Text>
+
+      <Text className={styles.details} size="1.2rem">
+        I have been toiling away on a few things, most recently:
+        <br />I built{' '}
+        <Link href="https://componentatlas.com">Component Atlas</Link>
+        , a React component/prop usage tracking tool.
+        <br />I built{' '}
+        <Link href="https://github.com/crosspoint-reader">CrossPoint</Link>, an
+        entire e-reader firmware from scratch (since handed off).
+      </Text>
+
       <HR />
       <Text container="div">
         Check out what I'm up to on{' '}
