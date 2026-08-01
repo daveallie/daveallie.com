@@ -1,8 +1,7 @@
+@use "src/assets/styles/contentBlock" as *;
+
 .container {
-  width: 90%;
-  max-width: 675px;
-  margin: 2rem auto;
-  overflow-wrap: break-word;
+  @include content-block;
 
   &.wide {
     max-width: 800px;

@@ -1,0 +1,22 @@
+@use "contentBlock" as *;
+
+// rehype-katex emits display math as a top-level `<div class="math
+// math-display">`, a sibling of the elements MDXProvider maps. It never passes
+// through ContentBlock, so it has to pick up the page column itself.
+.math-display {
+  @include content-block;
+}
+
+// A single long equation can't wrap, so let it scroll rather than burst the
+// 675px column on narrow screens.
+.katex-display {
+  padding: 0.25rem 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+// KaTeX sets its own line-height, which pushes body lines apart wherever
+// inline math appears. Body copy owns the spacing instead.
+.math-inline .katex {
+  line-height: inherit;
+}

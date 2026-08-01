@@ -1,0 +1,9 @@
+// Page-column geometry shared by the ContentBlock component and any markup we
+// don't control (e.g. the display-math wrappers rehype-katex emits at the top
+// level of a post, which can't be routed through ContentBlock).
+@mixin content-block {
+  width: 90%;
+  max-width: 675px;
+  margin: 2rem auto;
+  overflow-wrap: break-word;
+}

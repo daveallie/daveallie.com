@@ -1,5 +1,6 @@
 @use "amsipro";
 @use "colors" as *;
+@use "katex";
 
 body.body_Hero {
   background-color: $heroBackground;

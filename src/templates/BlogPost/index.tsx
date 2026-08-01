@@ -21,6 +21,7 @@ import Text from '~/components/Text';
 import Tooltip from '~/components/Tooltip';
 import useAlternateBodyBackground from '~/hooks/useAlternateBodyBackground';
 import usePageTracking from '~/hooks/usePageTracking';
+import 'katex/dist/katex.min.css';
 
 const components = {
   a: Link,

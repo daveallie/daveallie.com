@@ -13,8 +13,8 @@
     "check-types": "tsc --noEmit",
     "lint": "yarn lint:prettier && yarn lint:stylelint && yarn check-types",
     "lint:stylelint": "stylelint 'src/**/*.scss'",
-    "lint:prettier": "prettier '{src,api,config,gatsby}/**/*.{ts,tsx,js,jsx,json,md}' '*.{ts,tsx,js,jsx,json,md}' --check",
-    "lint:prettier:fix": "prettier '{src,api,config,gatsby}/**/*.{ts,tsx,js,jsx,json,md}' '*.{ts,tsx,js,jsx,json,md}' --write"
+    "lint:prettier": "prettier '{src,api,config,gatsby}/**/*.{ts,tsx,js,jsx,mjs,json,md}' '*.{ts,tsx,js,jsx,mjs,json,md}' --check",
+    "lint:prettier:fix": "prettier '{src,api,config,gatsby}/**/*.{ts,tsx,js,jsx,mjs,json,md}' '*.{ts,tsx,js,jsx,mjs,json,md}' --write"
   },
   "repository": {
     "type": "git",
@@ -42,6 +42,7 @@
     "gatsby-source-filesystem": "^5.13.1",
     "gatsby-transformer-sharp": "5.16.0",
     "jsonp": "^0.2.1",
+    "katex": "^0.16",
     "lodash": "^4.17.21",
     "react": "19.2.8",
     "react-dom": "19.2.8",
@@ -49,7 +50,9 @@
     "react-swipeable": "^7.0.1",
     "react-syntax-highlighter": "^16.0.0",
     "reading-time": "^1.5.0",
-    "remark-gfm": "^1.0.0",
+    "rehype-katex": "^6",
+    "remark-gfm": "^3",
+    "remark-math": "^5",
     "sass": "^1.75.0"
   },
   "devDependencies": {
@@ -81,7 +84,7 @@
   },
   "lint-staged": {
     "*.scss": "yarn lint:stylelint",
-    "*.{ts,tsx,js,jsx,json,md}": "yarn lint:prettier",
+    "*.{ts,tsx,js,jsx,mjs,json,md}": "yarn lint:prettier",
     "*.{ts,tsx}": "bash -c 'tsc --noEmit --pretty'"
   },
   "packageManager": "yarn@4.18.0"

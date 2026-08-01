@@ -6,5 +6,7 @@ declare module '*.module.scss' {
   export = classNames;
 }
 
-// Plain stylesheets are only ever imported for their side effects.
+// Plain stylesheets are only ever imported for their side effects. The .css
+// case covers third-party stylesheets shipped in packages, e.g. KaTeX's.
 declare module '*.scss';
+declare module '*.css';

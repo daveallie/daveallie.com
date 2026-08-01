@@ -1,7 +1,18 @@
-const remarkGfm = require('remark-gfm');
-const pluginFeedConfig = require('./gatsby/config/gatsbyPluginFeed');
-const siteMetadata = require('./config/util/siteMetadata');
-const { SUBSITE } = require('./config/util/subsite');
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+import rehypeKatex from 'rehype-katex';
+import remarkGfm from 'remark-gfm';
+import remarkMath from 'remark-math';
+import siteMetadata from './config/util/siteMetadata.js';
+import subsite from './config/util/subsite.js';
+import pluginFeedConfig from './gatsby/config/gatsbyPluginFeed.js';
+
+// remark-math and rehype-katex are ESM-only, which is why this file is .mjs
+// rather than .js. gatsby-node.js and gatsby-ssr.js are unaffected and stay
+// CommonJS.
+const { SUBSITE } = subsite;
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const plugins = [
   {
@@ -41,7 +52,8 @@ const plugins = [
         'gatsby-remark-copy-linked-files',
       ],
       mdxOptions: {
-        remarkPlugins: [remarkGfm],
+        remarkPlugins: [remarkGfm, remarkMath],
+        rehypePlugins: [rehypeKatex],
       },
     },
   },
@@ -114,7 +126,7 @@ const plugins = [
   SUBSITE === 'blog' && pluginFeedConfig,
 ];
 
-module.exports = {
+export default {
   siteMetadata,
   plugins: plugins.filter(Boolean),
 };

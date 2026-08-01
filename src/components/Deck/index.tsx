@@ -15,6 +15,7 @@ import Table from '~/components/Table';
 import Text from '~/components/Text';
 import DeckWrapper from './DeckWrapper';
 import { SlideConfig } from './Slide';
+import 'katex/dist/katex.min.css';
 
 const components = {
   wrapper: DeckWrapper,
