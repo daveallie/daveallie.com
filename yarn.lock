@@ -4255,14 +4255,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vercel/build-utils@npm:14.0.4":
-  version: 14.0.4
-  resolution: "@vercel/build-utils@npm:14.0.4"
+"@vercel/build-utils@npm:14.0.5":
+  version: 14.0.5
+  resolution: "@vercel/build-utils@npm:14.0.5"
   dependencies:
-    "@vercel/python-analysis": "npm:0.13.1"
+    "@vercel/python-analysis": "npm:0.13.2"
     cjs-module-lexer: "npm:1.2.3"
     es-module-lexer: "npm:1.5.0"
-  checksum: 10/48afe77583755f6403aecd1fd3154f4b0dcc7e2b198352bc71077d5e175e18f383a87c8348ba5eac534f36bd4661428afc6e5c3ca133a325e8e5416d550d7f84
+  checksum: 10/3d22bd17bf4c96635714d83b137d5a72efe6f356e15751311ce50a6826ac40626419e0f57424b272aa19810fe7250e20fc8c447b0e2dc80421226c970c69d559
   languageName: node
   linkType: hard
 
@@ -4296,14 +4296,14 @@ __metadata:
   linkType: hard
 
 "@vercel/node@npm:^5.0.0":
-  version: 5.9.8
-  resolution: "@vercel/node@npm:5.9.8"
+  version: 5.9.9
+  resolution: "@vercel/node@npm:5.9.9"
   dependencies:
     "@edge-runtime/node-utils": "npm:2.3.0"
     "@edge-runtime/primitives": "npm:4.1.0"
     "@edge-runtime/vm": "npm:3.2.0"
     "@types/node": "npm:20.11.0"
-    "@vercel/build-utils": "npm:14.0.4"
+    "@vercel/build-utils": "npm:14.0.5"
     "@vercel/error-utils": "npm:2.2.1"
     "@vercel/nft": "npm:1.10.0"
     "@vercel/static-config": "npm:3.4.1"
@@ -4321,13 +4321,13 @@ __metadata:
     tsx: "npm:4.21.0"
     typescript: "npm:typescript@5.9.3"
     undici: "npm:5.28.4"
-  checksum: 10/469b9a9965845cb080165682434e9161468c62b42911811c431e6c4ac580fb565acd197fbab41348e55127d02261573e5f175719ec4ab7c71071e03b1d8fb8b4
+  checksum: 10/1ae7547ee7c4402eb42f100e63ac47fd32f9b17470b4fa490fd8d1f265d1504d68b976a37cf5d77050b6fd0cd5f31aac573854c5ccdfbba7220e0f1ca448dcc9
   languageName: node
   linkType: hard
 
-"@vercel/python-analysis@npm:0.13.1":
-  version: 0.13.1
-  resolution: "@vercel/python-analysis@npm:0.13.1"
+"@vercel/python-analysis@npm:0.13.2":
+  version: 0.13.2
+  resolution: "@vercel/python-analysis@npm:0.13.2"
   dependencies:
     "@bytecodealliance/preview2-shim": "npm:0.17.6"
     "@renovatebot/pep440": "npm:4.2.1"
@@ -4336,7 +4336,7 @@ __metadata:
     minimatch: "npm:10.1.1"
     smol-toml: "npm:1.5.2"
     zod: "npm:3.22.4"
-  checksum: 10/a1805bd81bd1600ef1f70144bf06da32c78c474cc3b200547a2989f7fe5bbaf8890d0c31bb8c89a59a5d307497df0f1c48c7417bad6ff649f700d5c1b08fb356
+  checksum: 10/2bcb439d0e46a692bc9f13155ff6efecc37f233fb07f7a68b21a85b635beed37b1205de2705e453b17a8aa35ce2294a7ba2f4cfefa6142b7b79d5d98bbe80d56
   languageName: node
   linkType: hard
 
