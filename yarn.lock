@@ -6888,7 +6888,7 @@ __metadata:
     gatsby-transformer-sharp: "npm:5.16.0"
     husky: "npm:^9.0.11"
     jsonp: "npm:^0.2.1"
-    katex: "npm:^0.16"
+    katex: "npm:^0.18.0"
     lint-staged: "npm:^17.0.0"
     lodash: "npm:^4.17.21"
     prettier: "npm:^3.2.5"
@@ -11725,7 +11725,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"katex@npm:^0.16, katex@npm:^0.16.0":
+"katex@npm:^0.16.0":
   version: 0.16.47
   resolution: "katex@npm:0.16.47"
   dependencies:
@@ -11733,6 +11733,17 @@ __metadata:
   bin:
     katex: cli.js
   checksum: 10/e0286b45d9e0c8443cf0381205619ecbab3919ea5fb6616408f46f0cb471ce2222e83f46aef52cdaacdcbfd4485e00fcfbcf36bd85a8a9a81e22b45827c27ced
+  languageName: node
+  linkType: hard
+
+"katex@npm:^0.18.0":
+  version: 0.18.4
+  resolution: "katex@npm:0.18.4"
+  dependencies:
+    commander: "npm:^8.3.0"
+  bin:
+    katex: cli.js
+  checksum: 10/cf760043aaccba10aa2a1f73905b2922fa9bf471eb79f779f10680e77feba2edfdf7067a67123ef1b61bbb4c083af26a83ab91394a62f9b14ec7745df5393dfa
   languageName: node
   linkType: hard
 
