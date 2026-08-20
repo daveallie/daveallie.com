@@ -71,7 +71,7 @@
     "prettier": "^3.2.5",
     "stylelint": "17.14.1",
     "stylelint-config-recommended-scss": "^17.0.0",
-    "typescript": "^6.0.3"
+    "typescript": "^7.0.0"
   },
   "resolutions": {
     "@types/react": "19.2.18",
