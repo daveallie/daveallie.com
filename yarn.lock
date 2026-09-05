@@ -45,11 +45,11 @@ __metadata:
   linkType: hard
 
 "@aws-sdk/client-dynamodb@npm:^3.0.0":
-  version: 3.1120.0
-  resolution: "@aws-sdk/client-dynamodb@npm:3.1120.0"
+  version: 3.1126.0
+  resolution: "@aws-sdk/client-dynamodb@npm:3.1126.0"
   dependencies:
     "@aws-sdk/core": "npm:^3.977.9"
-    "@aws-sdk/credential-provider-node": "npm:^3.972.81"
+    "@aws-sdk/credential-provider-node": "npm:^3.972.82"
     "@aws-sdk/dynamodb-codec": "npm:^3.973.44"
     "@aws-sdk/middleware-endpoint-discovery": "npm:^3.972.30"
     "@aws-sdk/types": "npm:^3.974.5"
@@ -58,7 +58,7 @@ __metadata:
     "@smithy/node-http-handler": "npm:^4.11.3"
     "@smithy/types": "npm:^4.17.2"
     tslib: "npm:^2.6.2"
-  checksum: 10/e866b70d6dfe78297d9415678f6680f62423697e28bb9461a9d1819b405751c4471f427123fa255be6549b9aaece8fdb17b285581692e76d2cce17bb013e689d
+  checksum: 10/8f0f31e85f155b0746ea5430fb91e9df1657986bd7b0efddc05e04bbc1fc5f28734284777b162f7cea1a37362184fd57ba526d1ff5b5a044e75809f078ac03a3
   languageName: node
   linkType: hard
 
@@ -141,9 +141,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@aws-sdk/credential-provider-node@npm:^3.972.81":
-  version: 3.972.81
-  resolution: "@aws-sdk/credential-provider-node@npm:3.972.81"
+"@aws-sdk/credential-provider-node@npm:^3.972.82":
+  version: 3.972.82
+  resolution: "@aws-sdk/credential-provider-node@npm:3.972.82"
   dependencies:
     "@aws-sdk/credential-provider-env": "npm:^3.972.70"
     "@aws-sdk/credential-provider-http": "npm:^3.972.72"
@@ -156,7 +156,7 @@ __metadata:
     "@smithy/credential-provider-imds": "npm:^4.4.16"
     "@smithy/types": "npm:^4.17.2"
     tslib: "npm:^2.6.2"
-  checksum: 10/adc322099542d8a05954c7f9715f3db85172270500d2f2b12c115fc2d36a890ceea87d13ad55c2b43f4696079aca7633c7c17ed883a7e6f9d1f7c285119953f8
+  checksum: 10/14075a6bed1a3b0a05b9764b4024e485ac918378e470e7ea9ce12303f3fd5b60142c923d2b0b6ca247c66f63e28e217216734ceb5fe120bf91ae144253030b78
   languageName: node
   linkType: hard
 
