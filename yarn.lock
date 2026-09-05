@@ -6211,6 +6211,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"commander@npm:^15.0.0":
+  version: 15.0.0
+  resolution: "commander@npm:15.0.0"
+  checksum: 10/a5dab1f5c3f1bf2ea19e8089f650f7fb65c3ed88e13ddde62e490d34b20057bcb2cd3de5b6ddc8aae93286083f8256ca0b812df842f574cbebe0e40f5b2f98f7
+  languageName: node
+  linkType: hard
+
 "commander@npm:^2.20.0":
   version: 2.20.3
   resolution: "commander@npm:2.20.3"
@@ -6888,7 +6895,7 @@ __metadata:
     gatsby-transformer-sharp: "npm:5.16.0"
     husky: "npm:^9.0.11"
     jsonp: "npm:^0.2.1"
-    katex: "npm:^0.16"
+    katex: "npm:^0.18.0"
     lint-staged: "npm:^17.0.0"
     lodash: "npm:^4.17.21"
     prettier: "npm:^3.2.5"
@@ -11725,7 +11732,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"katex@npm:^0.16, katex@npm:^0.16.0":
+"katex@npm:^0.16.0":
   version: 0.16.47
   resolution: "katex@npm:0.16.47"
   dependencies:
@@ -11733,6 +11740,17 @@ __metadata:
   bin:
     katex: cli.js
   checksum: 10/e0286b45d9e0c8443cf0381205619ecbab3919ea5fb6616408f46f0cb471ce2222e83f46aef52cdaacdcbfd4485e00fcfbcf36bd85a8a9a81e22b45827c27ced
+  languageName: node
+  linkType: hard
+
+"katex@npm:^0.18.0":
+  version: 0.18.5
+  resolution: "katex@npm:0.18.5"
+  dependencies:
+    commander: "npm:^15.0.0"
+  bin:
+    katex: cli.js
+  checksum: 10/0e31ea2ad8263cad69a0948aa80e376c72c91aaa3d6d942af2a759f07f955a2df7863f4bcf0bd4ec473c9387229adb1754be135479cd8a9c1853d1ba5714c6f5
   languageName: node
   linkType: hard
 
