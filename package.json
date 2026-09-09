@@ -42,7 +42,7 @@
     "gatsby-source-filesystem": "^5.13.1",
     "gatsby-transformer-sharp": "5.16.0",
     "jsonp": "^0.2.1",
-    "katex": "^0.16",
+    "katex": "^0.18.0",
     "lodash": "^4.17.21",
     "react": "19.2.8",
     "react-dom": "19.2.8",
