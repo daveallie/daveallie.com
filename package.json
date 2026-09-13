@@ -44,8 +44,8 @@
     "jsonp": "^0.2.1",
     "katex": "^0.16",
     "lodash": "^4.17.21",
-    "react": "19.2.8",
-    "react-dom": "19.2.8",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
     "react-router-dom": "^7.0.0",
     "react-swipeable": "^7.0.1",
     "react-syntax-highlighter": "^16.0.0",
@@ -61,8 +61,8 @@
     "@types/jsonp": "^0.2.3",
     "@types/lodash": "^4.17.0",
     "@types/node": "~24.13.0",
-    "@types/react": "19.2.18",
-    "@types/react-dom": "19.2.7",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
     "@types/react-syntax-highlighter": "^15.5.11",
     "@vercel/node": "^5.0.0",
     "classnames": "^2.5.1",
@@ -74,8 +74,8 @@
     "typescript": "^6.0.3"
   },
   "resolutions": {
-    "@types/react": "19.2.18",
-    "@types/react-dom": "19.2.7"
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0"
   },
   "dependenciesMeta": {
     "sharp": {
