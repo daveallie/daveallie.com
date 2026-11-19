@@ -45,8 +45,8 @@ __metadata:
   linkType: hard
 
 "@aws-sdk/client-dynamodb@npm:^3.0.0":
-  version: 3.1168.0
-  resolution: "@aws-sdk/client-dynamodb@npm:3.1168.0"
+  version: 3.1171.0
+  resolution: "@aws-sdk/client-dynamodb@npm:3.1171.0"
   dependencies:
     "@aws-sdk/core": "npm:^3.981.0"
     "@aws-sdk/credential-provider-node": "npm:^3.972.97"
@@ -58,7 +58,7 @@ __metadata:
     "@smithy/node-http-handler": "npm:^4.14.2"
     "@smithy/types": "npm:^4.20.0"
     tslib: "npm:^2.6.2"
-  checksum: 10/1d7229d2a3a267085f692e3af4447e068b0a75da33ac9ff7a0b023be5d5230f09537a071192098f54fa7fc16ea21e183602a375abdf872c3bcfefd274ce38979
+  checksum: 10/eb2cec04031de1873ab4b0d47c89cfb814b593aaf823b4d089290c9d3db7e87341f25daa59a05d5b06d2a98830f69837198cb51e580994124fe9d1722006c204
   languageName: node
   linkType: hard
 
