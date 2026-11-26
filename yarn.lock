@@ -3985,12 +3985,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*, @types/node@npm:>=10.0.0":
-  version: 26.6.7
-  resolution: "@types/node@npm:26.6.7"
+"@types/node@npm:*, @types/node@npm:>=10.0.0, @types/node@npm:~26.6.0":
+  version: 26.6.8
+  resolution: "@types/node@npm:26.6.8"
   dependencies:
     undici-types: "npm:~8.9.0"
-  checksum: 10/6990282cd7f25609da26bca026f9ab62c94bf67b82c38b81608a8d6b34d51b7e91a95831b0dc55fa9c9d8066bc3b0def95308b1a61a275e6dd228ef82689bc44
+  checksum: 10/1d4f0c87a906c8485e412af5cb67bf1c26f04ece4539ad4fe9510e18a1dec06f324cf003a12b611cd3e36ebab411fa6721189ac849429666af87881db8d83254
   languageName: node
   linkType: hard
 
@@ -4007,15 +4007,6 @@ __metadata:
   version: 17.0.45
   resolution: "@types/node@npm:17.0.45"
   checksum: 10/b45fff7270b5e81be19ef91a66b764a8b21473a97a8d211218a52e3426b79ad48f371819ab9153370756b33ba284e5c875463de4d2cf48a472e9098d7f09e8a2
-  languageName: node
-  linkType: hard
-
-"@types/node@npm:~24.19.0":
-  version: 24.19.2
-  resolution: "@types/node@npm:24.19.2"
-  dependencies:
-    undici-types: "npm:>=7.24.0 <7.24.7"
-  checksum: 10/5bc31df093f2866db0a2f9df0a1e99c2a46c3154ca2dc62ee14bde7af216d6361e4737e1023880921007ccb326b8559980e239e18a6fa927cda507da9383225c
   languageName: node
   linkType: hard
 
@@ -6861,7 +6852,7 @@ __metadata:
     "@mdx-js/react": "npm:^2.3.0"
     "@types/jsonp": "npm:^0.2.3"
     "@types/lodash": "npm:^4.17.0"
-    "@types/node": "npm:~24.19.0"
+    "@types/node": "npm:~26.6.0"
     "@types/react": "npm:19.3.0"
     "@types/react-dom": "npm:19.3.0"
     "@types/react-syntax-highlighter": "npm:^15.5.11"
@@ -18012,13 +18003,6 @@ __metadata:
   version: 0.1.2
   resolution: "unc-path-regex@npm:0.1.2"
   checksum: 10/a05fa2006bf4606051c10fc7968f08ce7b28fa646befafa282813aeb1ac1a56f65cb1b577ca7851af2726198d59475bb49b11776036257b843eaacee2860a4ec
-  languageName: node
-  linkType: hard
-
-"undici-types@npm:>=7.24.0 <7.24.7":
-  version: 7.24.6
-  resolution: "undici-types@npm:7.24.6"
-  checksum: 10/defc9538b952e3c15b8526596c591f7c1f0c7605ad27a2b7feddbea7ef2e3003f3eda2cdb051a3cb1a2185e3893100fd9cb925c799db99d48131ea63b5233d10
   languageName: node
   linkType: hard
 
